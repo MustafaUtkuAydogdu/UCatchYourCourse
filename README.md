@@ -11,12 +11,12 @@
 * 21901865 Melis Atun
 * 21901779 Muhammed Can Küçükaslan 
 
+## Catch Your Course
+Look [here](https://cs102g1j.github.io/project01/)
+
 ## Project Proposal Guides
 * [How to prepare a proposal](http://www.cs.bilkent.edu.tr/~bgedik/coursewiki/doku.php/cs102:projects)
-* [How to lose points](http://www.cs.bilkent.edu.tr/~david/cs102/practicalwork/cs102projectorganisationandgrading.htm#AdditionalPoints)
-
-#### Catch Your Course
-Look [here](https://cs102g1j.github.io/project01/).
+* [How to lose points](http://www.cs.bilkent.edu.tr/~david/cs102/practicalwork/cs102projectorganisationandgrading.htm#AdditionalPoints).
 
 ## Resources
 + This topic will be moved another file soon (within next few decades).
