@@ -1,0 +1,247 @@
+<!--Copied and edited from Sololearn's html blog example -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Catch Your Course</title>
+	<style> html {
+    margin: 0;
+    padding: 10px;
+}
+body {
+    font-size: 13pt;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0;
+}
+h1 {
+    font-size: 15pt;
+    color: #20bcd5;
+    text-align: center;
+    padding: 18px 0 18px 0;
+    margin: 0 0 10px 0;
+}
+h1 span {
+    border: 4px dashed #20bcd5;
+    padding: 10px;
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+.img-circle {
+    border: 3px solid white;
+    border-radius: 50%;
+}
+.abc {
+    background-color:#ffb;
+    padding:7px;
+    margin-left:10px;
+    border-radius:25px;
+}
+.section {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+#header {
+    background-image: url("https://cdn.pixabay.com/photo/2017/11/13/22/12/compass-2946959_960_720.jpg");
+    background-size: cover;
+}
+#header img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+#header p {
+    font-size: 20pt;
+    color: #FFFFFF;
+    padding-top: 10px;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+.quote {
+    font-size: 12pt;
+    text-align: right;
+    margin-top: 20px;
+}
+table {
+    width: 100%;
+}
+table, th, td {
+    border: 4px solid #cecece;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+}
+.selected {
+    background-color: #f36f48;
+    font-weight: bold;
+    color: white;
+}
+li {
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+progress {
+    width: 70%;
+    height: 50px;
+    color: #3fb6b2;
+    background: #efefef;
+}
+progress::-webkit-progress-bar {
+    background: #efefef;
+}
+progress::-webkit-progress-value {
+    background: #3fb6b2;
+} 
+progress::-moz-progress-bar {
+    color: #3fb6b2;
+    background: #efefef;
+}
+iframe, audio {
+    display: block;
+    margin: 0 auto;
+    border: 6ox solid #3fb6b2;
+}
+hr {
+    border: 0;
+    height: 2px;
+    background: #f36f48;
+}
+form {
+    text-align: center;
+    margin-top: 0;
+}
+.submit {
+    background-color: #FF00FF;
+    padding: 20px 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #00FFff;
+    border: none;
+    outline: none;
+    margin: 0;
+    font-weight: bold;
+}
+.submit:hover {
+    background-color: #43a09d;
+}
+textarea {
+    height: 100px;
+}
+input, textarea {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    padding: 15px 10px 10px;
+    border: 1px solid #cecece;
+    background-color: #efefef;
+    color: #787575;
+    border-radius: 5px;
+    width: 70%;
+    outline: none;
+}
+.face {
+    transform: scale(0.4);
+    margin: 0 auto;
+    display: block;
+    margin-top: -35px;
+    margin-bottom: -25px;
+}
+#contacts img {
+    height: 50px;
+    width: 50px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+#contacts a {
+    text-decoration: none;
+}
+#contacts img:hover {
+    opacity: 0.8;
+}
+#contacts {
+    text-align: center;
+}
+.copyright {
+    font-size: 8pt;
+    text-align: right;
+    padding-bottom: 10px;
+    color: grey;
+} </style>
+    </head>
+    
+    <body>
+<!--
+ <div class="abc">   <ul>
+   
+   <li><a href="#ki me ez">Kî me ez?</a></li>
+    It has removed because of an error    <li><a href="#Quran"</a>Quran</li> 
+        <li><a href="#medya">Medyaya Civakî</a></li>
+    </ul></div>
+        <!-- header start -->
+        <div id="header" class="section">
+            <img class="img-circle" src="https://cdn.pixabay.com/photo/2019/09/22/16/20/location-4496459_960_720.png">
+            <p>CS 102-g1J</p>
+        </div>
+        <!-- header end -->
+
+
+       
+        <!-- About Me section start -->
+        <div class="section">
+            <h1 id="about"><span>About the project</span></h1>
+           <big><strong> Catch Your Professor & Course</strong></big>
+           <p>
+Our project’s aim is to make the students eager to go to their courses all the time. Also, we want to make the school life of every student enjoyable… Simply, our project tries to motivate the students to attend their lectures on time by making them play a fun game. This game includes catching the professors of the students’ lesson and earning points while doing so. When the student catches an amount of items, which will be determined by the app, the student is rewarded and has a chance to be on the leaderboards of the app. Furthermore, our app will have another feature. This feature includes finding the classrooms inside a labyrinthine building, for example the G building. Especially freshmen students confuse the places of the classrooms and they can be late to their lectures. Using our app, a student can find the classroom of his lecture and have the intention to attend a lecture on time to play the game and catch the professor of that lesson, knowing he will be rewarded if he catches as many items as he can.          </p>
+	</div>
+	
+		
+        <!-- What is it for section Start -->
+	    <div class="section">
+            <p class="quote"><h1 id="goal"><span>What is it for?</span></h1>
+			Our project's main purpose is being enjoyable and help students of Bilkent be more eager to go to their lectures. But, we also want to make a new Bilkent navigator to ease finding classrooms, cafes or buildings. In our opinion, at Bilkent University it is really hard to find the places you have to go which you have never been there before. Many students from our university have a hard time while they are trying to find their exam places. These kinds of situations happen to people who are familiar with the university and the campus. Probably newcomers, freshmen, and visitors have a much harder time while trying to find a building or a lecture hall that they have never heard or been before. Our project will be a helpful instrument for these people and mainly for the students.
+		
+		</div>
+        <!-- What is it for section end -->
+		
+<div class="section">
+		<p class="quote"><h1 id="users"><span>Who will use it?</span></h1>
+		Primarily, Students of Bilkent University who have difficulty in finding the place of the lectures which they attend and want to find it while having fun can use it. Besides that, lecturers who have just started to give lectures in Bilkent or came to Bilkent University from a different university may have difficulty in finding the right places at different times to give lecture so they can also use it if they want to have fun while they discover the university and find the correct classes to give lectures.
+	
+		</p></br>
+	</div>
+
+<div class="section">
+	<p class="quote"><h1 id=""><span>What does it do?</span></h1>
+	This Android application aims to help students find places of various activities (especially courses) and, most importantly it gives the users incentives to arrive in a timely manner. In mainpage user chooses the next course and the application shows the direction of the destination. It provides navigation and  direction “hints”, and it rewards students with items and gives points that the users can use to increase their ranks in public leaderboards.
+		
+	</p></br>
+	</div>
+
+    <div class="section">
+            <p class="quote"><h1 id="features"><span>Features</span></h1>
+		<big><strong>That are essential</strong></big>
+		</br>
+		Navigation to Building</br>
+		Lecture attendance items</br></br>
+		<big><strong>Those which are merely nice, and</strong></big></br>
+
+		Schedule integration</br>
+		Navigation to classes</br>
+		2-D Items and building demonstration</br>
+		Item leaderboards</br></br>
+		<big><strong>Those that will certainly be left for future extensions.</strong></big></br>
+
+		3-D Items and building demonstration"</p></br>
+	</div>
+<!--
+	<div class="section">
+            <p class="quote"><h1 id="goal"><span>TOPIC</span></h1>
+			</p></br>
+	</div>
+-->
+    </body>
+</html>
