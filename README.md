@@ -8,7 +8,7 @@
 * [ID number and Write Your Name]
 * [ID number and Write Your Name]
 * [ID number and Write Your Name]
-* [ID number and Write Your Name]
+* 21901865 Melis Atun
 * 21901779 Muhammed Can Küçükaslan 
 
 ## Project Proposal Guides
