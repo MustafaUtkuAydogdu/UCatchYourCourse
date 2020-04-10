@@ -16,7 +16,7 @@
 * [How to lose points](http://www.cs.bilkent.edu.tr/~david/cs102/practicalwork/cs102projectorganisationandgrading.htm#AdditionalPoints)
 
 #### Catch Your Course
-To be expanded.
+Look [here](https://cs102g1j.github.io/project01/).
 
 ## Resources
 + This topic will be moved another file soon (within next few decades).
