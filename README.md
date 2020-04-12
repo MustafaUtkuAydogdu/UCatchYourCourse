@@ -6,7 +6,7 @@
 ## Group Members
 * [ID number and Write Your Name]
 * [ID number and Write Your Name]
-* [ID number and Write Your Name]
+* 21803632 Deniz Hayri Özay
 * 21803473 Mustafa Utku Aydoğdu
 * 21901865 Melis Atun
 * 21901779 Muhammed Can Küçükaslan 
