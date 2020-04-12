@@ -12,7 +12,7 @@
 * 21901779 Muhammed Can Küçükaslan 
 
 ## Catch Your Course
-Project's [webpage](https://cs102g1j.github.io/project01/).
+Project's [webpage](https://muhammedcankucukaslan.github.io/cs102g1J/).
 
 ## Project Proposal Guides
 * [How to prepare a proposal](http://www.cs.bilkent.edu.tr/~bgedik/coursewiki/doku.php/cs102:projects)
