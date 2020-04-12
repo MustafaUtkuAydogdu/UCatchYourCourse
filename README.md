@@ -7,6 +7,7 @@
 * [ID number and Name]
 * [ID number and Name]
 * 21803632 Deniz Hayri Özay
+* 21902298 Giray Akyol
 * 21803473 Mustafa Utku Aydoğdu
 * 21901865 Melis Atun
 * 21901779 Muhammed Can Küçükaslan 
