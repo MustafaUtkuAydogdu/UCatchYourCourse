@@ -4,7 +4,7 @@
 * Each project group member should write their ***own name and Bilkent ID*** under the "Group Members" title in the README.md file, and send this change ***as a commit using their OWN account***.
 
 ## Group Members
-* [ID number and Name]
+* 21802530 Mustafa Yasir Altunhan
 * 21803632 Deniz Hayri Özay
 * 21902298 Giray Akyol
 * 21803473 Mustafa Utku Aydoğdu
