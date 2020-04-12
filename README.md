@@ -5,7 +5,6 @@
 
 ## Group Members
 * [ID number and Name]
-* [ID number and Name]
 * 21803632 Deniz Hayri Özay
 * 21902298 Giray Akyol
 * 21803473 Mustafa Utku Aydoğdu
