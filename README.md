@@ -4,15 +4,15 @@
 * Each project group member should write their ***own name and Bilkent ID*** under the "Group Members" title in the README.md file, and send this change ***as a commit using their OWN account***.
 
 ## Group Members
-* [ID number and Write Your Name]
-* [ID number and Write Your Name]
+* [ID number and Name]
+* [ID number and Name]
 * 21803632 Deniz Hayri Özay
 * 21803473 Mustafa Utku Aydoğdu
 * 21901865 Melis Atun
 * 21901779 Muhammed Can Küçükaslan 
 
 ## Catch Your Course
-Look [here](https://cs102g1j.github.io/project01/)
+Project's [webpage](https://cs102g1j.github.io/project01/).
 
 ## Project Proposal Guides
 * [How to prepare a proposal](http://www.cs.bilkent.edu.tr/~bgedik/coursewiki/doku.php/cs102:projects)
@@ -21,7 +21,7 @@ Look [here](https://cs102g1j.github.io/project01/)
 ## Resources
 + This topic will be moved another file soon (within next few decades).
 ### Default images
-[App icon](https://pixabay.com/tr/vectors/konum-toprak-harita-d%C3%BCnya-4496459/)
+[App icon proposal](https://pixabay.com/tr/vectors/konum-toprak-harita-d%C3%BCnya-4496459/)
 ### Android Application development
 * [Build Your First Android App in Java by Google](https://codelabs.developers.google.com/codelabs/build-your-first-android-app/#0)
 * [Request Location updates](https://developer.android.com/training/location/request-updates?hl=en)
