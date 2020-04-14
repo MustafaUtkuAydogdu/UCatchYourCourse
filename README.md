@@ -1,7 +1,6 @@
 # CS 102 Project for 2019-2020 Spring Semester in Bilkent
 ## Notes to be deleted afterward
 * This project was initialy started as an organization project [here](https://github.com/CS102g1J/project01). It is copied here due to Mr. David Davenport's emphasis on ***private repositories***.
-* Each project group member should write their ***own name and Bilkent ID*** under the "Group Members" title in the README.md file, and send this change ***as a commit using their OWN account***.
 
 ## Group Members
 * 21802530 Mustafa Yasir Altunhan
