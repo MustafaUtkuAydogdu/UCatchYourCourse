@@ -18,7 +18,8 @@ If you want you can always add a shortcut to desktop.
 ## Open Repository
 + Open android studio ( If there is some opened projects, close them. You don't have to, but it is better practice.)
 + Click ***Open an existing Android Studio project***
-+ Choose the "proper (path) location" where you downloaded the repository
++ Choose the "proper (path) location" where you downloaded the repository.  
+Important warning: Do not choose ***cs102g1J*** file, You should choose ***CatchYourCourse*** file because this file is assigned for the android project and if you choose cs102g1J it will (supposingly) give error related to gradle sync.
 
 ## Edit and Upload files
 + You better to know the way to edit in Android Studio. If you don't, learn it.
