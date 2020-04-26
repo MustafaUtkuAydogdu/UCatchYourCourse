@@ -1,7 +1,7 @@
 # How to use Git, Github and Android Studio in this project
 This, work on progress, file contains simple instructions for collaborators to examine and edit project files.
 We assume that you are using GitHub Desktop app for version controlling, and Android Studio as an IDE. 
-Moreover you're not allowed to falsify our assumption, if our assumption doesn't seem correct render them correct without changing it!
+Moreover you're not allowed to falsify our assumption, if our assumption doesn't seem correct render it correct without changing it!
 
 ## Downloading current files 
 ### First time ever
