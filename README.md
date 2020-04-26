@@ -16,6 +16,9 @@ Look project's [webpage](https://muhammedcankucukaslan.github.io/cs102g1J/) for 
 
 ## Member Contributions 
 _Assuming the week starting April 20th as week 12 as indicated in the moodle page of CS102 course._
+### 18601187 Example
+##### Week 12
+ *  _There will be some fancy explanations for ordinary works. For instance, "I am pleased to announce that with the efficiencies we have identified, and despite the additional two assignments given by the instructor, I have conducted an operation that killed ramExploitBug2147483647. I could say with my whole humbleness, thanks to the my unprecedented efforts our users WILL NOT be seeing a further exploitation of their RAMs. God bless me..."._
 ### 21802530 Mustafa Yasir Altunhan
 
 ### 21803632 Deniz Hayri Özay
@@ -28,4 +31,6 @@ _Assuming the week starting April 20th as week 12 as indicated in the moodle pag
 
 ### 21901779 Muhammed Can Küçükaslan 
 ##### Week 12
-   _There will be some fancy explanations for ordinary works. For instance, "I am pleased to announce that with the efficiencies we have identified, and despite the additional two assignments given by the instructor, I have conducted an operation that killed ramExploitBug2147483647. I could say with my whole humbleness, thanks to the my unprecedented efforts our users WILL NOT be seeing a further exploitation of their RAMs. God bless me..."._
+* Generated inital files from Android Studio.templates.
+* Created a guide for repository synchronization through Github Desktop and  Android Studio.
+* Made an application (to apply) for Play Console ( Play Store developer portal).
