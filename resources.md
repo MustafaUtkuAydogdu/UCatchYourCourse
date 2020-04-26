@@ -4,8 +4,10 @@
 * [How to lose points](http://www.cs.bilkent.edu.tr/~david/cs102/practicalwork/cs102projectorganisationandgrading.htm#AdditionalPoints).
 
 ## Application Specific Resources
-### Default images
+### Images, Icons, Vectors and so on
 [App icon proposal](https://pixabay.com/tr/vectors/konum-toprak-harita-d%C3%BCnya-4496459/)
+[Create drawables from a large scale image automatically](https://medium.com/code-yoga/create-drawables-from-a-large-scale-image-automatically-2128dde61ad9)
+
 ### Android Application development
 * [Build Your First Android App in Java by Google](https://codelabs.developers.google.com/codelabs/build-your-first-android-app/#0)
 * [Request Location updates](https://developer.android.com/training/location/request-updates?hl=en)
