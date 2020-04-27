@@ -15,25 +15,26 @@ import androidx.lifecycle.ViewModelProviders;
 import io.github.cs102g1j.R;
 
 public class ScheduleFragment extends Fragment
-{
+   {
 
-    private ScheduleViewModel scheduleViewModel;
+   private ScheduleViewModel scheduleViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState)
-    {
-        scheduleViewModel =
-                ViewModelProviders.of(this).get(ScheduleViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_schedule, container, false);
-        final TextView textView = root.findViewById(R.id.text_schedule);
-        scheduleViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>()
-        {
-            @Override
-            public void onChanged(@Nullable String s)
+   public View onCreateView( @NonNull LayoutInflater inflater,
+                             ViewGroup container,
+                             Bundle savedInstanceState
+                           )
+      {
+      scheduleViewModel = ViewModelProviders.of( this ).get( ScheduleViewModel.class );
+      View root = inflater.inflate( R.layout.fragment_schedule, container, false );
+      final TextView textView = root.findViewById( R.id.text_schedule );
+      scheduleViewModel.getText().observe( getViewLifecycleOwner(), new Observer< String >()
+         {
+         @Override
+         public void onChanged( @Nullable String s )
             {
-                textView.setText(s);
+            textView.setText( s );
             }
-        });
-        return root;
-    }
-}
+         } );
+      return root;
+      }
+   }
