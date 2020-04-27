@@ -8,12 +8,12 @@ Below is a record of my own work for the project. This page will be submitted to
 This week I started to learn Android Studio basics. I will continue to improve myself. 
 
 ****
-### date
+### ~ date ~
 ****
 This week I helped abc brainstorm ideas for...
 
 ****
-### date
+### ~ date ~
 ****
 blah, blah, blah...
 
