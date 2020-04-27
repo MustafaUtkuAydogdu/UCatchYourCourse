@@ -53,13 +53,13 @@ public class MainActivity extends AppCompatActivity
       NavigationUI.setupWithNavController( navigationView, navController );
    }
 
-    @Override
-    public boolean onCreateOptionsMenu( Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate( R.menu.main, menu);
-        return true;
-    }
+   @Override
+   public boolean onCreateOptionsMenu( Menu menu )
+   {
+      // Inflate the menu; this adds items to the action bar if it is present.
+      getMenuInflater().inflate( R.menu.main, menu );
+      return true;
+   }
 
    @Override
    public boolean onSupportNavigateUp()
@@ -68,3 +68,4 @@ public class MainActivity extends AppCompatActivity
       return NavigationUI.navigateUp( navController, mAppBarConfiguration ) ||
              super.onSupportNavigateUp();
    }
+} // End of the class, if you don't think so go this link https://web.archive.org/web/20200309045607/https://pbs.twimg.com/media/ESpDAfOUUAAShrE.jpg
