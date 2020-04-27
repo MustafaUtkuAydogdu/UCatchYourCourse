@@ -9,7 +9,8 @@
 [Create drawables from a large scale image automatically](https://medium.com/code-yoga/create-drawables-from-a-large-scale-image-automatically-2128dde61ad9)
 
 ### Android Application development
-* [Build Your First Android App in Java by Google](https://codelabs.developers.google.com/codelabs/build-your-first-android-app/#0)
+* [Android Studio User Guide](https://developer.android.com/studio/intro)
+* [Build Your First Android App in Java by Google (codelabs)](https://codelabs.developers.google.com/codelabs/build-your-first-android-app/#0)
 * [Request Location updates](https://developer.android.com/training/location/request-updates?hl=en)
 
 ### Mapping
