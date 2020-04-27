@@ -1,18 +1,18 @@
 <resources>
-   <string name="app_name">CatchYourCourse</string>
-   <string name="navigation_drawer_open">Open navigation drawer</string>
-   <string name="navigation_drawer_close">Close navigation drawer</string>
-   <string name="nav_header_title">#User Name#</string>
-   <string name="nav_header_subtitle">user.name@ug.bilkent.edu.tr</string>
-   <string name="nav_header_desc">Navigation</string>
-   <string name="action_settings">Settings</string>
-   
-   <string name="menu_home">Home</string>
-   <string name="menu_gallery">Gallery</string>
-   <string name="menu_slideshow">Slideshow</string>
-   <string name="menu_schedule">Schedule</string>
-   
-   <string name="home_second">Home Second</string>
-   <string name="gallery_header">There will be the list of the attained pokemons</string>
-   <string name="schedule_header">Your Schedule</string>
+    <string name="app_name">CatchYourCourse</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">#User Name#</string>
+    <string name="nav_header_subtitle">user.name@ug.bilkent.edu.tr</string>
+    <string name="nav_header_desc">Navigation</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_schedule">Schedule</string>
+
+    <string name="home_second">Home Second</string>
+    <string name="gallery_header">There will be the list of the attained pokemons</string>
+    <string name="schedule_header">Your Schedule</string>
 </resources>
