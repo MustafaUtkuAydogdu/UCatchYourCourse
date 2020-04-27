@@ -49,7 +49,7 @@
       android:id="@+id/nav_slideshow"
       android:name="io.github.cs102g1j.ui.slideshow.SlideshowFragment"
       android:label="@string/menu_slideshow"
-      tools:layout="@layout/fragment_slideshow" />
+      tools:layout="@layout/fragment_slideshow" >
    </fragment>
 
    <fragment
