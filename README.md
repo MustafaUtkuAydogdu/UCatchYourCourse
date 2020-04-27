@@ -25,7 +25,7 @@ _Include a concise description of your project here. Be sure to include the prop
 - [21802530 Mustafa Yasir Altunhan](group/altunhan_mustafa_yasir_log.md)
 - [21803632 Deniz Hayri Özay](group/template_member1_log.md) _(full name & link to personal log file)_
 - [21902298 Giray Akyol](group/akyol_giray_log.md)
-- [21803473 Mustafa Utku Aydoğdu](group/template_member1_log.md) _(full name & link to personal log file)_
+- [21803473 Mustafa Utku Aydoğdu](group/aydogdu_mustafa_utku_log.md)
 - [21901865 Melis Atun](group/template_member1_log.md) _(full name & link to personal log file)_
 
 ****
