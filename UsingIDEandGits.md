@@ -32,6 +32,6 @@ To update press Git: update button (blue arrow) on the right top of window
 Write appropriate commit comments and press commit, then push it.  
 Thus your changes will be synchronized with the repository in the github servers :) 
 
-## Question & Answer part
+## Questions & Answers
 + I would like to try new things to better understand the android/files ecosystem without messing up all project, since it is totaly different from drjava projects. Are there any way to make this changes without the risk of messing up the project?
-- Impressed, you have just rediscovered the _branch_ system ( forking may also work in this case). You can create new branche(s) and sustain your work on this branch till you  completed or made some resonable progress then connect (merge ?) it to the master branch. Further explanation will be given soon.
+> Impressed, you have just rediscovered the _branch_ system ( forking may also work in this case). You can create new branche(s) and sustain your work on this branch till you  completed or made some resonable progress then connect (merge ?) it to the master branch. Further explanation will be given soon.
