@@ -22,7 +22,7 @@ _Include a concise description of your project here. Be sure to include the prop
 [Group Meetings Log](group/meetingslog.md)
 #### Group Members
 - [21901779 Muhammed Can Küçükaslan](group/kucukaslan_muhammed_can_log.md)
-- [21802530 Mustafa Yasir Altunhan](group/template_member1_log.md) _(full name & link to personal log file)_
+- [21802530 Mustafa Yasir Altunhan](group/altunhan_mustafa_yasir_log.md)
 - [21803632 Deniz Hayri Özay](group/template_member1_log.md) _(full name & link to personal log file)_
 - [21902298 Giray Akyol](group/template_member1_log.md) _(full name & link to personal log file)_
 - [21803473 Mustafa Utku Aydoğdu](group/template_member1_log.md) _(full name & link to personal log file)_
