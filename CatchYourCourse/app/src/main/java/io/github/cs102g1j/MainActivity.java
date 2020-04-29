@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity
          public void onClick( View view )
          {
             Snackbar.make( view,
-                           "MainActivity.java file in io.github.cs102g1j package.MustafabyGiray",
+                           "MainActivity.java file in io.github.cs102g1j package.",
                            Snackbar.LENGTH_LONG
                          ).setAction( "Action", null ).show();
          }
@@ -69,5 +69,4 @@ public class MainActivity extends AppCompatActivity
       return NavigationUI.navigateUp( navController, mAppBarConfiguration ) ||
              super.onSupportNavigateUp();
    }
-} // End of the class, if you don't think so go this link https://web.archive
-// .org/web/20200309045607/https://pbs.twimg.com/media/ESpDAfOUUAAShrE.jpg
+} // End of the class, if you don't think so go this link https://web.archive.org/web/20200309045607/https://pbs.twimg.com/media/ESpDAfOUUAAShrE.jpg
