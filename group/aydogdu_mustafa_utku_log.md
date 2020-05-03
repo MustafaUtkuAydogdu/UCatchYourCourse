@@ -13,7 +13,7 @@ Created a basic Pokemon Android app which is based on the ActionListener( now On
 
 
 
-### ~  Week 13: April 27 to April 4 ~
+### ~  Week 13: April 27 to May 4 ~
 Created an Memory game based on remembering the paired cards.
 Created a TicTacToe game.
 Started working on Navigation ( taking the location of the user, showing the user's location etc.). However, it seems quite unrelated to what we have learned in Java for the year and therefore encountering problems understanding the logic of the codes.
