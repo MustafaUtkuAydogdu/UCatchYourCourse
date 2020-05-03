@@ -1,16 +1,16 @@
-# CS102 ~ Personal Log page ~
+# CS102 ~ Personal Log page ~ Melis Atun
 
 Below is a record of my own work for the project. This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
 
 ****
-### Melis Atun
+### 25.04.2020
 **** 
-This week I started to learn Android Studio basics. I will continue to improve myself. 
+This week I started to learn Android Studio basics. I will continue to improve myself on it.
 
 ****
-### ~ date ~
+### 02.05.2020
 ****
-This week I helped abc brainstorm ideas for...
+This week me and my friends started to learn Augmented Reality. 
 
 ****
 ### ~ date ~
