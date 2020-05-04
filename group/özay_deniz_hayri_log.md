@@ -8,8 +8,9 @@ This page will be submitted together with the rest of the repository, in partial
 
 ### ~ 20.04.2020 - 27.04.2020 ~
 I have started to learn basics of Android Studio and I will continue to learn more about. 
-### ~ date ~
-This week I helped abc brainstorm ideas for...
+### ~ Week 13: April 27 to May 3 ~
+Looked at Unity game engine to use AR.
+I have worked on Android Studio more to improve my skills.
 
 ### ~ date ~
 blah, blah, blah...
