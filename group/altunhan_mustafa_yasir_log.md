@@ -10,8 +10,10 @@ This page will be submitted together with the rest of the repository, in partial
 I kind of learned the basics of android studio (creating projects, adding buttons etc.).
 I am trying to learn virtual machine so that I can test my application.
 I have been still trying to learn some configuration settings and which softwares are preffered to set up so that I can run the applications withut any problem.
-### ~ date ~
-This week I helped abc brainstorm ideas for...
+### ~ 27.04.2020 - 04.05.2020 ~
+I learned how to use action listeners in android studio and created a game depending a character's weight, action time etc.
+I kind of learned using images taking input from the user.
+After now my plan is learning navigation specifically and combining my basic knowlede with this so that it can be used to take location of person and pokemon in our application.
 
 ### ~ date ~
 blah, blah, blah...
