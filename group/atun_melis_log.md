@@ -10,7 +10,7 @@ This week I started to learn Android Studio basics. I will continue to improve m
 ****
 ### 02.05.2020
 ****
-This week me and my friends started to learn Augmented Reality. 
+This week me and my friends started to learn Augmented Reality. Also, we met through Zoom to talk about how our project is going, who is doing what, etc.
 
 ****
 ### ~ date ~
