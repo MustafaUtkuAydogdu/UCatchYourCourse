@@ -10,6 +10,7 @@
 
 ### Android Application development
 * [Android Studio User Guide](https://developer.android.com/studio/intro)
+* [A great Udacity Course](https://www.udacity.com/course/new-android-fundamentals--ud851)
 * [Build Your First Android App in Java by Google (codelabs)](https://codelabs.developers.google.com/codelabs/build-your-first-android-app/#0)
 * [Request Location updates](https://developer.android.com/training/location/request-updates?hl=en)
 
