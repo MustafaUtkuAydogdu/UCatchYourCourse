@@ -22,6 +22,14 @@ We decided we need to do two main things: 1) location-navigation which is assign
 Giray explained his concerns about the complexity of Google's ARCore and suggested to examine other AR frameworks. Both Muhammed and Giray are searching for AR framework and how to implement it in the our app.  
 Our app was planned to generate "pokemon items" according to location/class but considering current situation (ps. for the future: Universities are closed and moved to online lectures due to Covid-19 precautions in 2020, in Turkey) we can't test or do this. Therefore, we agreed that an alternative test may be randomly generating items for now. 
 
+
+****
+### Meeting ~ (2020.05.07, around group texting)
+****
+**Present:** All members  
+**Discussion:**  
+Disadvantages of our project were discussed. Utku and Mustafa promised to ~finish navigation code by the Monday, Rest of the members will focus on the AR and the implementation of the user interfaces. More specifically Giray and Muhammed will focus on ARCore...
+
 ****
 ### Meeting ~ (date, duration)
 ****
