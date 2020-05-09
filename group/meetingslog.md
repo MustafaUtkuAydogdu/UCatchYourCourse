@@ -31,9 +31,22 @@ Our app was planned to generate "pokemon items" according to location/class but 
 Disadvantages of our project were discussed. Utku and Mustafa promised to ~finish navigation code by the Monday, Rest of the members will focus on the AR and the implementation of the user interfaces. More specifically Giray and Muhammed will focus on ARCore...
 
 ****
+### Meeting ~ (2020.05.09, 30 minutes)
+****
+**Present:** Muhammed Can Küçükaslan, Giray Akyol,  Deniz Hayri Özay, Melis Atun.
+**Discussion: AR and User interface**  
+Melis (said she) was examining the "wikitude", Deniz is examining the Unity, and Muhammed & Giray examined kudan & ARCore together. A discussion occured about the which framework (?) to implement in the app. Kudan and wikitude were abandoned(?) due to licence problems, and among  the Unity and ARCore the latter one seemed more preferable to us.  
+Muhammed and Giray will continue work focusing ARCore implementation, Deniz and Melis will look for generating "item assets" and made some improvements in the design.    
+Google-sign-in api requires "verified domain address", so, despite the Having a Play Console Developer account we couldn't get a key to use it in our project. However, we will look for alternative ways.  
+  
+Current Objective is: to have AR and location activities implemented seperately by the Monday even with the flaws. Then, constructing relation between these activities and other parts of app.
+
+****
 ### Meeting ~ (date, duration)
 ****
-blah, blah, blah...
+**Present:**    
+**Discussion:**  
+
 
 ****
 ****
