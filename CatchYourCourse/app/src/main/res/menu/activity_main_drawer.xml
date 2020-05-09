@@ -16,11 +16,11 @@
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_schedule"
-            android:icon="@drawable/ic_menu_default"
+            android:icon="@drawable/ic_menu_schedule"
             android:title="@string/menu_schedule" />
         <item
             android:id="@+id/mapsActivity"
-            android:icon="@drawable/ic_menu_default"
+            android:icon="@drawable/ic_menu_map"
             android:title="@string/menu_maps" />
         <item
             android:id="@+id/nav_slideshow"
