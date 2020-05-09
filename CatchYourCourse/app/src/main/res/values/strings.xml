@@ -16,4 +16,6 @@
     <string name="home_second">Home Second</string>
     <string name="gallery_header">There will be the list of the attained pokemons</string>
     <string name="schedule_header">Your Schedule</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="menu_maps">Map</string>
 </resources>

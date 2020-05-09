@@ -4,21 +4,27 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+        <!-- ic_menu_default is just a circle filled black color
+        -->
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_default"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_menu_default"
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_schedule"
-            android:icon="@drawable/ic_menu_schedule"
+            android:icon="@drawable/ic_menu_default"
             android:title="@string/menu_schedule" />
         <item
+            android:id="@+id/mapsActivity"
+            android:icon="@drawable/ic_menu_default"
+            android:title="@string/menu_maps" />
+        <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_default"
             android:title="@string/menu_slideshow" />
     </group>
 </menu>
