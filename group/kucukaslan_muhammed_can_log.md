@@ -3,18 +3,30 @@
 ## Muhammed Can Küçükaslan
 ****
 
-On this page I will keep a weekly record of what I have done for the CS102 group project. 
-This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
+On this page I will keep a weekly record of
+what I have done for the CS102 group project.
+This page will be submitted together with the rest of the repository,
+in partial fulfillment of the CS102 course requirements.
 
 ### ~ Week 12: April 20 to April 26 ~
-* I learned basics of Android Studio, value assignments as well as creating text/button objects for android,
+* I learned basics of Android Studio,
+value assignments as well as creating text/button objects for android,
 xml - java relations, generating apk ( either signed or unsigned)...
 * Generated inital files from Android Studio templates.
-* Created a guide for repository synchronization through Github Desktop and  Android Studio.
+* Created a guide for repository synchronization
+through Github Desktop and  Android Studio.
 * Made an application (to apply) for Play Console ( Play Store developer portal).
 
-### ~ date ~
-This week I helped abc brainstorm ideas for...
+### ~ Week 12: May 4 to May 10 ~
+* This week I helped Mustafa to implement MapsActivity
+* I searched for AR frameworks:  
+kudanAR: failed due to licence key problem
+ARCore: better and can be implemented, of course I have still a long way to go
+* Looked for Google sign-in implementation,
+but I couldn't get a key to implement it.
+Because I couldn't provide a verified web address.
+*...
+
 
 ### ~ date ~
 blah, blah, blah...
