@@ -35,7 +35,7 @@ import java.util.TimeZone;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 {
-
+ // class MapsActivity'de "MyClasses" arrayList'i property'si
    private GoogleMap mMap;
    LocationManager locationManager;
    LocationListener locationListener;
