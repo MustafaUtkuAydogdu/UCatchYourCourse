@@ -5,9 +5,9 @@
    when clicked 3dot at right top
    -->
     <item
-        android:id="@+id/action_find"
+        android:id="@+id/action_maps"
         android:orderInCategory="100"
-        android:title="@string/action_find"
+        android:title="@string/action_maps"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_settings"

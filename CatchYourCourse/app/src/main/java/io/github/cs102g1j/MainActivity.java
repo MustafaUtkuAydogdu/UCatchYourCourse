@@ -1,7 +1,9 @@
 package io.github.cs102g1j;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,9 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+
+import io.github.cs102g1j.nav.MapsActivity;
+import io.github.cs102g1j.ui.settings.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -60,6 +65,26 @@ public class MainActivity extends AppCompatActivity
       // Inflate the menu; this adds items to the action bar if it is present.
       getMenuInflater().inflate( R.menu.main, menu );
       return true;
+   }
+
+   @Override
+   public boolean onOptionsItemSelected( MenuItem item )
+   {
+      Intent intent;
+      switch (item.getItemId()) {
+         case R.id.action_settings:
+            intent = new Intent( this, SettingsFragment.class);
+            startActivity(intent);
+            return true;
+
+         case R.id.action_maps:
+            intent = new Intent( this, MapsActivity.class);
+            startActivity(intent);
+            return true;
+
+      }
+
+      return super.onOptionsItemSelected(item);
    }
 
    @Override
