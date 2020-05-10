@@ -24,7 +24,7 @@ Our app was planned to generate "pokemon items" according to location/class but 
 
 
 ****
-### Meeting ~ (2020.05.07, around group texting)
+### Meeting ~ (2020.05.07, group texting)
 ****
 **Present:** All members  
 **Discussion:**  
@@ -42,11 +42,17 @@ Google-sign-in api requires "verified domain address", so, despite the Having a 
 Current Objective is: to have AR and location activities implemented seperately by the Monday even with the flaws. Then, constructing relation between these activities and other parts of app.
 
 ****
+### Meeting ~ (2020.05.10, One and an half hour simultaneous debugging/coding)
+****
+**Present:**   Muhammed Can Küçükaslan, Mustafa Yasir Altunhan
+**Discussion:**  
+Implementation of MapsActivity and problems during executing MapsActivity. Current Execution problems are solved, though, the MapsActivity is still to be improved and, thus, can cause new problems.
+
+
+****
 ### Meeting ~ (date, duration)
 ****
 **Present:**    
 **Discussion:**  
-
-
 ****
 ****
