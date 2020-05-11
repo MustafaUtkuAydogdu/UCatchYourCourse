@@ -13,9 +13,9 @@ This week I started to learn Android Studio basics. I will continue to improve m
 This week me and my friends started to learn Augmented Reality. Also, we met through Zoom to talk about how our project is going, who is doing what, etc.
 
 ****
-### ~ date ~
+### 09.05.2020
 ****
-blah, blah, blah...
+This week, me and Deniz are focusing Augmented Reality, and writing the actual code for the User Interface design, like the menu part of our app, etc.
 
 ****
 ****
