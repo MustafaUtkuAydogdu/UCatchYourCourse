@@ -4,11 +4,12 @@
    <!-- Folllowings are items/buttons shown
    when clicked 3dot at right top
    -->
-    <item
+    <!-- <item
         android:id="@+id/action_maps"
         android:orderInCategory="100"
         android:title="@string/action_maps"
         app:showAsAction="never" />
+    -->
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

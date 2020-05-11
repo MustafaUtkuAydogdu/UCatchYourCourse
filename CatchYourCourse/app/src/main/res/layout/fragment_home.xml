@@ -9,9 +9,13 @@
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/homeTop"
@@ -34,16 +38,28 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/home_pokedex"
                     android:layout_width="113dp"
                     android:layout_height="92dp"
-                    android:text="@string/home_button_pokedex" />
+                    android:backgroundTint="@color/colorPokedex"
+                    android:fontFamily="@font/give_you_glory"
+                    android:text="@string/home_button_pokedex"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button2"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/home_play"
+                    android:layout_width="113dp"
                     android:layout_height="92dp"
-                    android:text="@string/home_button_play" />
+                    android:backgroundTint="#000000"
+                    android:fontFamily="@font/give_you_glory"
+                    android:shadowColor="#41FFDF"
+                    android:text="@string/home_button_play"
+                    android:textColor="#F4FF0E"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
             </TableRow>
 
             <TableRow
