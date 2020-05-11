@@ -9,6 +9,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -33,7 +35,9 @@ public class MainActivity extends AppCompatActivity
       setContentView( R.layout.activity_main );
       Toolbar toolbar = findViewById( R.id.toolbar );
       setSupportActionBar( toolbar );
-      /*FloatingActionButton fab = findViewById( R.id.fab );
+      /*
+      // Little e mail button:
+      FloatingActionButton fab = findViewById( R.id.fab );
       fab.setOnClickListener( new View.OnClickListener()
       {
          @Override
@@ -47,6 +51,10 @@ public class MainActivity extends AppCompatActivity
       } );
 
        */
+      // Hopefully settings fragment will be added
+      Fragment settings = new SettingsFragment();
+      getSupportFragmentManager().beginTransaction().commit();
+
       DrawerLayout drawer = findViewById( R.id.drawer_layout );
       NavigationView navigationView = findViewById( R.id.nav_view );
       // Passing each menu ID as a set of Ids because each
@@ -75,7 +83,16 @@ public class MainActivity extends AppCompatActivity
       Intent intent;
       switch (item.getItemId()) {
          case R.id.action_settings:
+            // Create new transaction
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
+            // Replace whatever is in the fragment_container view with this fragment,
+            // and add the transaction to the back stack
+            transaction.replace(R.id.nav_host_fragment,  new SettingsFragment());
+            transaction.addToBackStack(null);
+
+            // Commit the transaction
+            transaction.commit();
             return true;
 /*
          case R.id.action_maps:

@@ -37,4 +37,7 @@
         android:id="@+id/settingsFragment"
         android:name="io.github.cs102g1j.ui.settings.SettingsFragment"
         android:label="SettingsFragment" />
+    <!--Global action-->
+    <action android:id="@+id/open_settings_fragment"
+        app:destination="@id/settingsFragment"/>
 </navigation>
