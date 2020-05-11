@@ -1,6 +1,6 @@
 # CS102 ~ Personal Log page ~
 ****
-## Mustafa Utku Aydoğddu
+## Mustafa Utku Aydoğdu
 ****
 
 On this page I will keep a weekly record of what I have done for the CS102 group project. This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
@@ -18,7 +18,7 @@ Created an Memory game based on remembering the paired cards.
 Created a TicTacToe game.
 Started working on Navigation ( taking the location of the user, showing the user's location etc.). However, it seems quite unrelated to what we have learned in Java for the year and therefore encountering problems understanding the logic of the codes.
 
-### ~ date ~
-blah, blah, blah...
+###~  Week 14: April 4 to May 11 ~
+Worked on the GPS part of our program. Completed the taking the user location and making the program work in background parts with Mustafa ; however,we still need to integrate these two parts. 
 
 ****
