@@ -17,15 +17,19 @@ xml - java relations, generating apk ( either signed or unsigned)...
 through Github Desktop and  Android Studio.
 * Made an application (to apply) for Play Console ( Play Store developer portal).
 
-### ~ Week 12: May 4 to May 10 ~
-* This week I helped Mustafa to implement MapsActivity
+### ~ Week 14: May 4 to May 10 ~
+* This week I helped Mustafa to implement MapsActivity class
+and designed Building and MyClasses (MyActivities could be a better name) class'es
+and also redesigned MyDate class. But someone else will write the java code.
 * I searched for AR frameworks:  
 kudanAR: failed due to licence key problem
 ARCore: better and can be implemented, of course I have still a long way to go
 * Looked for Google sign-in implementation,
 but I couldn't get a key to implement it.
 Because I couldn't provide a verified web address.
-*...
+* Designed Home fragment.
+Learned how to add and modify the item to toolbar
+* Prepared/ing UML diagram(s) for detailed design report via https://creately.com/
 
 
 ### ~ date ~

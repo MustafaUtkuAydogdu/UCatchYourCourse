@@ -10,13 +10,13 @@ Our project’s aim is to make the students eager to go to their courses all the
 \
 Look project's [webpage](https://muhammedcankucukaslan.github.io/cs102g1J/) for further informations.
 
-   
+
 ## Project Status
 + **Group/project Selection:** completed (date)
 + **Requirements:** completed ( 2020 March 8th)
 + **UI Design:** completed ( 2020 March 30th)
 + **Detailed Design:** in progress
-+ **Implementation:** not started!
++ **Implementation:** in progress
 + **Reflections:** not yet!
 
 [Group Meetings Log](group/meetingslog.md)
