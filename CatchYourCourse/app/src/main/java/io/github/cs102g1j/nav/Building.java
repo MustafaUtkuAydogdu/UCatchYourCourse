@@ -15,16 +15,16 @@ public class Building
    //properties
    String nameOfBuilding;
    double latitudeOfBuilding;
-   double longtitudeOfBuilding;
+   double longitudeOfBuilding;
 
 
 
    //constructors
-   public Building( double longtitude, double latitude,String name)
+   public Building( double longitude, double latitude, String name)
    {
       nameOfBuilding = name;
       latitudeOfBuilding = latitude;
-      longtitudeOfBuilding = longtitude;
+      longitudeOfBuilding = longitude;
 
    }
 
@@ -32,11 +32,9 @@ public class Building
    {
       nameOfBuilding = building.getNameOfBuilding();
       latitudeOfBuilding = building.getLatitudeOfBuilding();
-      longtitudeOfBuilding = building.getLongtitudeOfBuilding();
+      longitudeOfBuilding = building.getLongitudeOfBuilding();
 
    }
-
-
 
    //methods
    public String getNameOfBuilding()
@@ -49,9 +47,9 @@ public class Building
       return latitudeOfBuilding;
    }
 
-   public double getLongtitudeOfBuilding()
+   public double getLongitudeOfBuilding()
    {
-      return longtitudeOfBuilding;
+      return longitudeOfBuilding;
    }
 
    public double setLatitudeOfBuilding( double latitude)
@@ -60,39 +58,43 @@ public class Building
       return latitude;
    }
 
-   public double setLongtitudeOfBuilding( double longtitude)
+   public double setLongitudeOfBuilding( double longtitude)
    {
-      longtitudeOfBuilding = longtitude;
-      return longtitude;
+      longitudeOfBuilding = longtitude;
+      return longitude;
    }
 
-   private double getDistance(Location currentLocation ) {
-      double theta = longtitudeOfBuilding - currentLocation.getLongitude();
-      double dist = Math.sin(deg2rad(latitudeOfBuilding))
-                    * Math.sin(deg2rad(currentLocation.getLatitude()))
-                    + Math.cos(deg2rad(latitudeOfBuilding))
-                      * Math.cos(deg2rad(currentLocation.getLatitude()))
-                      * Math.cos(deg2rad(theta));
-      dist = Math.acos(dist);
-      dist = rad2deg(dist);
+   private double getDistance( Location currentLocation ) 
+   {
+      double theta = longitudeOfBuilding - currentLocation.getLongitude();
+      double dist = Math.sin( deg2rad( latitudeOfBuilding))
+                    * Math.sin( deg2rad( currentLocation.getLatitude()))
+                    + Math.cos( deg2rad( latitudeOfBuilding))
+                      * Math.cos( deg2rad( currentLocation.getLatitude()))
+                      * Math.cos( deg2rad( theta));
+      dist = Math.acos( dist);
+      dist = rad2deg( dist);
       dist = dist * 60 * 1.1515;
-      return (dist);
+      return ( dist);
    }
 
-   private double deg2rad(double deg) {
-      return (deg * Math.PI / 180.0);
-   }
-
-   private double rad2deg(double rad) {
-      return (rad * 180.0 / Math.PI);
-   }
-
-   public boolean isNearer( double meter,Location currentLocation)
+   private double deg2rad( double deg) 
    {
-      if (getDistance(currentLocation) <= meter/100)
+      return ( deg * Math.PI / 180.0);
+   }
+
+   private double rad2deg( double rad)
+   {
+      return ( rad * 180.0 / Math.PI);
+   }
+
+   public boolean isNearer( double meter, Location currentLocation)
+   {
+      if ( getDistance( currentLocation) <= meter / 100)
+      {
          return true;
+      }
       else
          return false;
    }
-
 }
