@@ -15,7 +15,12 @@ I learned how to use action listeners in android studio and created a game depen
 I kind of learned using images taking input from the user.
 After now my plan is learning navigation specifically and combining my basic knowlede with this so that it can be used to take location of person and pokemon in our application.
 
-### ~ date ~
-blah, blah, blah...
+### ~ 04.05.2020 - 11.05.2020 ~
+1- I learned how to use and apply google app in my application.
+2 - I created MapsActivity activity class which has properties to store the data of the building that lessons are given and it also properties such as isInEEBuilding,
+which checks whether the user is near to his lesson's building less than 15 meters and whether it is correct time, i.e., from 10 minutes ago of the lesson's start time until the start time of the lesson.
+3 - I created properties like isInEEBuilding in such a way that it updates its boolean value whenever location is changed.
+4- I added distance method to the class to measure the difference between two points on earth where the points are specified according to their latitude and longitude.
+5 - I added MyDate class so that I restore the right time to show the pokemons for specific buildings.
 
 ****
