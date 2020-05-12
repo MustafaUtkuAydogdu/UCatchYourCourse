@@ -3,6 +3,10 @@
 Below is a record of my own work for the project. This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
 
 ****
+### 18.04.2020
+****
+We talked about how we will do our project, what tools we will use, etc. We also divided the work between oour group members.
+
 ### 25.04.2020
 **** 
 This week I started to learn Android Studio basics. I will continue to improve myself about it.
