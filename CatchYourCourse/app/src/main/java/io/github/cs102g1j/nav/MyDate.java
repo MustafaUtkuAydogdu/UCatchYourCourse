@@ -10,7 +10,7 @@ public class MyDate
    int endTime;
 
    //constructors
-   public  MyDate( int day,int hour, int minuteStart,int minuteEnd)
+
    {
       this.startTime = (day - 2) * 1440 + hour * 60 + minuteStart;
       this.endTime = (day - 2) * 1440 + hour * 60 + minuteEnd;

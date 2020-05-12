@@ -68,15 +68,17 @@
 
                 <ImageButton
                     android:id="@+id/imageButton"
-                    android:layout_width="197dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_home_group" />
+                    android:layout_width="204dp"
+                    android:layout_height="204dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_home_bag" />
 
                 <ImageButton
                     android:id="@+id/imageButton2"
                     android:layout_width="204dp"
-                    android:layout_height="118dp"
-                    android:src="@drawable/ic_home_andy" />
+                    android:layout_height="204dp"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/ic_home_item" />
             </TableRow>
 
         </TableLayout>
