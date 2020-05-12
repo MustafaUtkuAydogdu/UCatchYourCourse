@@ -10,7 +10,7 @@ public class MyDate
    int timeEnd;
 
    //constructors
-   public  MyDate( int day,int hour, int timeStart,int timeEnd)
+   public  MyDate( int day, int hour, int timeStart, int timeEnd)
    {
       this.day = day;
       this.timeStart = timeStart;
