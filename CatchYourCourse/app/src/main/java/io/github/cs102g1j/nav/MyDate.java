@@ -4,24 +4,28 @@ package io.github.cs102g1j.nav;
 public class MyDate
 {
    //properties
-   int day; //Sunday is 1, Saturday is 7. (To be compatible with Calendar Class).
-   int hour; //Write it according to GM + 0 ( Turkey is +3 so subtract 3 from Turkey's time)
-   int timeStart;
-   int timeEnd;
+   //int day; //Sunday is 1, Saturday is 7. (To be compatible with Calendar Class).
+   //int hour; //Write it according to GM + 0 ( Turkey is +3 so subtract 3 from Turkey's time)
+   int startTime;
+   int endTime;
 
    //constructors
-   public  MyDate( int day,int hour, int timeStart,int timeEnd)
+   public  MyDate( int day,int hour, int minuteStart,int minuteEnd)
    {
-      this.day = day;
-      this.timeStart = timeStart;
-      this.timeEnd = timeEnd;
-      this.hour = hour;
+      this.startTime = (day - 2) * 1440 + hour * 60 + minuteStart;
+      this.endTime = (day - 2) * 1440 + hour * 60 + minuteEnd;
+   }
+
+   public MyDate(int timeStart, int timeEnd )
+   {
+      this.startTime = timeStart;
+      this.endTime = timeEnd;
    }
 
    //methods
    public boolean isIncludes( MyDate time)
    {
-      if ( time.day == day && time.timeStart >= timeStart && time.timeEnd <= timeEnd && hour == time.hour)
+      if ( startTime <= time.startTime && endTime >= time.endTime)
       {
          return true;
       }

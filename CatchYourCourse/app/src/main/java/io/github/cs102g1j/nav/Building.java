@@ -61,7 +61,7 @@ public class Building
    public double setLongitudeOfBuilding( double longtitude)
    {
       longitudeOfBuilding = longtitude;
-      return longitude;
+      return longtitude;
    }
 
    private double getDistance( Location currentLocation ) 
@@ -78,6 +78,7 @@ public class Building
       return ( dist);
    }
 
+
    private double deg2rad( double deg) 
    {
       return ( deg * Math.PI / 180.0);
@@ -90,7 +91,7 @@ public class Building
 
    public boolean isNearer( double meter, Location currentLocation)
    {
-      if ( getDistance( currentLocation) <= meter / 100)
+      if ( getDistance( currentLocation) <= meter / 1000)
       {
          return true;
       }

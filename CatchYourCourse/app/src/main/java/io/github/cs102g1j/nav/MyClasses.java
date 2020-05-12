@@ -10,11 +10,6 @@ import io.github.cs102g1j.nav.Building;
 public class MyClasses
 {
    //constants
-   public final String MATH_102 = "MATH_102";
-   public final String CS_102 =   "CS_102";
-   public final String ENG_102 = "ENG_102";
-   public final String MATH_132 = "MATH_132";
-   public final String TURK_102 = "TURK_102";
 
 
 
