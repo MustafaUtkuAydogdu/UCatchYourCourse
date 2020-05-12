@@ -4,23 +4,21 @@ package io.github.cs102g1j.nav;
 import android.location.Location;
 
 import java.text.ParseException;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 import io.github.cs102g1j.nav.Building;
 
-public class MyClasses
+public class MyLesson
 {
-   //constants
-
-
-
    //properties
-   String lectureName;
-   Building lectureBuilding;
-   MyDate lectureTime;
+   private String lectureName;
+   private Building lectureBuilding;
+   private MyDate lectureTime;
 
 
    //constructors
-   public MyClasses( MyDate date, Building building, String lectureName)
+   public MyLesson( MyDate date, Building building, String lectureName)
    {
       lectureTime = date;
       lectureBuilding = building;
@@ -62,15 +60,25 @@ public class MyClasses
       lectureTime = date;
    }
 
-   /* WE CAN CHANGE THİS THE WAY BY ADDİNG SOME LOCATİON FEATURES OR GETTİNG CURRENT LOCATİON FROM LOCATİON CLASS.
-   public boolean isNow( Location currentLocation) throws ParseException {
-      if (lectureBuilding.isNearer(10,currentLocation) && lectureTime.isNow())
+
+
+   public boolean isNow( Location currentLocation)
+   {
+      // getting the current time
+      Calendar calendar = Calendar.getInstance( TimeZone.getDefault() );
+      MyDate currentDate = new MyDate( calendar.get( Calendar.DAY_OF_WEEK ),
+                                       calendar.get( Calendar.HOUR_OF_DAY ),
+                                       calendar.get( Calendar.MINUTE ),
+                                       calendar.get( Calendar.MINUTE )
+      );
+
+      if (lectureBuilding.isNearer(10,currentLocation) && lectureTime.isIncludes(currentDate))
          return true;
-      else return false;
+      else
+         return false;
 
    }
-   *
-    */
+
 
 
 

@@ -35,82 +35,117 @@ import java.util.TimeZone;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 {
- // class MapsActivity'de "MyClasses" arrayList'i property'si
+   // class MapsActivity'de "MyClasses" arrayList'i property'si
    private GoogleMap mMap;
    LocationManager locationManager;
    LocationListener locationListener;
-   LatLng V_BUILDING = new LatLng( 39.867379025065425, 32.75014751011084);
-   LatLng EE_BUILDING = new LatLng( 39.8721596623455, 32.75088418742559);
-   final MyDate EE_Date = new MyDate( 2, 9, 30, 40);
-   final MyDate V_Date = new MyDate( 3, 9, 30, 40);
+   LatLng V_BUILDING = new LatLng( 39.867379025065425, 32.75014751011084 );
+   LatLng EE_BUILDING = new LatLng( 39.8721596623455, 32.75088418742559 );
+   final MyDate EE_Date = new MyDate( 2, 9, 30, 40 );
+   final MyDate V_Date = new MyDate( 3, 9, 30, 40 );
    boolean isInVBuilding = false;
    boolean isInEEBuilding = false;
 
    @Override
-   public void onRequestPermissionsResult( int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) 
+   public void onRequestPermissionsResult( int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults
+                                         )
    {
-      super.onRequestPermissionsResult( requestCode, permissions, grantResults);
-      if ( requestCode == 1)
+      super.onRequestPermissionsResult( requestCode, permissions, grantResults );
+      if ( requestCode == 1 )
       {
-         if ( grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+         if ( grantResults.length > 0 && grantResults[ 0 ] == PackageManager.PERMISSION_GRANTED )
          {
-            if ( ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+            if ( ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED )
             {
-               locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+               locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER,
+                                                       0,
+                                                       0,
+                                                       locationListener
+                                                     );
             }
          }
       }
    }
 
    @Override
-   protected void onCreate( Bundle savedInstanceState) 
+   protected void onCreate( Bundle savedInstanceState )
    {
-      super.onCreate( savedInstanceState);
-      setContentView( R.layout.activity_maps);
+      super.onCreate( savedInstanceState );
+      setContentView( R.layout.activity_maps );
       // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-      SupportMapFragment mapFragment = ( SupportMapFragment) getSupportFragmentManager()
-                                                               .findFragmentById(R.id.map);
-      mapFragment.getMapAsync( this);
-      locationManager = ( LocationManager) this.getSystemService( Context.LOCATION_SERVICE);
-      locationListener = new LocationListener() 
+      SupportMapFragment
+         mapFragment
+         = (SupportMapFragment) getSupportFragmentManager().findFragmentById( R.id.map );
+      mapFragment.getMapAsync( this );
+      locationManager = (LocationManager) this.getSystemService( Context.LOCATION_SERVICE );
+      locationListener = new LocationListener()
       {
          @Override
-         public void onLocationChanged( Location location) 
+         public void onLocationChanged( Location location )
          {
-            Toast.makeText( MapsActivity.this, location.toString(),Toast.LENGTH_SHORT).show();
+            Toast.makeText( MapsActivity.this, location.toString(), Toast.LENGTH_SHORT ).show();
          }
 
          @Override
-         public void onStatusChanged( String provider, int status, Bundle extras) 
-         {
-
-         }
-
-         @Override
-         public void onProviderEnabled( String provider) 
+         public void onStatusChanged( String provider, int status, Bundle extras )
          {
 
          }
 
          @Override
-         public void onProviderDisabled( String provider) 
+         public void onProviderEnabled( String provider )
+         {
+
+         }
+
+         @Override
+         public void onProviderDisabled( String provider )
          {
 
          }
       };
-      if ( Build.VERSION.SDK_INT < 23)
+      if ( Build.VERSION.SDK_INT < 23 )
       {
-         locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+         if ( ActivityCompat.checkSelfPermission( this,
+                                                  Manifest.permission.ACCESS_FINE_LOCATION
+                                                ) != PackageManager.PERMISSION_GRANTED &&
+              ActivityCompat.checkSelfPermission( this,
+                                                  Manifest.permission.ACCESS_COARSE_LOCATION
+                                                ) != PackageManager.PERMISSION_GRANTED )
+         {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+         }
+         locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER,
+                                                 0,
+                                                 0,
+                                                 locationListener
+                                               );
       }
       else
       {
-         if ( ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+         if ( ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION ) !=
+              PackageManager.PERMISSION_GRANTED )
          {
-            ActivityCompat.requestPermissions( this,new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            ActivityCompat.requestPermissions( this,
+                                               new String[] { Manifest.permission.ACCESS_FINE_LOCATION },
+                                               1
+                                             );
          }
          else
          {
-            locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+            locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER,
+                                                    0,
+                                                    0,
+                                                    locationListener
+                                                  );
          }
       }
    }
@@ -126,24 +161,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     * installed Google Play services and returned to the app.
     */
    @Override
-   public void onMapReady( GoogleMap googleMap) 
+   public void onMapReady( GoogleMap googleMap )
    {
       mMap = googleMap;
 
-      locationManager = ( LocationManager) this.getSystemService( Context.LOCATION_SERVICE);
-      locationListener = new LocationListener() 
+      locationManager = (LocationManager) this.getSystemService( Context.LOCATION_SERVICE );
+      locationListener = new LocationListener()
       {
          @Override
-         public void onLocationChanged( Location location) 
+         public void onLocationChanged( Location location )
          {
             mMap.clear();
-            LatLng userLocation = new LatLng( location.getLatitude(), location.getLongitude());
-            mMap.addMarker( new MarkerOptions().position( userLocation).title( "Your Location"));
-            mMap.moveCamera( CameraUpdateFactory.newLatLng( userLocation));
+            LatLng userLocation = new LatLng( location.getLatitude(), location.getLongitude() );
+            mMap.addMarker( new MarkerOptions().position( userLocation ).title( "Your Location" ) );
+            mMap.moveCamera( CameraUpdateFactory.newLatLng( userLocation ) );
 
-            Calendar calendar = Calendar.getInstance( TimeZone.getDefault());
-            MyDate currentDate = new MyDate( calendar.get( Calendar.DAY_OF_WEEK), calendar.get( Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), calendar.get(Calendar.MINUTE));
-            if ( EE_Date.isIncludes( currentDate) && distance( location.getLatitude(), location.getLongitude(), EE_BUILDING.latitude, EE_BUILDING.longitude ) <= 0.015 )
+            Calendar calendar = Calendar.getInstance( TimeZone.getDefault() );
+            MyDate currentDate = new MyDate( calendar.get( Calendar.DAY_OF_WEEK ),
+                                             calendar.get( Calendar.HOUR_OF_DAY ),
+                                             calendar.get( Calendar.MINUTE ),
+                                             calendar.get( Calendar.MINUTE )
+            );
+            if ( EE_Date.isIncludes( currentDate ) && distance( location.getLatitude(),
+                                                                location.getLongitude(),
+                                                                EE_BUILDING.latitude,
+                                                                EE_BUILDING.longitude
+                                                              ) <= 0.015 )
             {
                isInEEBuilding = true;
             }
@@ -152,7 +195,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                isInEEBuilding = false;
             }
 
-            if ( V_Date.isIncludes( currentDate) && distance( location.getLatitude(), location.getLongitude(), V_BUILDING.latitude, V_BUILDING.longitude ) <= 0.015 )
+            if ( V_Date.isIncludes( currentDate ) && distance( location.getLatitude(),
+                                                               location.getLongitude(),
+                                                               V_BUILDING.latitude,
+                                                               V_BUILDING.longitude
+                                                             ) <= 0.015 )
             {
                isInVBuilding = true;
             }
@@ -163,26 +210,46 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
          }
 
          @Override
-         public void onStatusChanged( String provider, int status, Bundle extras) 
+         public void onStatusChanged( String provider, int status, Bundle extras )
          {
 
          }
 
          @Override
-         public void onProviderEnabled( String provider) 
+         public void onProviderEnabled( String provider )
          {
 
          }
 
          @Override
-         public void onProviderDisabled( String provider) 
+         public void onProviderDisabled( String provider )
          {
 
          }
       };
-      if ( Build.VERSION.SDK_INT < 23)
+      if ( Build.VERSION.SDK_INT < 23 )
       {
-         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+         if ( ActivityCompat.checkSelfPermission( this,
+                                                  Manifest.permission.ACCESS_FINE_LOCATION
+                                                ) != PackageManager.PERMISSION_GRANTED &&
+              ActivityCompat.checkSelfPermission( this,
+                                                  Manifest.permission.ACCESS_COARSE_LOCATION
+                                                ) != PackageManager.PERMISSION_GRANTED )
+         {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+         }
+         locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER,
+                                                 0,
+                                                 0,
+                                                 locationListener
+                                               );
       }
       else
       {

@@ -6,11 +6,11 @@ public class MyDate
    //properties
    //int day; //Sunday is 1, Saturday is 7. (To be compatible with Calendar Class).
    //int hour; //Write it according to GM + 0 ( Turkey is +3 so subtract 3 from Turkey's time)
-   int startTime;
-   int endTime;
+   private int startTime;
+   private int endTime;
 
    //constructors
-   public myDate( int day, int hour, int minuteStart, int minuteEnd)
+   public MyDate( int day, int hour, int minuteStart, int minuteEnd)
    {
       this.startTime = (day - 2) * 1440 + hour * 60 + minuteStart;
       this.endTime = (day - 2) * 1440 + hour * 60 + minuteEnd;
@@ -30,6 +30,16 @@ public class MyDate
          return true;
       }
       return false;
+   }
+
+   public int getStartTime()
+   {
+      return  startTime;
+   }
+
+   public int getEndTime()
+   {
+      return  endTime;
    }
 
 }
