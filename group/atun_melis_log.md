@@ -5,7 +5,7 @@ Below is a record of my own work for the project. This page will be submitted to
 ****
 ### 18.04.2020
 ****
-We talked about how we will do our project, what tools we will use, etc. We also divided the work between oour group members.
+We talked about how we will do our project, what tools we will use, etc. We also divided the work between our group members.
 
 ### 25.04.2020
 **** 
