@@ -50,6 +50,13 @@ Implementation of MapsActivity and problems during executing MapsActivity. Curre
 
 
 ****
+### Meeting ~ (2020.05.12, arund an hour zoom teleconference)
+****
+**Present:**  Muhammed Can Küçükaslan, Mustafa Yasir Altunhan, Mustafa Utku Aydoğdu  
+**Discussion:**  Implementation of MapsActivity class, its connections with helper classes (MyDate, MyClasses, Buildings) are discussed. User interface for adding new "MyClasses" planned. Also decided to use [App Specific Storage](https://developer.android.com/training/data-storage) for demo. Also MapActivities interaction with ARActivity is planned.
+
+
+****
 ### Meeting ~ (date, duration)
 ****
 **Present:**    
