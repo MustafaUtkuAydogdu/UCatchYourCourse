@@ -4,6 +4,13 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+    // Sceneform libraries use language constructs from Java 8.
+    // Add these compile options if targeting minSdkVersion < 26.
+    // Muhammed: My compiler gave an error without it.
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     defaultConfig {
         applicationId "io.github.cs102g1j"
         minSdkVersion 23
@@ -44,4 +51,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Provides ARCore Session and related resources.
+    implementation 'com.google.ar:core:1.15.0'
+
+    // Provides ArFragment, and other UX resources.
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
+
+    // Alternatively, use ArSceneView without the UX dependency.
+    implementation 'com.google.ar.sceneform:core:1.15.0'
 }
