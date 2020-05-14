@@ -88,22 +88,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
          }
 
          @Override
-         public void onStatusChanged( String provider, int status, Bundle extras )
-         {
-
-         }
-
+         public void onStatusChanged( String provider, int status, Bundle extras ) {         }
          @Override
-         public void onProviderEnabled( String provider )
-         {
-
-         }
-
+         public void onProviderEnabled( String provider ) {         }
          @Override
-         public void onProviderDisabled( String provider )
-         {
-
-         }
+         public void onProviderDisabled( String provider ) {         }
       };
       if ( Build.VERSION.SDK_INT < 23 )
       {
@@ -182,6 +171,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                              calendar.get( Calendar.MINUTE ),
                                              calendar.get( Calendar.MINUTE )
             );
+            /*
             if ( EE_Date.isIncludes( currentDate ) && distance( location.getLatitude(),
                                                                 location.getLongitude(),
                                                                 EE_BUILDING.latitude,
@@ -207,6 +197,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             {
                isInVBuilding = false;
             }
+
+             */
          }
 
          @Override

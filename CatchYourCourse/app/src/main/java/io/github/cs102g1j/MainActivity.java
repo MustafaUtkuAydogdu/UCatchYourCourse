@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity
 
             // Replace whatever is in the fragment_container view with this fragment,
             // and add the transaction to the back stack
-            transaction.replace(R.id.nav_host_fragment,  new SettingsFragment());
+            transaction.replace(R.id.action_settings,  new SettingsFragment());
             transaction.addToBackStack(null);
 
             // Commit the transaction
@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity
  */
 
       }
-
       return super.onOptionsItemSelected(item);
    }
 
