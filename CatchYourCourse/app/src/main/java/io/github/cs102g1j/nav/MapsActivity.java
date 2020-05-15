@@ -182,6 +182,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                              calendar.get( Calendar.MINUTE ),
                                              calendar.get( Calendar.MINUTE )
             );
+            /*
             if ( EE_Date.isIncludes( currentDate ) && distance( location.getLatitude(),
                                                                 location.getLongitude(),
                                                                 EE_BUILDING.latitude,
@@ -207,6 +208,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             {
                isInVBuilding = false;
             }
+
+             */
          }
 
          @Override

@@ -40,4 +40,25 @@
     <!--Global action-->
     <action android:id="@+id/open_settings_fragment"
         app:destination="@id/settingsFragment"/>
+    <fragment
+        android:id="@+id/scheduleAdd"
+        android:name="io.github.cs102g1j.schedule.ScheduleAdd"
+        android:label="schedule_add"
+        tools:layout="@layout/schedule_add" >
+        <action
+            android:id="@+id/action_scheduleAdd_to_scheduleMain"
+            app:destination="@id/scheduleMain" />
+        <action
+            android:id="@+id/action_scheduleAdd_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleMain"
+        android:name="io.github.cs102g1j.schedule.ScheduleMain"
+        android:label="schedule_main"
+        tools:layout="@layout/schedule_main" >
+        <action
+            android:id="@+id/action_scheduleMain_to_scheduleAdd"
+            app:destination="@id/scheduleAdd" />
+    </fragment>
 </navigation>
