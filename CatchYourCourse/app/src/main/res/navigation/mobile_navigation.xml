@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="io.github.cs102g1j.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_home"/>
 
     <fragment
@@ -23,11 +23,6 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow"/>
 
-    <fragment
-        android:id="@+id/nav_schedule"
-        android:name="io.github.cs102g1j.ui.schedule.ScheduleFragment"
-        android:label="@string/menu_schedule"
-        tools:layout="@layout/fragment_schedule"/>
     <activity
         android:id="@+id/mapsActivity"
         android:name="io.github.cs102g1j.nav.MapsActivity"
@@ -36,8 +31,29 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="io.github.cs102g1j.ui.settings.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="Settings" />
     <!--Global action-->
     <action android:id="@+id/open_settings_fragment"
         app:destination="@id/settingsFragment"/>
+    <fragment
+        android:id="@+id/scheduleAdd"
+        android:name="io.github.cs102g1j.schedule.ScheduleAdd"
+        android:label="schedule_add"
+        tools:layout="@layout/schedule_add" >
+        <action
+            android:id="@+id/action_scheduleAdd_to_scheduleMain"
+            app:destination="@id/scheduleMain" />
+        <action
+            android:id="@+id/action_scheduleAdd_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleMain"
+        android:name="io.github.cs102g1j.schedule.ScheduleMain"
+        android:label="schedule_main"
+        tools:layout="@layout/schedule_main" >
+        <action
+            android:id="@+id/action_scheduleMain_to_scheduleAdd"
+            app:destination="@id/scheduleAdd" />
+    </fragment>
 </navigation>

@@ -30,7 +30,6 @@ public class MyLessons
          return null;
 
       return myLessons.get(index);
-
    }
 
    public MyLesson getNextLesson()

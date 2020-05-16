@@ -1,10 +1,13 @@
 package io.github.cs102g1j.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +38,15 @@ public class HomeFragment extends Fragment
             textView.setText( s );
          }
       } );
+      // There is much to discover
+      /*
+      Button button = (Button) findViewById(R.id.home_play);
+      button.setOnClickListener(new View.OnClickListener() {
+         public void onClick(View v) {
+            Toast
+         }
+      });
+      */
       return root;
    }
 }
