@@ -80,10 +80,14 @@ public class MainActivity extends AppCompatActivity
       switch (item.getItemId()) {
          case R.id.action_settings:
             openSettings();
-            /*// Create new transaction
+            /*
+            // tEST PURPOSES
+            // Create new transaction
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             // Replace whatever is in the fragment_container view with this fragment,
             // and add the transaction to the back stack
+            transaction.replace(R.id.action_settings,  new SettingsFragment());
+
             transaction.replace(R.id.nav_host_fragment,  new HomeFragment() );
             transaction.addToBackStack(null);
             // Commit the transaction
@@ -104,7 +108,6 @@ public class MainActivity extends AppCompatActivity
  */
 
       }
-
       return super.onOptionsItemSelected(item);
    }
 
