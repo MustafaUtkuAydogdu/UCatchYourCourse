@@ -13,7 +13,7 @@ public class MyLessons
    //constructors
    public MyLessons()
    {
-      myLessons = new ArrayList<MyLesson>( );
+      myLessons = new ArrayList <MyLesson>( );
 
    }
 

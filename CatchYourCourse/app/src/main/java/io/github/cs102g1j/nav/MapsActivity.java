@@ -12,6 +12,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import io.github.cs102g1j.R;
+import io.github.cs102g1j.nav.MyLesson;
+import io.github.cs102g1j.nav.MyDate;
+import io.github.cs102g1j.nav.MyLessons;
+import io.github.cs102g1j.nav.Building;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -29,6 +33,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -36,6 +41,8 @@ import java.util.TimeZone;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 {
    // class MapsActivity'de "MyClasses" arrayList'i property'si
+   protected MyLessons myLessons;
+
    private GoogleMap mMap;
    LocationManager locationManager;
    LocationListener locationListener;
@@ -73,6 +80,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
    {
       super.onCreate( savedInstanceState );
       setContentView( R.layout.activity_maps );
+
+      // initiate MyLesson
+      myLessons = new MyLessons(); //( int day, int hour, int minuteStart, int duration)
+      myLessons.addLesson( new MyLesson( new MyDate( 7, 8, 40, 600),
+                                         Building.BUILDING_EE, "Sample Lecture EE") );
+      myLessons.addLesson( new MyLesson( new MyDate( 7, 21, 40, 600),
+                                         Building.BUILDING_EA, "Sample Lecture EA") );
+      myLessons.addLesson( new MyLesson( new MyDate( 1, 21, 40, 600),
+                                         Building.BUILDING_B, "Sample Lecture B") );
+      myLessons.addLesson( new MyLesson( new MyDate( 1, 8, 40, 600),
+                                         Building.BUILDING_S, "Sample Lecture S") );
+
       // Obtain the SupportMapFragment and get notified when the map is ready to be used.
       SupportMapFragment
          mapFragment
@@ -94,49 +113,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
          @Override
          public void onProviderDisabled( String provider ) {         }
       };
-      if ( Build.VERSION.SDK_INT < 23 )
+
+      // Since minSDK is 24 = Android 7.0, we don't have to control pre Android 6.0 permissions
+      if ( ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION ) !=
+           PackageManager.PERMISSION_GRANTED )
       {
-         if ( ActivityCompat.checkSelfPermission( this,
-                                                  Manifest.permission.ACCESS_FINE_LOCATION
-                                                ) != PackageManager.PERMISSION_GRANTED &&
-              ActivityCompat.checkSelfPermission( this,
-                                                  Manifest.permission.ACCESS_COARSE_LOCATION
-                                                ) != PackageManager.PERMISSION_GRANTED )
-         {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-         }
+         ActivityCompat.requestPermissions( this,
+                                            new String[] { Manifest.permission.ACCESS_FINE_LOCATION },
+                                            1
+                                          );
+      }
+      else
+      {
          locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER,
                                                  0,
                                                  0,
                                                  locationListener
                                                );
       }
-      else
-      {
-         if ( ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION ) !=
-              PackageManager.PERMISSION_GRANTED )
-         {
-            ActivityCompat.requestPermissions( this,
-                                               new String[] { Manifest.permission.ACCESS_FINE_LOCATION },
-                                               1
-                                             );
-         }
-         else
-         {
-            locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER,
-                                                    0,
-                                                    0,
-                                                    locationListener
-                                                  );
-         }
-      }
+
    }
 
 
@@ -219,51 +214,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
          }
       };
-      if ( Build.VERSION.SDK_INT < 23 )
+
+      // Since minSDK is 24 = Android 7.0, we don't have to control pre Android 6.0 permissions
+
+      if (ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
       {
-         if ( ActivityCompat.checkSelfPermission( this,
-                                                  Manifest.permission.ACCESS_FINE_LOCATION
-                                                ) != PackageManager.PERMISSION_GRANTED &&
-              ActivityCompat.checkSelfPermission( this,
-                                                  Manifest.permission.ACCESS_COARSE_LOCATION
-                                                ) != PackageManager.PERMISSION_GRANTED )
-         {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-         }
-         locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER,
-                                                 0,
-                                                 0,
-                                                 locationListener
-                                               );
+         ActivityCompat.requestPermissions( this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 1);
       }
       else
       {
-         if (ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-         {
-            ActivityCompat.requestPermissions( this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-         }
-         else
-         {
-            locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER, 0, 0, locationListener);
-            Location lastKnownLocation = locationManager.getLastKnownLocation( LocationManager.GPS_PROVIDER);
+         locationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+         Location lastKnownLocation = locationManager.getLastKnownLocation( LocationManager.GPS_PROVIDER);
 
-            mMap.clear();
-            LatLng userLocation = new LatLng( lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
-            mMap.addMarker( new MarkerOptions().position( userLocation).title( "Your Location"));
-            mMap.moveCamera( CameraUpdateFactory.newLatLng( userLocation));
+         mMap.clear();
+         LatLng userLocation = new LatLng( lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
+         mMap.addMarker( new MarkerOptions().position( userLocation).title( "Your Location"));
+         mMap.moveCamera( CameraUpdateFactory.newLatLng( userLocation));
 
-         }
       }
-
-
    }
-
-
 }
