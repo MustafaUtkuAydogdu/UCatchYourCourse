@@ -11,30 +11,12 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home"/>
 
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="io.github.cs102g1j.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery"/>
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="io.github.cs102g1j.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow"/>
-
     <activity
         android:id="@+id/mapsActivity"
         android:name="io.github.cs102g1j.nav.MapsActivity"
         android:label="activity_maps"
         tools:layout="@layout/activity_maps" />
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="io.github.cs102g1j.ui.settings.SettingsFragment"
-        android:label="Settings" />
     <!--Global action-->
-    <action android:id="@+id/open_settings_fragment"
-        app:destination="@id/settingsFragment"/>
     <fragment
         android:id="@+id/scheduleAdd"
         android:name="io.github.cs102g1j.schedule.ScheduleAdd"

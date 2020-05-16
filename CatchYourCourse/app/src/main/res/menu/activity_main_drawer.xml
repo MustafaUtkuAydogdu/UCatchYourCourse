@@ -10,11 +10,8 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_home"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_default"
-            android:title="@string/menu_gallery" />
-
+    </group>
+    <group android:checkableBehavior="single">
         <item
             android:id="@+id/scheduleMain"
             android:icon="@drawable/ic_menu_schedule"
@@ -23,14 +20,5 @@
             android:id="@+id/mapsActivity"
             android:icon="@drawable/ic_menu_map"
             android:title="@string/menu_maps" />
-
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_default"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/settingsFragment"
-            android:icon="@drawable/ic_menu_default"
-            android:title="@string/action_settings" />
     </group>
 </menu>
