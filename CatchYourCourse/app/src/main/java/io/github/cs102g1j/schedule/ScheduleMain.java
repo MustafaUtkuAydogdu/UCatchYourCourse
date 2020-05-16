@@ -9,6 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import io.github.cs102g1j.R;
 
 public class ScheduleMain extends Fragment
@@ -26,6 +29,25 @@ public class ScheduleMain extends Fragment
    {
       super.onViewCreated( view, savedInstanceState );
 
+      FloatingActionButton fab = view.findViewById( R.id.fab );
+      fab.setOnClickListener( new View.OnClickListener()
+      {
+         @Override
+         public void onClick( View view )
+         {
+            NavHostFragment.findNavController( ScheduleMain.this )
+                           .navigate( R.id.action_scheduleMain_to_scheduleAdd );
+            /*
+            //System.out.println( "\n\nline 49 fab clicked\n\n");
+            Snackbar.make( view, "Replace with your own action", Snackbar.LENGTH_LONG )
+                    .setAction( "Action", null ).show();
+            //navController.navigate( R.id.action_scheduleMain_to_scheduleAdd );
+            */
+         }
+      } );
+
+      //no more needed, to be totally deleted soon
+      /*
       view.findViewById( R.id.button_first ).setOnClickListener( new View.OnClickListener()
       {
          @Override
@@ -35,5 +57,7 @@ public class ScheduleMain extends Fragment
                            .navigate( R.id.action_scheduleMain_to_scheduleAdd );
          }
       } );
-   }
-}
+
+       */
+   }// this is end of METHOD onViewCreated(), I assure myself.
+} // this is end of the CLASS, for sure

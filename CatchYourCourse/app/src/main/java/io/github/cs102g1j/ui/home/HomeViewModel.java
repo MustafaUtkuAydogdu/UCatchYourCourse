@@ -14,7 +14,7 @@ public class HomeViewModel extends ViewModel
    public HomeViewModel()
    {
       mText = new MutableLiveData<>();
-      mText.setValue( "HomeViewModel: 17");
+      mText.setValue( "HomeViewModel: WHY DO WE EVEN NEED IT?");
    }
 
    public LiveData< String > getText()

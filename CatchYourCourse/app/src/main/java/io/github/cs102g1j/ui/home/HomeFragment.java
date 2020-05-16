@@ -14,8 +14,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.fragment.NavHostFragment;
 
 import io.github.cs102g1j.R;
+import io.github.cs102g1j.nav.MapsActivity;
+import io.github.cs102g1j.schedule.ScheduleMain;
 
 public class HomeFragment extends Fragment
 {
@@ -38,6 +41,7 @@ public class HomeFragment extends Fragment
             textView.setText( s );
          }
       } );
+
       // There is much to discover
       /*
       Button button = (Button) findViewById(R.id.home_play);
@@ -47,6 +51,18 @@ public class HomeFragment extends Fragment
          }
       });
       */
+      root.findViewById( R.id.home_play ).setOnClickListener( new View.OnClickListener()
+      {
+         @Override
+         public void onClick( View view )
+         {
+            Intent intent = new Intent( getContext(), MapsActivity.class);
+            startActivity(intent);
+            /*
+            NavHostFragment.findNavController( HomeFragment.this )
+                           .navigate( R.id.action_scheduleMain_to_scheduleAdd );*/
+         }
+      } );
       return root;
    }
 }

@@ -30,24 +30,16 @@ public class ScheduleActivity extends AppCompatActivity
       Toolbar toolbar = findViewById( R.id.toolbar );
       setSupportActionBar( toolbar );
 
-      FloatingActionButton fab = findViewById( R.id.fab );
-      fab.setOnClickListener( new View.OnClickListener()
-      {
-         @Override
-         public void onClick( View view )
-         {
-            Snackbar.make( view, "Replace with your own action", Snackbar.LENGTH_LONG )
-                    .setAction( "Action", null ).show();
-            //navController.navigate( R.id.action_scheduleMain_to_scheduleAdd );
-         }
-      } );
+      // Navigation bar
       DrawerLayout drawer = findViewById( R.id.drawer_layout );
       NavigationView navigationView = findViewById( R.id.nav_view );
+
       // Only Schedule main is top destination, scheduleAdd is a helper user interface
       mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.scheduleMain ).setDrawerLayout( drawer ).build();
-      navController = Navigation.findNavController( this, R.id.nav_host_fragment );
+      navController = Navigation.findNavController( this, R.id.nav_host_fragment_schedule );
       NavigationUI.setupActionBarWithNavController( this, navController, mAppBarConfiguration );
       NavigationUI.setupWithNavController( navigationView, navController );
+
    }
 
 }

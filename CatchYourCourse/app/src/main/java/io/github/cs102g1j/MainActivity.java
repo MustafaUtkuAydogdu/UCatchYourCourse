@@ -4,22 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
 import io.github.cs102g1j.nav.MapsActivity;
-import io.github.cs102g1j.schedule.ScheduleActivity;
-import io.github.cs102g1j.schedule.ScheduleMain;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -33,32 +29,16 @@ public class MainActivity extends AppCompatActivity
       setContentView( R.layout.activity_main );
       Toolbar toolbar = findViewById( R.id.toolbar );
       setSupportActionBar( toolbar );
-      /*
-      // Little e mail button:
-      FloatingActionButton fab = findViewById( R.id.fab );
-      fab.setOnClickListener( new View.OnClickListener()
-      {
-         @Override
-         public void onClick( View view )
-         {
-            Snackbar.make( view,
-                           "MainActivity.java file in io.github.cs102g1j package.",
-                           Snackbar.LENGTH_LONG
-                         ).setAction( "Action", null ).show();
-         }
-      } );
-
-       */
-
       DrawerLayout drawer = findViewById( R.id.drawer_layout );
       NavigationView navigationView = findViewById( R.id.nav_view );
-      // Passing each menu ID as a set of Ids because each
+      // Passing menu ID as a set of Ids that
       // menu should be considered as top level destinations.
+      // Only scheduleAdd is not considered as top level destination
+      // There is "three line" shaped button at the left corner of toolbar in top level destinations
+      // while there is a "return" button at the left corner of toolbar in other destinations
       mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.nav_home,
-                                                              R.id.nav_gallery,
-                                                              R.id.nav_slideshow,
                                                               R.id.scheduleMain,
-                                                              R.id.settingsFragment
+                                                              R.id.mapsActivity
       ).setDrawerLayout( drawer ).build();
       NavController navController = Navigation.findNavController( this, R.id.nav_host_fragment );
       NavigationUI.setupActionBarWithNavController( this, navController, mAppBarConfiguration );
@@ -79,7 +59,6 @@ public class MainActivity extends AppCompatActivity
       Intent intent;
       switch (item.getItemId()) {
          case R.id.action_settings:
-            openSettings();
             /*
             // tEST PURPOSES
             // Create new transaction
@@ -93,20 +72,12 @@ public class MainActivity extends AppCompatActivity
             // Commit the transaction
             transaction.commit();
             */
+
             return true;
       case R.id.action_find:
-        // setContentView( R.layout.fragment_schedule );
-         Toast toast = Toast.makeText( getApplicationContext(), "Clicked", Toast.LENGTH_SHORT );
-         toast.show();
          intent = new Intent( this, MapsActivity.class);
          startActivity(intent);
          return true;
-   /*         intent = new Intent( this, MapsActivity.class);
-            startActivity(intent);
-            return true;
-
- */
-
       }
       return super.onOptionsItemSelected(item);
    }
@@ -119,9 +90,5 @@ public class MainActivity extends AppCompatActivity
              super.onSupportNavigateUp();
    }
 
-   private void openSettings()
-   {
-      NavController navigator = Navigation.findNavController( this, R.id.nav_host_fragment );
-                     navigator.navigate( R.id.action_scheduleMain_to_scheduleAdd );
-   }
+
 } // End of the class, if you don't think so go this link https://web.archive.org/web/20200309045607/https://pbs.twimg.com/media/ESpDAfOUUAAShrE.jpg
