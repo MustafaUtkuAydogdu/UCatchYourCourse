@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
@@ -18,6 +19,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import io.github.cs102g1j.nav.MapsActivity;
 import io.github.cs102g1j.schedule.ScheduleActivity;
+import io.github.cs102g1j.schedule.ScheduleMain;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity
       mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.nav_home,
                                                               R.id.nav_gallery,
                                                               R.id.nav_slideshow,
-                                                              R.id.nav_schedule,
+                                                              R.id.scheduleMain,
                                                               R.id.settingsFragment
       ).setDrawerLayout( drawer ).build();
       NavController navController = Navigation.findNavController( this, R.id.nav_host_fragment );
@@ -77,8 +79,7 @@ public class MainActivity extends AppCompatActivity
       Intent intent;
       switch (item.getItemId()) {
          case R.id.action_settings:
-            intent = new Intent( this, ScheduleActivity.class);
-            startActivity(intent);
+            openSettings();
             /*// Create new transaction
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             // Replace whatever is in the fragment_container view with this fragment,
@@ -113,5 +114,11 @@ public class MainActivity extends AppCompatActivity
       NavController navController = Navigation.findNavController( this, R.id.nav_host_fragment );
       return NavigationUI.navigateUp( navController, mAppBarConfiguration ) ||
              super.onSupportNavigateUp();
+   }
+
+   private void openSettings()
+   {
+      NavController navigator = Navigation.findNavController( this, R.id.nav_host_fragment );
+                     navigator.navigate( R.id.action_scheduleMain_to_scheduleAdd );
    }
 } // End of the class, if you don't think so go this link https://web.archive.org/web/20200309045607/https://pbs.twimg.com/media/ESpDAfOUUAAShrE.jpg

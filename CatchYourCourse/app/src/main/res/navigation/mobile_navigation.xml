@@ -23,11 +23,6 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow"/>
 
-    <fragment
-        android:id="@+id/nav_schedule"
-        android:name="io.github.cs102g1j.ui.schedule.ScheduleFragment"
-        android:label="@string/menu_schedule"
-        tools:layout="@layout/fragment_schedule"/>
     <activity
         android:id="@+id/mapsActivity"
         android:name="io.github.cs102g1j.nav.MapsActivity"

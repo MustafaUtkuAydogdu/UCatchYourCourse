@@ -21,7 +21,7 @@ import io.github.cs102g1j.R;
 public class ScheduleActivity extends AppCompatActivity
 {
    private AppBarConfiguration mAppBarConfiguration;
-
+   private NavController navController;
    @Override
    protected void onCreate( Bundle savedInstanceState )
    {
@@ -36,23 +36,16 @@ public class ScheduleActivity extends AppCompatActivity
          @Override
          public void onClick( View view )
          {
-            Snackbar.make( view, "Replace with your own action", Snackbar.LENGTH_LONG ).setAction(
-               "Action",
-               null
-                                                                                                 ).show();
+            Snackbar.make( view, "Replace with your own action", Snackbar.LENGTH_LONG )
+                    .setAction( "Action", null ).show();
+            //navController.navigate( R.id.action_scheduleMain_to_scheduleAdd );
          }
       } );
       DrawerLayout drawer = findViewById( R.id.drawer_layout );
       NavigationView navigationView = findViewById( R.id.nav_view );
-      // Passing each menu ID as a set of Ids because each
-      // menu should be considered as top level destinations.
-      mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.nav_home,
-                                                              R.id.nav_gallery,
-                                                              R.id.nav_slideshow,
-                                                              R.id.scheduleMain
-
-      ).setDrawerLayout( drawer ).build();
-      NavController navController = Navigation.findNavController( this, R.id.nav_host_fragment );
+      // Only Schedule main is top destination, scheduleAdd is a helper user interface
+      mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.scheduleMain ).setDrawerLayout( drawer ).build();
+      navController = Navigation.findNavController( this, R.id.nav_host_fragment );
       NavigationUI.setupActionBarWithNavController( this, navController, mAppBarConfiguration );
       NavigationUI.setupWithNavController( navigationView, navController );
    }
