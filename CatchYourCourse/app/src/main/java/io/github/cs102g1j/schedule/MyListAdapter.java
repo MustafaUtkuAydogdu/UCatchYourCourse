@@ -1,3 +1,9 @@
+/**
+*This is the MyListAdapter class.
+*@author Muhammed Can Küçükaslan
+*@author Melis Atun
+*@author Deniz Özay
+*/
 package io.github.cs102g1j.schedule;
 
 import android.view.LayoutInflater;
