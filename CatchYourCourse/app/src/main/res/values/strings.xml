@@ -9,40 +9,19 @@
     <string name="action_maps">Map</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="menu_schedule">Schedule</string>
 
-    <string name="gallery_header">There will be the list of the attained pokemons</string>
-    <string name="schedule_header">Your Schedule</string>
+    <string name="schedule_header_main">Your Schedule</string>
+    <string name="schedule_header_add">Add new lesson</string>
     <string name="title_activity_maps">Map</string>
     <string name="menu_maps">Map</string>
     <string name="home_button_pokedex">Pokedex</string>
     <string name="home_button_play">Play</string>
     <string name="home_top_text">There will be information about your next course if available</string>
 
-    <!-- Preference Titles -->
-    <string name="setting_top">Setting top text to be initialized</string>
-    <string name="settings_user">User</string>
-    <string name="sync_header">Sync</string>
 
-    <!-- Messages Preferences -->
-    <string name="user_name">Your name</string>
-    <string name="user_email">Your mail address</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="title_activity_schedule">Schedule</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

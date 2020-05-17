@@ -42,14 +42,13 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
    @Override
    public void onBindViewHolder( ViewHolder holder, int position) {
       final MyLesson myListData = listdata.getLesson( position );
-      String tmp = "Line 36" + listdata.getLesson( position ).toString();
-      System.out.println( tmp );
-      holder.textView.setText( tmp );
+      String text = listdata.getLesson( position ).toString();
+      holder.textView.setText( text );
       //holder.imageView.setImageResource(listdata[position].getImgId());
       holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
-            Toast.makeText(view.getContext(),"click on item: "+ myListData.getLectureName(),Toast.LENGTH_LONG).show();
+            Toast.makeText(view.getContext(),"clicked on item: "+ myListData.getLectureName(),Toast.LENGTH_LONG).show();
          }
       });
    }

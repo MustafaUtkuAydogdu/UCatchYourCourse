@@ -78,29 +78,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
       setContentView( R.layout.activity_maps );
 
       // initiate MyLesson
-      myLessons
-         = new MyLessons(); //( int day, int hour, int minuteStart, int duration)
-      myLessons.addLesson( new MyLesson( new MyDate( 7, 8, 40, 600 ),
-                                         Building.BUILDING_EE,
-                                         "Sample Lecture EE"
-      ) );
-      myLessons.addLesson( new MyLesson( new MyDate( 7, 21, 40, 600 ),
-                                         Building.BUILDING_EA,
-                                         "Sample Lecture EA"
-      ) );
-      myLessons.addLesson( new MyLesson( new MyDate( 1, 21, 40, 600 ),
-                                         Building.BUILDING_B,
-                                         "Sample Lecture B"
-      ) );
-      myLessons.addLesson( new MyLesson( new MyDate( 1, 8, 40, 600 ),
-                                         Building.BUILDING_S,
-                                         "Sample Lecture S"
-      ) );
+      myLessons = new MyLessons();
+      // add test values
+      myLessons.addTest();
 
       // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-      SupportMapFragment
-         mapFragment
-         = (SupportMapFragment) getSupportFragmentManager().findFragmentById( R.id.map );
+      SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById( R.id.map );
       mapFragment.getMapAsync( this );
       locationManager
          = (LocationManager) this.getSystemService( Context.LOCATION_SERVICE );
@@ -277,6 +260,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
          mMap.moveCamera( CameraUpdateFactory.newLatLng( userLocation ) );
 
       }
+   }
+
+   @Override
+   protected void onPause()
+   {
+      super.onPause();
+      locationManager = null;
+      locationListener = null;
    }
 
    @Override
