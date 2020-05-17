@@ -43,7 +43,7 @@ public class ScheduleActivity extends AppCompatActivity
    protected void onCreate( Bundle savedInstanceState )
    {
       super.onCreate( savedInstanceState );
-      setContentView( R.layout.schedule_main); //activity_schedule );
+      setContentView( R.layout.activity_schedule );
       // Test input
       // initiate MyLesson
       myLessons = new MyLessons(); //( int day, int hour, int minuteStart, int duration)

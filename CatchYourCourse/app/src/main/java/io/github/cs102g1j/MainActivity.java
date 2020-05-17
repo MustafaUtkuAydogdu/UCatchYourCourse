@@ -15,6 +15,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import io.github.cs102g1j.ar.ARActivity;
 import io.github.cs102g1j.nav.MapsActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -59,6 +60,9 @@ public class MainActivity extends AppCompatActivity
       Intent intent;
       switch (item.getItemId()) {
          case R.id.action_settings:
+            intent = new Intent( this, ARActivity.class);
+            startActivity(intent);
+            return true;
             /*
             // tEST PURPOSES
             // Create new transaction
@@ -72,8 +76,6 @@ public class MainActivity extends AppCompatActivity
             // Commit the transaction
             transaction.commit();
             */
-
-            return true;
       case R.id.action_find:
          intent = new Intent( this, MapsActivity.class);
          startActivity(intent);
