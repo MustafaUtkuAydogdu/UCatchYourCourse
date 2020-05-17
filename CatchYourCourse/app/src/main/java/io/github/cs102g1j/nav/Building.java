@@ -98,4 +98,9 @@ public class Building
       else
          return false;
    }
+   @Override
+   public String toString()
+   {
+      return nameOfBuilding;
+   }
 }

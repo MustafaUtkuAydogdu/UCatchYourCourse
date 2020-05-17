@@ -61,4 +61,8 @@ dependencies {
 
     // Alternatively, use ArSceneView without the UX dependency.
     implementation 'com.google.ar.sceneform:core:1.15.0'
+
+    // Recycler View dependencies
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha03'
+    implementation 'com.android.support:recyclerview-v7:29.0.0'
 }

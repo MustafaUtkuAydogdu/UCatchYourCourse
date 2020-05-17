@@ -62,4 +62,9 @@ public class MyLessons
       }
       return myLessons.get( indexOfNextLesson );
    }
+
+   public int size()
+   {
+      return myLessons.size();
+   }
 }

@@ -72,16 +72,16 @@ public class MyLesson
                                        calendar.get( Calendar.MINUTE )
       );
 
-      if (lectureBuilding.isNearer(10,currentLocation) && lectureTime.isIncludes(currentDate))
-         return true;
-      else
-         return false;
+      return lectureBuilding.isNearer( 10, currentLocation ) &&
+             lectureTime.isIncludes( currentDate );
 
    }
 
-
-
-
-
-
-}
+   @Override
+   public String toString()
+   {
+      return lectureName + " at " + lectureBuilding.toString()
+             + "\nbetween " + lectureTime.normalize( lectureTime.getStartTime() )
+             + " and " + lectureTime.normalize( lectureTime.getEndTime() );
+   }
+} // END OF the class
