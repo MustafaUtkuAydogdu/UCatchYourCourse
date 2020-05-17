@@ -13,7 +13,11 @@ import com.google.ar.core.Plane;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
+import com.google.ar.sceneform.ux.BaseArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
+
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 import io.github.cs102g1j.R;
 
@@ -32,7 +36,8 @@ public class ARActivity extends AppCompatActivity
 
 
       setContentView( R.layout.activity_ar );
-      arFragment = (ArFragment) getSupportFragmentManager().findFragmentById( R.id.ux_fragment );
+      arFragment
+         = (ArFragment) getSupportFragmentManager().findFragmentById( R.id.ux_fragment );
 
       // When you build a Renderable, Sceneform loads its resources in the background while
       // returning
@@ -40,43 +45,57 @@ public class ARActivity extends AppCompatActivity
       ModelRenderable.builder()
                      .setSource( this, R.raw.andy )
                      .build()
-                     .thenAccept( renderable ->
-                                     andyRenderable
-                                        = renderable )
-                     .exceptionally( throwable ->
-                                     {
-                                        Toast toast = Toast.makeText( this,
-                                                                      "Unable to load andy " +
-                                                                      "renderable",
-                                                                      Toast.LENGTH_LONG
-                                                                    );
-                                        toast.setGravity( Gravity.CENTER, 0, 0 );
-                                        toast.show();
-                                        return null;
-                                     } );
+                     .thenAccept( new Consumer< ModelRenderable >()
+                     {
+                        @Override
+                        public void accept( ModelRenderable renderable )
+                        {
+                           andyRenderable = renderable;
+                        }
+                     } )
+                     .exceptionally( new Function< Throwable, Void >()
+                     {
+                        @Override
+                        public Void apply( Throwable throwable )
+                        {
+                           Toast toast = Toast.makeText( ARActivity.this,
+                                                         "Unable to load pokemons",
+                                                         Toast.LENGTH_LONG
+                                                       );
+                           toast.setGravity( Gravity.CENTER, 0, 0 );
+                           toast.show();
+                           return null;
+                        }
+                     } );
 
-      arFragment.setOnTapArPlaneListener( ( HitResult hitResult, Plane plane,
-                                            MotionEvent motionEvent ) ->
-                                          {
-                                             if ( andyRenderable == null )
-                                             {
-                                                return;
-                                             }
+      arFragment.setOnTapArPlaneListener( new BaseArFragment.OnTapArPlaneListener()
+      {
+         @Override
+         public void onTapPlane( HitResult hitResult,
+                                 Plane plane,
+                                 MotionEvent motionEvent
+                               )
+         {
+            if ( andyRenderable == null )
+            {
+               return;
+            }
 
-                                             // Create the Anchor.
-                                             Anchor anchor = hitResult.createAnchor();
-                                             AnchorNode anchorNode = new AnchorNode( anchor );
-                                             anchorNode.setParent( arFragment.getArSceneView()
-                                                                             .getScene() );
+            // Create the Anchor.
+            Anchor anchor = hitResult.createAnchor();
+            AnchorNode anchorNode = new AnchorNode( anchor );
+            anchorNode.setParent( arFragment.getArSceneView().getScene() );
 
-                                             // Create the transformable andy and add it to the
-                                             // anchor.
-                                             TransformableNode andy = new TransformableNode(
-                                                arFragment.getTransformationSystem() );
-                                             andy.setParent( anchorNode );
-                                             andy.setRenderable( andyRenderable );
-                                             andy.select();
-                                          } );
+            // Create the transformable andy and add it to the
+            // anchor.
+            TransformableNode
+               andy
+               = new TransformableNode( arFragment.getTransformationSystem() );
+            andy.setParent( anchorNode );
+            andy.setRenderable( andyRenderable );
+            andy.select();
+         }
+      } );
    }
 
 }
