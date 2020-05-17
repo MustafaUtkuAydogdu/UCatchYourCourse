@@ -14,6 +14,12 @@ On this page I will keep a weekly record of what I have done for the CS102 group
 * Finished and merged code templates.
 * Looked at ARCore even more (it is way way way harder than it looks).
 
+### ~ Week 14: May 4 to May 10 ~
+* Found out that ARCore is too complex to use raw, so researched abstractions for it (KudanAR, Sceneform).  
+
+### ~ Week 15: May 11 to May 17 ~
+* Looked at sample apps for Sceneform and made a prototype based on those and committed it.
+
 ### ~ date ~
 blah, blah, blah...
 
