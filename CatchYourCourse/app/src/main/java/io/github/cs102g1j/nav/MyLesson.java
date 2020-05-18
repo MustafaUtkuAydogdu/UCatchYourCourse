@@ -79,7 +79,7 @@ public class MyLesson
       isTimeToAppearPokemon = lectureBuilding.isNearer( DISTANCE_20, currentLocation ) &&
                               lectureTime.isIncludes( currentDate );
 
-      return lectureBuilding.isNearer( DISTANCE_20, currentLocation ) &&
+      return lectureBuilding.isNearer( DISTANCE_20, currentLocation ) && lectureTime.isIncludes( currentDate );
 
 
 
