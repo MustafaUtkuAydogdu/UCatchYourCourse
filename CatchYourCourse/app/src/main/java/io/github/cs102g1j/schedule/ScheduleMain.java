@@ -37,6 +37,7 @@ public class ScheduleMain extends Fragment
       return inflater.inflate( R.layout.schedule_main, container, false );
    }
 
+   @Override
    public void onViewCreated( @NonNull View view, Bundle savedInstanceState )
    {
       super.onViewCreated( view, savedInstanceState );
