@@ -78,6 +78,20 @@ public class MyLesson
 
    }
 
+   public String getLecture()
+   {
+      return lectureName;
+   }
+
+   public String getPlace()
+   {
+      return lectureBuilding.toString();
+   }
+
+   public String getDate()
+   {
+      return lectureTime.normalize( lectureTime.getStartTime() );
+   }
    @Override
    public String toString()
    {
