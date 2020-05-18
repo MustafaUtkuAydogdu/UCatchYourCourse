@@ -11,6 +11,7 @@ import io.github.cs102g1j.nav.Building;
 
 public class MyLesson
 {
+   static final int DISTANCE_20 = 20;
    //properties
    private String lectureName;
    private Building lectureBuilding;
@@ -74,11 +75,13 @@ public class MyLesson
                                        calendar.get( Calendar.MINUTE )
       );
 
-      isTimeToAppearPokemon = lectureBuilding.isNearer( 10, currentLocation ) &&
+
+      isTimeToAppearPokemon = lectureBuilding.isNearer( DISTANCE_20, currentLocation ) &&
                               lectureTime.isIncludes( currentDate );
 
-      return lectureBuilding.isNearer( 10, currentLocation ) &&
-             lectureTime.isIncludes( currentDate );
+      return lectureBuilding.isNearer( DISTANCE_20, currentLocation ) &&
+
+
 
    }
 

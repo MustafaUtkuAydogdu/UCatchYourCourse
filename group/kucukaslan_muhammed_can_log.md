@@ -31,6 +31,14 @@ Because I couldn't provide a verified web address.
 Learned how to add and modify the item to toolbar
 * Prepared/ing UML diagram(s) for detailed design report via https://creately.com/
 
+### ~ Week 15: May 11 to May 17 ~
+* Prepared initial interface of Schedule Activity.
+* I learned "a lot" about the recyclerView and modified 
+Deniz & and Melis's template (which was designed as a separate app !) 
+and after a long struggle I integrated it to the our App 
+( along with the template MyLessons list) 
+* Updated app requirements to make it compatible with ARActivity  
+
 
 ### ~ date ~
 blah, blah, blah...

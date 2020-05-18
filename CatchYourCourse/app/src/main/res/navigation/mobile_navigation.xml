@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/scheduleAdd"
         android:name="io.github.cs102g1j.schedule.ScheduleAdd"
-        android:label="schedule_add"
+        android:label="@string/schedule_header_add"
         tools:layout="@layout/schedule_add">
         <action
             android:id="@+id/action_scheduleAdd_to_scheduleMain"
@@ -39,7 +39,7 @@
     <fragment
         android:id="@+id/scheduleMain"
         android:name="io.github.cs102g1j.schedule.ScheduleMain"
-        android:label="schedule_main"
+        android:label="@string/schedule_header_main"
         tools:layout="@layout/schedule_main">
         <action
             android:id="@+id/action_scheduleMain_to_scheduleAdd"
