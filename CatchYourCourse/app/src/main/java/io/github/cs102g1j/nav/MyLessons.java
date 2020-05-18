@@ -23,7 +23,7 @@ public class MyLessons
       myLessons.add( lesson );
    }
 
-   public MyLesson get(int index)
+   public MyLesson getLesson(int index)
    {
       if (index < 0 || index >= myLessons.size())
 
@@ -124,5 +124,7 @@ public class MyLessons
       addLesson( new MyLesson( new MyDate( 5, 7, 40, 120), Building.BUILDING_S, "POLS 344 Turkish Nationalism :Politics and Ideology") );
       addLesson( new MyLesson( new MyDate( 5, 15, 40, 120), Building.BUILDING_EA, "CS 443 Cloud Computing and Mobile Applications") );
       addLesson( new MyLesson( new MyDate( 2, 9, 40, 120), Building.BUILDING_EE, "GRA 215 Computer Graphics for Film and Television I") );
+
+
    }
 }

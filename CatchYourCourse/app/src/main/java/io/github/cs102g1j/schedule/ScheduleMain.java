@@ -37,7 +37,6 @@ public class ScheduleMain extends Fragment
       return inflater.inflate( R.layout.schedule_main, container, false );
    }
 
-   @Override
    public void onViewCreated( @NonNull View view, Bundle savedInstanceState )
    {
       super.onViewCreated( view, savedInstanceState );
@@ -55,6 +54,36 @@ public class ScheduleMain extends Fragment
       recyclerView.setLayoutManager(new LinearLayoutManager( getContext()) );
       recyclerView.setAdapter( adapter);
 
+      // Add FAB "+" button which navigates to scheduleAdd fragment
+      FloatingActionButton fab = view.findViewById( R.id.fab );
+      fab.setOnClickListener( new View.OnClickListener()
+      {
+         @Override
+         public void onClick( View view )
+         {
+            NavHostFragment.findNavController( ScheduleMain.this )
+                           .navigate( R.id.action_scheduleMain_to_scheduleAdd );
+            /*
+            //System.out.println( "\n\nline 49 fab clicked\n\n");
+            Snackbar.make( view, "Replace with your own action", Snackbar.LENGTH_LONG )
+                    .setAction( "Action", null ).show();
+            //navController.navigate( R.id.action_scheduleMain_to_scheduleAdd );
+            */
+         }
+      } );
 
+      //no more needed, to be totally deleted soon
+      /*
+      view.findViewById( R.id.button_first ).setOnClickListener( new View.OnClickListener()
+      {
+         @Override
+         public void onClick( View view )
+         {
+            NavHostFragment.findNavController( ScheduleMain.this )
+                           .navigate( R.id.action_scheduleMain_to_scheduleAdd );
+         }
+      } );
+
+       */
    }// this is end of METHOD onViewCreated(), I assure myself.
 } // this is end of the CLASS, for sure
