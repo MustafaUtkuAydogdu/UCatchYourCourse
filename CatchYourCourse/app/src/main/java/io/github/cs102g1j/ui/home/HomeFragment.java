@@ -15,25 +15,34 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import io.github.cs102g1j.R;
 import io.github.cs102g1j.nav.MapsActivity;
+import io.github.cs102g1j.nav.MyLessons;
+import io.github.cs102g1j.schedule.MyListAdapter;
 import io.github.cs102g1j.schedule.ScheduleMain;
 
 public class HomeFragment extends Fragment
 {
 
-   private HomeViewModel homeViewModel;
+   // private HomeViewModel homeViewModel;
+   private MyLessons myLessons;
+   private RecyclerView recyclerView;
+   private MyListAdapter adapter;
 
    public View onCreateView( @NonNull LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState
                            )
    {
-      homeViewModel = ViewModelProviders.of( this ).get( HomeViewModel.class );
+      //homeViewModel = ViewModelProviders.of( this ).get( HomeViewModel.class );
       View root = inflater.inflate( R.layout.fragment_home, container, false );
-      final TextView textView = root.findViewById( R.id.homeTop );
-      homeViewModel.getText().observe( getViewLifecycleOwner(), new Observer< String >()
+      // final TextView textView = root.findViewById( R.id.homeTop );
+      /* homeViewModel.getText().observe( getViewLifecycleOwner(), new Observer< String >()
       {
          @Override
          public void onChanged( @Nullable String s )
@@ -41,6 +50,8 @@ public class HomeFragment extends Fragment
             textView.setText( s );
          }
       } );
+
+       */
 
       // There is much to discover
       /*
@@ -51,6 +62,20 @@ public class HomeFragment extends Fragment
          }
       });
       */
+      // initiate MyLesson
+      myLessons = new MyLessons();
+      // add test values
+      myLessons.addTest();
+
+      // RecyclerView setup
+      recyclerView = root.findViewById( R.id.recyclerView );
+
+      adapter = new MyListAdapter( myLessons );
+
+      //      recyclerView.setHasFixedSize(true);
+      recyclerView.setLayoutManager(new LinearLayoutManager( getContext()) );
+      recyclerView.setAdapter( adapter);
+
       root.findViewById( R.id.home_play ).setOnClickListener( new View.OnClickListener()
       {
          @Override
@@ -61,6 +86,45 @@ public class HomeFragment extends Fragment
             /*
             NavHostFragment.findNavController( HomeFragment.this )
                            .navigate( R.id.action_scheduleMain_to_scheduleAdd );*/
+         }
+      } );
+
+      root.findViewById( R.id.home_pokedex ).setOnClickListener( new View.OnClickListener()
+      {
+         @Override
+         public void onClick( View view )
+         {
+            Snackbar snackbar = Snackbar.make( view,
+                                               "Pokedex screen is coming soon",
+                                               Snackbar.LENGTH_SHORT
+                                             );
+            snackbar.show();
+         }
+      } );
+
+      root.findViewById( R.id.home_bag ).setOnClickListener( new View.OnClickListener()
+      {
+         @Override
+         public void onClick( View view )
+         {
+            Snackbar snackbar = Snackbar.make( view,
+                                               "Pokemon bag screen is coming soon",
+                                               Snackbar.LENGTH_SHORT
+                                             );
+            snackbar.show();
+         }
+      } );
+
+      root.findViewById( R.id.home_item ).setOnClickListener( new View.OnClickListener()
+      {
+         @Override
+         public void onClick( View view )
+         {
+            Snackbar snackbar = Snackbar.make( view,
+                                               "Items screen coming soon",
+                                               Snackbar.LENGTH_SHORT
+                                             );
+            snackbar.show();
          }
       } );
       return root;
