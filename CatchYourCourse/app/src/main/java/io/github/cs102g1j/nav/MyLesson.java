@@ -15,15 +15,15 @@ public class MyLesson
    private String lectureName;
    private Building lectureBuilding;
    private MyDate lectureTime;
-
+   private boolean isTimeToAppearPokemon;
 
    //constructors
-   public MyLesson( MyDate date, Building building, String lectureName)
+   public MyLesson( MyDate date, Building building, String lectureName )
    {
       lectureTime = date;
       lectureBuilding = building;
       this.lectureName = lectureName;
-
+      isTimeToAppearPokemon = false;
    }
 
 
@@ -42,6 +42,8 @@ public class MyLesson
    {
       return lectureTime;
    }
+
+   public boolean getIsTimeToAppearPokemon() { return isTimeToAppearPokemon; }
 
    // SHOULD THE SETTERS ALSO RETURN THE  VALUES WE SET
    public void setLectureName( String name)
@@ -71,6 +73,9 @@ public class MyLesson
                                        calendar.get( Calendar.MINUTE ),
                                        calendar.get( Calendar.MINUTE )
       );
+
+      isTimeToAppearPokemon = lectureBuilding.isNearer( 10, currentLocation ) &&
+                              lectureTime.isIncludes( currentDate );
 
       return lectureBuilding.isNearer( 10, currentLocation ) &&
              lectureTime.isIncludes( currentDate );
