@@ -21,4 +21,7 @@ Started working on Navigation ( taking the location of the user, showing the use
 ###~  Week 14: April 4 to May 11 ~
 Worked on the GPS part of our program. Completed the taking the user location and making the program work in background parts with Mustafa ; however,we still need to integrate these two parts. 
 
+###~  Week 14: April 11 to May 18
+Created an interface that users can enter their schedules( classes,building,dates) and provided a way to keep these information in a way similar to " a database" (GSON AND JSON ARE USED AT THİS PART). Therefore, know we are able to flow data between classes such as MapsActivity,AR and helper classes. 
+
 ****
