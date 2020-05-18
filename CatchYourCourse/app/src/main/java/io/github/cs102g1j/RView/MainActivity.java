@@ -45,9 +45,7 @@ public class MainActivity extends AppCompatActivity
       setButtons();
    }
 
-   public void insertItem( int position,
-                           String lectureName,
-                           String buildingName
+   public void insertItem( int position, String lectureName, String buildingName
                          )
    {
       mExampleList.add( position,
@@ -80,13 +78,12 @@ public class MainActivity extends AppCompatActivity
    public void buildRecyclerView()
    {
       mRecyclerView = findViewById( R.id.recyclerView );
-      mRecyclerView.setHasFixedSize( true );
+      // mRecyclerView.setHasFixedSize( true );
       mLayoutManager = new LinearLayoutManager( this );
-      mAdapter
-         = new com.example.recyleviewproject.ExampleAdapter( mExampleList );
+      mAdapter = new ExampleAdapter( mExampleList );
       mRecyclerView.setLayoutManager( mLayoutManager );
       mRecyclerView.setAdapter( mAdapter );
-      mAdapter.setOnItemClickListener( new com.example.recyleviewproject.ExampleAdapter.OnItemClickListener()
+      mAdapter.setOnItemClickListener( new ExampleAdapter.OnItemClickListener()
       {
          @Override
          public void onItemClick( int position )
