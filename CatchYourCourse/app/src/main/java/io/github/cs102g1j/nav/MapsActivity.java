@@ -2,6 +2,7 @@ package io.github.cs102g1j.nav;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -18,6 +19,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -25,13 +27,15 @@ import java.util.Calendar;
 import java.util.TimeZone;
 
 import io.github.cs102g1j.R;
+import io.github.cs102g1j.ar.ARActivity;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 {
    // class MapsActivity'de "MyClasses" arrayList'i property'si
    protected MyLessons myLessons;
-
    private GoogleMap mMap;
+   Intent toAR;
+   boolean isAR;
    LocationManager locationManager;
    LocationListener locationListener;
    LatLng V_BUILDING = new LatLng( 39.867379025065425, 32.75014751011084 );
@@ -77,13 +81,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
       super.onCreate( savedInstanceState );
       setContentView( R.layout.activity_maps );
 
-      // initiate MyLesson
+      // initiate MyLesson and intent
       myLessons = new MyLessons();
+      toAR = new Intent( MapsActivity.this, ARActivity.class );
+      isAR = false;
       // add test values
       myLessons.addTest();
 
       // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-      SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById( R.id.map );
+      SupportMapFragment
+         mapFragment
+         = (SupportMapFragment) getSupportFragmentManager().findFragmentById( R.id.map );
       mapFragment.getMapAsync( this );
       locationManager
          = (LocationManager) this.getSystemService( Context.LOCATION_SERVICE );
@@ -99,9 +107,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
          }
 
          @Override
-         public void onStatusChanged( String provider,
-                                      int status,
-                                      Bundle extras
+         public void onStatusChanged( String provider, int status, Bundle extras
                                     )
          {
          }
@@ -167,6 +173,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             );
             mMap.addMarker( new MarkerOptions().position( userLocation )
                                                .title( "Your Location" ) );
+            LatLng nearestBuilding = new LatLng( myLessons.getNextLesson()
+                                                          .getLectureBuilding()
+                                                          .getLatitudeOfBuilding(),
+                                                 myLessons.getNextLesson()
+                                                          .getLectureBuilding()
+                                                          .getLongitudeOfBuilding()
+            );
+            mMap.addMarker( new MarkerOptions().position( nearestBuilding )
+                                               .icon( BitmapDescriptorFactory.defaultMarker(
+                                                  BitmapDescriptorFactory.HUE_BLUE ) ) );
+
             mMap.moveCamera( CameraUpdateFactory.newLatLng( userLocation ) );
 
             Calendar calendar = Calendar.getInstance( TimeZone.getDefault() );
@@ -177,40 +194,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                              calendar.get( Calendar.MINUTE ),
                              calendar.get( Calendar.MINUTE )
             );
-            /*
-            if ( EE_Date.isIncludes( currentDate ) && distance( location.getLatitude(),
-                                                                location.getLongitude(),
-                                                                EE_BUILDING.latitude,
-                                                                EE_BUILDING.longitude
-                                                              ) <= 0.015 )
+            if ( !isAR )
             {
-               isInEEBuilding = true;
-            }
-            else
-            {
-               isInEEBuilding = false;
+               for ( int i = 0; i < myLessons.size(); i++ )
+               {
+                  if ( myLessons.getLesson( i ).isNow( location ) || true)
+                  {
+                     isAR = true;
+                     startActivity( toAR );
+                  }
+               }
             }
 
-            if ( V_Date.isIncludes( currentDate ) && distance( location.getLatitude(),
-                                                               location.getLongitude(),
-                                                               V_BUILDING.latitude,
-                                                               V_BUILDING.longitude
-                                                             ) <= 0.015 )
-            {
-               isInVBuilding = true;
-            }
-            else
-            {
-               isInVBuilding = false;
-            }
 
-             */
          }
 
          @Override
-         public void onStatusChanged( String provider,
-                                      int status,
-                                      Bundle extras
+         public void onStatusChanged( String provider, int status, Bundle extras
                                     )
          {
 

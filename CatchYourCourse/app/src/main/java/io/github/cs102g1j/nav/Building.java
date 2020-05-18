@@ -20,7 +20,7 @@ public class Building
 
 
    //constructors
-   public Building( double longitude, double latitude, String name)
+   public Building( double latitude, double longitude, String name)
    {
       nameOfBuilding = name;
       latitudeOfBuilding = latitude;
