@@ -79,7 +79,7 @@ public class MyLessons
       addLesson( new MyLesson( new MyDate( 4, 13, 40, 120), Building.BUILDING_EA, "HART 431 The Archaeology of Cyprus in the Bronze Age") );
       addLesson( new MyLesson( new MyDate( 3, 9, 40, 120), Building.BUILDING_B, "MATH 132 Discrete and Combinatorial Mathematics") );
       addLesson( new MyLesson( new MyDate( 6, 12, 40, 120), Building.BUILDING_S, "POLS 344 Turkish Nationalism :Politics and Ideology") );
-      addLesson( new MyLesson( new MyDate( 2, 9, 40, 120), Building.BUILDING_EE, "CS 443 Cloud Computing and Mobile Applications") );
+     // addLesson( new MyLesson( new MyDate( 2, 9, 40, 120), Building.BUILDING_EE, "CS 443 Cloud Computing and Mobile Applications") );
       addLesson( new MyLesson( new MyDate( 5, 9, 40, 120), Building.BUILDING_EE, "CS 453 Application Lifecycle Management") );
       addLesson( new MyLesson( new MyDate( 2, 7, 40, 120), Building.BUILDING_EE, "CS 443 Cloud Computing and Mobile Applications") );
       addLesson( new MyLesson( new MyDate( 4, 13, 40, 120), Building.BUILDING_EA, "POLS 344 Turkish Nationalism :Politics and Ideology") );
