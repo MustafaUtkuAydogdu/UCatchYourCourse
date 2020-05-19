@@ -14,10 +14,10 @@ import io.github.cs102g1j.nav.MyLessons;
 
 /**
  * This is RecyclerView Adapter class for MyLessons objects.
+ *
  * @version 2020.05.19
  */
-public class MyListAdapter
-   extends RecyclerView.Adapter< MyListAdapter.ViewHolder >
+public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>
 {
    private MyLessons myLessons;
    private OnItemClickListener myListener;
@@ -38,13 +38,8 @@ public class MyListAdapter
    @Override
    public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType )
    {
-      LayoutInflater
-         layoutInflater
-         = LayoutInflater.from( parent.getContext() );
-      View listItemView = layoutInflater.inflate( R.layout.list_item,
-                                                  parent,
-                                                  false
-                                                );
+      LayoutInflater layoutInflater = LayoutInflater.from( parent.getContext() );
+      View listItemView = layoutInflater.inflate( R.layout.list_item, parent, false );
       ViewHolder viewHolder = new ViewHolder( listItemView, myListener );
       return viewHolder;
    }
@@ -55,9 +50,7 @@ public class MyListAdapter
       MyLesson myListData = myLessons.get( position );
       myListData = myLessons.get( position );
       holder.mTextView1.setText( myListData.getLecture() );
-      holder.mTextView2.setText( myListData.getPlace() +
-                                 ", " +
-                                 myListData.getDate() );
+      holder.mTextView2.setText( myListData.getPlace() + ", " + myListData.getDate() );
       // image is default, no need for getting
       //holder.mImageView.setImageResource(myListData.getImageResource());
    }
