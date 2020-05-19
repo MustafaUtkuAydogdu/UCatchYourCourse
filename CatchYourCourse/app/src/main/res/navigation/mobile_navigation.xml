@@ -45,4 +45,9 @@
             android:id="@+id/action_scheduleMain_to_scheduleAdd"
             app:destination="@id/scheduleAdd" />
     </fragment>
+    <activity
+        android:id="@+id/scheduleAct"
+        android:name="io.github.cs102g1j.ui.schedule.ScheduleAct"
+        android:label="activity_sched"
+        tools:layout="@layout/activity_sched" />
 </navigation>

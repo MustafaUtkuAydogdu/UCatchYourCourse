@@ -25,6 +25,7 @@ import io.github.cs102g1j.nav.MapsActivity;
 import io.github.cs102g1j.nav.MyLessons;
 import io.github.cs102g1j.schedule.MyListAdapter;
 import io.github.cs102g1j.schedule.ScheduleMain;
+import io.github.cs102g1j.ui.schedule.ScheduleAct;
 
 public class HomeFragment extends Fragment
 {
@@ -73,11 +74,15 @@ public class HomeFragment extends Fragment
              @Override
              public void onClick( View view )
              {
+                Intent intent = new Intent( getContext(), ScheduleAct.class );
+                startActivity( intent );
+                /*
                 Snackbar snackbar = Snackbar.make( view,
                                                    "Pokedex screen is coming soon",
                                                    Snackbar.LENGTH_SHORT
                                                  );
                 snackbar.show();
+                */
              }
           } );
 
