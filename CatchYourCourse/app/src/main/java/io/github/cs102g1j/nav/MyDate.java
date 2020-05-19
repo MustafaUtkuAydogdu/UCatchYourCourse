@@ -1,5 +1,11 @@
 package io.github.cs102g1j.nav;
-
+/**
+ * This is MyDate class.
+ * @author Mustafa Yasir Altunhan.
+ * @author Mustafa Utku Aydoğdu
+ * @author Muhammed Can Küçükaslan
+ * @version 19.05.2020
+ */
 import android.os.Parcel;
 import android.os.Parcelable;
 
