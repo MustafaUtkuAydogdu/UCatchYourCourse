@@ -63,11 +63,7 @@ public class MyDate implements Parcelable
    //methods
    public boolean isIncludes( MyDate time)
    {
-      if ( startTime <= time.startTime && endTime >= time.endTime)
-      {
-         return true;
-      }
-      return false;
+      return startTime <= time.startTime && endTime >= time.endTime;
    }
 
    public int getStartTime()
@@ -107,7 +103,7 @@ public class MyDate implements Parcelable
       else if ( day == 3 )
          dayName = "Tuesday";
       else if ( day == 4 )
-         dayName = "Wednasday";
+         dayName = "Wednesday";
       else if ( day == 5 )
          dayName = "Thursday";
       else if ( day == 6 )
