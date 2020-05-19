@@ -19,7 +19,12 @@ This week me and my friends started to learn Augmented Reality. Also, we met thr
 ****
 ### 09.05.2020
 ****
-This week, me and Deniz are focusing writing some necessary classes. Also, we as a group are focusing on Augmented Reality in general.
+This week, I completed the RecycleView layout, which enables us to list the lessons in the schedules of students.
+
+****
+### 19.05.2020
+****
+This week, we finished our project, talked about some little things through Zoom, and recorded our videos.
 
 ****
 ****
