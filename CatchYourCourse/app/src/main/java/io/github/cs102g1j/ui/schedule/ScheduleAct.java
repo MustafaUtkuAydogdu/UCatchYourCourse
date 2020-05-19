@@ -57,6 +57,11 @@ public class ScheduleAct extends AppCompatActivity
    private EditText lectureNameText;
    private EditText buildingNameText;
 
+   private EditText dayText;
+   private EditText hourText;
+   private EditText startMinuteText;
+   private EditText durationText;
+
    private Button saveButton;
 
 
@@ -66,29 +71,12 @@ public class ScheduleAct extends AppCompatActivity
    protected void onCreate( Bundle savedInstanceState )
    {
       super.onCreate( savedInstanceState );
-      setContentView( R.layout.activity_sched );
-      /* Toolbar toolbar = findViewById( R.id.toolbar );
-      setSupportActionBar( toolbar );
+      setContentView( R.layout.activity_schedule);
 
-      // Navigation bar
-      DrawerLayout drawer = findViewById( R.id.drawer_layout );
-      NavigationView navigationView = findViewById( R.id.nav_view );
 
-      // Only Schedule main is top destination, scheduleAdd is a helper user interface
-      mAppBarConfiguration
-         = new AppBarConfiguration.Builder( R.id.scheduleMain ).setDrawerLayout(
-         drawer ).build();
-      navController = Navigation.findNavController( this,
-                                                    R.id.nav_host_fragment_schedule
-                                                  );
-      NavigationUI.setupActionBarWithNavController( this,
-                                                    navController,
-                                                    mAppBarConfiguration
-                                                  );
-      NavigationUI.setupWithNavController( navigationView, navController );
-    */
-      //taking the data stored in the disk
       loadData();
+
+
 
       //createExampleList();
 
@@ -154,6 +142,10 @@ public class ScheduleAct extends AppCompatActivity
       editTextRemove = findViewById( R.id.edittext_remove );
       lectureNameText = findViewById( R.id.lectureName );
       buildingNameText = findViewById( R.id.buildingName );
+      dayText = findViewById( R.id.dayText );
+      hourText = findViewById( R.id.hourText );
+      startMinuteText = findViewById( R.id.startMinute );
+      durationText = findViewById( R.id.durationText );
 
       buttonInsert.setOnClickListener( new View.OnClickListener()
       {
@@ -165,7 +157,17 @@ public class ScheduleAct extends AppCompatActivity
             String lectureName = lectureNameText.getText().toString();
             String buildingName = buildingNameText.getText().toString();
 
-            MyDate myDate = new MyDate( 2, 8, 40, 120 );
+            int day = Integer.parseInt( dayText.getText()
+                                                           .toString() );
+            int hour = Integer.parseInt( hourText.getText()
+                                                       .toString() );
+            int startTime = Integer.parseInt( startMinuteText.getText()
+                                                      .toString() );
+            int duration = Integer.parseInt( durationText.getText()
+                                                      .toString() );
+
+
+            MyDate myDate = new MyDate( day, hour, startTime, duration);
             Building building = Building.getBuilding( buildingNameText.getText()
                                                                       .toString()
                                                                       .toUpperCase() );
@@ -236,4 +238,6 @@ public class ScheduleAct extends AppCompatActivity
       }
       return exportList;
    }
+
+
 } // end of class

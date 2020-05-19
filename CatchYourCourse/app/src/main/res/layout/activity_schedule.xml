@@ -1,25 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:context=".ui.schedule.ScheduleAct">
 
-    <include
-        layout="@layout/app_bar_schedule"
+    <EditText
+        android:id="@+id/durationText"
+        android:layout_width="91dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Duration"
+        android:ems="10"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="140dp"
+        android:layout_marginTop="546dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="308dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="12dp" />
+
+    <EditText
+        android:id="@+id/startMinute"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Start"
+        android:ems="10"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="141dp"
+        android:layout_marginTop="545dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="221dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="124dp" />
+
+    <EditText
+        android:id="@+id/hourText"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="HR"
+        android:ems="10"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="137dp"
+        android:layout_marginTop="549dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="123dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="222dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="397dp"
+        android:layout_marginBottom="100dp"
+        android:background="@android:color/darker_gray"
+        android:padding="4dp"
+        android:scrollbars="vertical" />
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+    <EditText
+        android:id="@+id/buildingName"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginBottom="194dp"
+        android:text="Building name" />
+
+    <EditText
+        android:id="@+id/lectureName"
+        android:layout_width="357dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="256dp"
+        android:text="Lecture Name"
+        android:background="@drawable/border" />
+
+
+
+    <EditText
+        android:id="@+id/edittext_insert"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp" />
+    <Button
+        android:id="@+id/button_insert"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/edittext_insert"
+        android:layout_toEndOf="@id/edittext_insert"
+        android:text="insert"
+        android:layout_toRightOf="@id/edittext_insert" />
+    <EditText
+        android:id="@+id/edittext_remove"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/button_insert"
+        android:layout_marginStart="65dp"
+        android:layout_toEndOf="@id/button_insert"
+        android:layout_marginLeft="65dp"
+        android:layout_toRightOf="@id/button_insert" />
 
-</androidx.drawerlayout.widget.DrawerLayout>
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/edittext_remove"
+        android:layout_toEndOf="@id/edittext_remove"
+        android:layout_toRightOf="@id/edittext_remove"
+        android:text="SAVE" />
+
+    <EditText
+        android:id="@+id/dayText"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="DAY"
+        android:ems="10"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="135dp"
+        android:layout_marginTop="551dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="28dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="317dp" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="129dp"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="85dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="271dp"
+        android:layout_marginTop="601dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="11dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="84dp"
+        android:layout_marginTop="602dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="187dp" />
+
+</RelativeLayout>
