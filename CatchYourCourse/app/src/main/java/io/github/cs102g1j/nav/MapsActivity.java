@@ -186,7 +186,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                                                 .getLectureBuilding()
                                                      .toString())  );
 
-            mMap.moveCamera( CameraUpdateFactory.newLatLng( userLocation ) );
+            mMap.moveCamera( CameraUpdateFactory.newLatLngZoom( userLocation, 12 ) );
 
             Calendar calendar = Calendar.getInstance( TimeZone.getDefault() );
             MyDate currentDate
@@ -256,7 +256,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
          );
          mMap.addMarker( new MarkerOptions().position( userLocation )
                                             .title( "Your Location" ) );
-         mMap.moveCamera( CameraUpdateFactory.newLatLng( userLocation ) );
+         mMap.moveCamera( CameraUpdateFactory.newLatLngZoom( userLocation,12 ) );
 
       }
    }
