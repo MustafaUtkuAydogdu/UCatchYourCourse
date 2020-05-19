@@ -57,9 +57,9 @@ Implementation of MapsActivity and problems during executing MapsActivity. Curre
 
 
 ****
-### Meeting ~ (date, duration)
+### Meeting ~ (2020.05.18, DataBase and Taking schedule from user)
 ****
-**Present:**    
-**Discussion:**  
+**Present:**   Mustafa Utku Aydoğdu, Mustafa Yasir Altunhan,Giray Akyol
+**Discussion:** We discussed and implemented taking the schedule from the user and transmitted the infromation between classes using intent. To store data, we used gson and json.
 ****
 ****
