@@ -1,5 +1,9 @@
 /**
  * This is the ScheduleActivity class.
+ * @author Mustafa Yasir Altunhan
+ * @author Mustafa Utku Aydoğdu
+ * @author Muhammed Can Küçükaslan
+ * @author Giray Akyol
  */
 package io.github.cs102g1j.schedule;
 

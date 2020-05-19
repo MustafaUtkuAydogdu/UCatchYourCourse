@@ -14,6 +14,10 @@ import io.github.cs102g1j.nav.MyLessons;
 
 /**
  * This is RecyclerView Adapter class for MyLessons objects.
+ * @author Mustafa Yasir Altunhan
+ * @author Mustafa Utku Aydoğdu
+ * @author Muhammed Can Küçükaslan
+ * @author Giray Akyol
  * @version 2020.05.19
  */
 public class MyListAdapter
