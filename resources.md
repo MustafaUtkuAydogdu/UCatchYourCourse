@@ -35,6 +35,31 @@
   import superPack.pack.src.Class;
   import java.util.Xxxx;
   ```
+  
+### Order of parts of the classes
+1. If you have inner classes ad/or interfaces you MUST place them to END OF THE CLASS!
+Not the beginning, not the middle of the class's, NOT BETWEEN METHODS OR CONSTRUCTORS.
+Do not mess with the code, humans will read your code not ROBOTs! Also do not mix the static and instance methods.
+
+```
+class TheClass
+{
+   // static constants/variables
+   // properties/ instance variables
+   
+   //Constructors
+   
+   // Instance methods
+   
+   // Static methods
+   
+   // inner Interfaces
+   
+   // inner Classes
+   
+} //end of the TheClass
+```
+
 ### About javadoc comments
 ***Usage of javadoc comments just before defining classes, constructors and methods is mandatory.***
 1. Examples of styling

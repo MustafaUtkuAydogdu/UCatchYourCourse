@@ -15,6 +15,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import io.github.cs102g1j.ar.ARActivity;
 import io.github.cs102g1j.nav.MapsActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -23,6 +24,10 @@ public class MainActivity extends AppCompatActivity
    private AppBarConfiguration mAppBarConfiguration;
 
    @Override
+   /**
+    * initialize the Main activity, its toolbar, DrawerLayour,
+    * Fragment Navigation functions.
+    */
    protected void onCreate( Bundle savedInstanceState )
    {
       super.onCreate( savedInstanceState );
@@ -38,10 +43,16 @@ public class MainActivity extends AppCompatActivity
       // while there is a "return" button at the left corner of toolbar in other destinations
       mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.nav_home,
                                                               R.id.scheduleMain,
-                                                              R.id.mapsActivity
+                                                              R.id.mapsActivity,
+                                                              R.id.sceneform_ar_scene_view
       ).setDrawerLayout( drawer ).build();
-      NavController navController = Navigation.findNavController( this, R.id.nav_host_fragment );
-      NavigationUI.setupActionBarWithNavController( this, navController, mAppBarConfiguration );
+      NavController navController = Navigation.findNavController( this,
+                                                                  R.id.nav_host_fragment
+                                                                );
+      NavigationUI.setupActionBarWithNavController( this,
+                                                    navController,
+                                                    mAppBarConfiguration
+                                                  );
       NavigationUI.setupWithNavController( navigationView, navController );
    }
 
@@ -54,41 +65,33 @@ public class MainActivity extends AppCompatActivity
    }
 
    @Override
+   /**
+    * Initializes the buttons on the toolbar ( such
+    */
    public boolean onOptionsItemSelected( MenuItem item )
    {
       Intent intent;
-      switch (item.getItemId()) {
+      switch ( item.getItemId() )
+      {
          case R.id.action_settings:
-            /*
-            // tEST PURPOSES
-            // Create new transaction
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            // Replace whatever is in the fragment_container view with this fragment,
-            // and add the transaction to the back stack
-            transaction.replace(R.id.action_settings,  new SettingsFragment());
-
-            transaction.replace(R.id.nav_host_fragment,  new HomeFragment() );
-            transaction.addToBackStack(null);
-            // Commit the transaction
-            transaction.commit();
-            */
-
+            intent = new Intent( this, ARActivity.class );
+            startActivity( intent );
             return true;
-      case R.id.action_find:
-         intent = new Intent( this, MapsActivity.class);
-         startActivity(intent);
-         return true;
+         case R.id.action_find:
+            intent = new Intent( this, MapsActivity.class );
+            startActivity( intent );
+            return true;
       }
-      return super.onOptionsItemSelected(item);
+      return super.onOptionsItemSelected( item );
    }
 
    @Override
    public boolean onSupportNavigateUp()
    {
-      NavController navController = Navigation.findNavController( this, R.id.nav_host_fragment );
+      NavController navController = Navigation.findNavController( this,
+                                                                  R.id.nav_host_fragment
+                                                                );
       return NavigationUI.navigateUp( navController, mAppBarConfiguration ) ||
              super.onSupportNavigateUp();
    }
-
-
 } // End of the class, if you don't think so go this link https://web.archive.org/web/20200309045607/https://pbs.twimg.com/media/ESpDAfOUUAAShrE.jpg

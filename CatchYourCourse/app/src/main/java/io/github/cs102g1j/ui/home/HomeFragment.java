@@ -25,10 +25,10 @@ import io.github.cs102g1j.nav.MapsActivity;
 import io.github.cs102g1j.nav.MyLessons;
 import io.github.cs102g1j.schedule.MyListAdapter;
 import io.github.cs102g1j.schedule.ScheduleMain;
+import io.github.cs102g1j.ui.schedule.ScheduleAct;
 
 public class HomeFragment extends Fragment
 {
-
    // private HomeViewModel homeViewModel;
    private MyLessons myLessons;
    private RecyclerView recyclerView;
@@ -41,27 +41,7 @@ public class HomeFragment extends Fragment
    {
       //homeViewModel = ViewModelProviders.of( this ).get( HomeViewModel.class );
       View root = inflater.inflate( R.layout.fragment_home, container, false );
-      // final TextView textView = root.findViewById( R.id.homeTop );
-      /* homeViewModel.getText().observe( getViewLifecycleOwner(), new Observer< String >()
-      {
-         @Override
-         public void onChanged( @Nullable String s )
-         {
-            textView.setText( s );
-         }
-      } );
 
-       */
-
-      // There is much to discover
-      /*
-      Button button = (Button) findViewById(R.id.home_play);
-      button.setOnClickListener(new View.OnClickListener() {
-         public void onClick(View v) {
-            Toast
-         }
-      });
-      */
       // initiate MyLesson
       myLessons = new MyLessons();
       // add test values
@@ -69,64 +49,70 @@ public class HomeFragment extends Fragment
 
       // RecyclerView setup
       recyclerView = root.findViewById( R.id.recyclerView );
-
       adapter = new MyListAdapter( myLessons );
+      //recyclerView.setHasFixedSize(true);
+      recyclerView.setLayoutManager( new LinearLayoutManager( getContext() ) );
+      recyclerView.setAdapter( adapter );
 
-      //      recyclerView.setHasFixedSize(true);
-      recyclerView.setLayoutManager(new LinearLayoutManager( getContext()) );
-      recyclerView.setAdapter( adapter);
-
-      root.findViewById( R.id.home_play ).setOnClickListener( new View.OnClickListener()
-      {
-         @Override
-         public void onClick( View view )
-         {
-            Intent intent = new Intent( getContext(), MapsActivity.class);
-            startActivity(intent);
+      root.findViewById( R.id.home_play )
+          .setOnClickListener( new View.OnClickListener()
+          {
+             @Override
+             public void onClick( View view )
+             {
+                Intent intent = new Intent( getContext(), MapsActivity.class );
+                startActivity( intent );
             /*
             NavHostFragment.findNavController( HomeFragment.this )
                            .navigate( R.id.action_scheduleMain_to_scheduleAdd );*/
-         }
-      } );
+             }
+          } );
 
-      root.findViewById( R.id.home_pokedex ).setOnClickListener( new View.OnClickListener()
-      {
-         @Override
-         public void onClick( View view )
-         {
-            Snackbar snackbar = Snackbar.make( view,
-                                               "Pokedex screen is coming soon",
-                                               Snackbar.LENGTH_SHORT
-                                             );
-            snackbar.show();
-         }
-      } );
+      root.findViewById( R.id.home_pokedex )
+          .setOnClickListener( new View.OnClickListener()
+          {
+             @Override
+             public void onClick( View view )
+             {
+                Intent intent = new Intent( getContext(), ScheduleAct.class );
+                startActivity( intent );
+                /*
+                Snackbar snackbar = Snackbar.make( view,
+                                                   "Pokedex screen is coming soon",
+                                                   Snackbar.LENGTH_SHORT
+                                                 );
+                snackbar.show();
+                */
+             }
+          } );
 
-      root.findViewById( R.id.home_bag ).setOnClickListener( new View.OnClickListener()
-      {
-         @Override
-         public void onClick( View view )
-         {
-            Snackbar snackbar = Snackbar.make( view,
-                                               "Pokemon bag screen is coming soon",
-                                               Snackbar.LENGTH_SHORT
-                                             );
-            snackbar.show();
-         }
-      } );
+      root.findViewById( R.id.home_bag )
+          .setOnClickListener( new View.OnClickListener()
+          {
+             @Override
+             public void onClick( View view )
+             {
+                Snackbar snackbar = Snackbar.make( view,
+                                                   "Pokemon bag screen is coming soon",
+                                                   Snackbar.LENGTH_SHORT
+                                                 );
+                snackbar.show();
+             }
+          } );
 
-      root.findViewById( R.id.home_item ).setOnClickListener( new View.OnClickListener()
-      {
-         @Override
-         public void onClick( View view )
-         {
-            Snackbar snackbar = Snackbar.make( view,
-                                               "Items screen coming soon",
-                                               Snackbar.LENGTH_SHORT
-                                             );
-            snackbar.show();
-         }
-      } );
+      root.findViewById( R.id.home_item )
+          .setOnClickListener( new View.OnClickListener()
+          {
+             @Override
+             public void onClick( View view )
+             {
+                Snackbar snackbar = Snackbar.make( view,
+                                                   "Items screen coming soon",
+                                                   Snackbar.LENGTH_SHORT
+                                                 );
+                snackbar.show();
+             }
+          } );
       return root;
    }
 }

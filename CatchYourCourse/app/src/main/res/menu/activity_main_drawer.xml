@@ -13,7 +13,7 @@
     </group>
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/scheduleMain"
+            android:id="@+id/scheduleAct"
             android:icon="@drawable/ic_menu_schedule"
             android:title="@string/menu_schedule" />
         <item

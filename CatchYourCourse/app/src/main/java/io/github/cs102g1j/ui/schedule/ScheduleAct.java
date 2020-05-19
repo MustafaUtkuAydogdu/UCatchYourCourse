@@ -1,7 +1,7 @@
 /**
  * This is the ScheduleActivity class.
  */
-package io.github.cs102g1j.schedule;
+package io.github.cs102g1j.ui.schedule;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -40,7 +40,7 @@ import io.github.cs102g1j.nav.MyDate;
 import io.github.cs102g1j.nav.MyLesson;
 import io.github.cs102g1j.nav.MyLessons;
 
-public class ScheduleActivity extends AppCompatActivity
+public class ScheduleAct extends AppCompatActivity
 {
    //properties
    private AppBarConfiguration mAppBarConfiguration;
@@ -66,8 +66,8 @@ public class ScheduleActivity extends AppCompatActivity
    protected void onCreate( Bundle savedInstanceState )
    {
       super.onCreate( savedInstanceState );
-      setContentView( R.layout.activity_schedule );
-      Toolbar toolbar = findViewById( R.id.toolbar );
+      setContentView( R.layout.activity_sched );
+      /* Toolbar toolbar = findViewById( R.id.toolbar );
       setSupportActionBar( toolbar );
 
       // Navigation bar
@@ -86,7 +86,7 @@ public class ScheduleActivity extends AppCompatActivity
                                                     mAppBarConfiguration
                                                   );
       NavigationUI.setupWithNavController( navigationView, navController );
-
+    */
       //taking the data stored in the disk
       loadData();
 
@@ -182,12 +182,14 @@ public class ScheduleActivity extends AppCompatActivity
             saveData();
 
             Intent intent;
-            intent = new Intent( ScheduleActivity.this, MainActivity.class );
+            intent = new Intent( ScheduleAct.this, MainActivity.class );
             intent.putExtra( "linker", createList( mExampleList ) );
             startActivity( intent );
 
          }
       } );
+
+
    }
 
    public void saveData()

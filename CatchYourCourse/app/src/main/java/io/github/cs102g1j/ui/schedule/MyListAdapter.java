@@ -1,4 +1,4 @@
-package io.github.cs102g1j.schedule;
+package io.github.cs102g1j.ui.schedule;
 
 import android.view.LayoutInflater;
 import android.view.View;

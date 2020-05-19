@@ -15,7 +15,7 @@
     <string name="schedule_header_add">Add new lesson</string>
     <string name="title_activity_maps">Map</string>
     <string name="menu_maps">Map</string>
-    <string name="home_button_pokedex">Pokedex</string>
+    <string name="home_button_pokedex">Schedule</string>
     <string name="home_button_play">Play</string>
     <string name="home_top_text">There will be information about your next course if available</string>
 

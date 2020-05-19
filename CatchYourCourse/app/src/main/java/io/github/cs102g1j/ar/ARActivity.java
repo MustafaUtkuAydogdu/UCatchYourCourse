@@ -11,8 +11,6 @@ import com.google.ar.core.Anchor;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
 import com.google.ar.sceneform.AnchorNode;
-import com.google.ar.sceneform.FrameTime;
-import com.google.ar.sceneform.Scene;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.BaseArFragment;
@@ -25,24 +23,29 @@ import io.github.cs102g1j.R;
 
 public class ARActivity extends AppCompatActivity
 {
-   ArFragment arFragment;
-   ModelRenderable andyRenderable;
-   private boolean placed;
+   private ArFragment arFragment;
+   private ModelRenderable andyRenderable;
 
    @Override
    @SuppressWarnings( { "AndroidApiChecker", "FutureReturnValueIgnored" } )
-
+   // CompletableFuture requires api level 24
+   // FutureReturnValueIgnored is not valid
    protected void onCreate( Bundle savedInstanceState )
    {
       super.onCreate( savedInstanceState );
 
-      setContentView( R.layout.activity_ar );
-      arFragment = (ArFragment) getSupportFragmentManager().findFragmentById( R.id.ux_fragment );
 
+      setContentView( R.layout.activity_ar );
+      arFragment
+         = (ArFragment) getSupportFragmentManager().findFragmentById( R.id.ux_fragment );
+
+      // When you build a Renderable, Sceneform loads its resources in the background while
+      // returning
+      // a CompletableFuture. Call thenAccept(), handle(), or check isDone() before calling get().
       ModelRenderable.builder()
                      .setSource( this, R.raw.andy )
                      .build()
-                     .thenAccept( new Consumer<ModelRenderable>()
+                     .thenAccept( new Consumer< ModelRenderable >()
                      {
                         @Override
                         public void accept( ModelRenderable renderable )
@@ -50,7 +53,7 @@ public class ARActivity extends AppCompatActivity
                            andyRenderable = renderable;
                         }
                      } )
-                     .exceptionally( new Function<Throwable, Void>()
+                     .exceptionally( new Function< Throwable, Void >()
                      {
                         @Override
                         public Void apply( Throwable throwable )
@@ -65,37 +68,12 @@ public class ARActivity extends AppCompatActivity
                         }
                      } );
 
-      arFragment.getArSceneView().getScene().addOnUpdateListener( new Scene.OnUpdateListener()
-      {
-         @Override
-         public void onUpdate( FrameTime frameTime )
-         {
-            arFragment.onUpdate( frameTime );
-            if ( !placed )
-            {// Create the Anchor.
-               placed = true;
-               Anchor anchor = hitResult.createAnchor();
-               AnchorNode anchorNode = new AnchorNode( anchor );
-               anchorNode.setParent( arFragment.getArSceneView().getScene() );
-
-               // Create the transformable andy and add it to the
-               // anchor.
-               TransformableNode
-                  andy
-                  = new TransformableNode( arFragment.getTransformationSystem() );
-               andy.setParent( anchorNode );
-               andy.setRenderable( andyRenderable );
-               andy.select();
-            }
-
-         }
-      } );
-
-
       arFragment.setOnTapArPlaneListener( new BaseArFragment.OnTapArPlaneListener()
       {
          @Override
-         public void onTapPlane( HitResult hitResult, Plane plane, MotionEvent motionEvent
+         public void onTapPlane( HitResult hitResult,
+                                 Plane plane,
+                                 MotionEvent motionEvent
                                )
          {
             if ( andyRenderable == null )
@@ -110,7 +88,9 @@ public class ARActivity extends AppCompatActivity
 
             // Create the transformable andy and add it to the
             // anchor.
-            TransformableNode andy = new TransformableNode( arFragment.getTransformationSystem() );
+            TransformableNode
+               andy
+               = new TransformableNode( arFragment.getTransformationSystem() );
             andy.setParent( anchorNode );
             andy.setRenderable( andyRenderable );
             andy.select();
