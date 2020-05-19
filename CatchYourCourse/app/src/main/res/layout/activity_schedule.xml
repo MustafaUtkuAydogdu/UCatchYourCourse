@@ -7,52 +7,52 @@
     tools:context=".ui.schedule.ScheduleAct">
 
     <EditText
-        android:id="@+id/durationText"
-        android:layout_width="91dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Duration"
-        android:ems="10"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="140dp"
-        android:layout_marginTop="546dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="308dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="12dp" />
-
-    <EditText
         android:id="@+id/startMinute"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Start"
-        android:ems="10"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="141dp"
-        android:layout_marginTop="545dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="171dp"
+        android:layout_height="61dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="221dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="124dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="117dp"
+        android:text="Start Time" />
 
     <EditText
         android:id="@+id/hourText"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="HR"
-        android:ems="10"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="137dp"
-        android:layout_marginTop="549dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="176dp"
+        android:layout_height="59dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="123dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="222dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="210dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginBottom="214dp"
+        android:text="Hour" />
+
+    <EditText
+        android:id="@+id/durationText"
+        android:layout_width="195dp"
+        android:layout_height="63dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="208dp"
+        android:layout_marginLeft="208dp"
+        android:layout_marginBottom="112dp"
+        android:text="Duration" />
+
+    <EditText
+        android:id="@+id/dayText"
+        android:layout_width="144dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="207dp"
+        android:text="Day" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -63,6 +63,7 @@
         android:padding="4dp"
         android:scrollbars="vertical" />
 
+
     <EditText
         android:id="@+id/buildingName"
         android:layout_width="355dp"
@@ -70,9 +71,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginBottom="194dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="353dp"
         android:text="Building name" />
 
     <EditText
@@ -82,13 +83,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginBottom="256dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginBottom="432dp"
         android:text="Lecture Name"
         android:background="@drawable/border" />
-
-
 
     <EditText
         android:id="@+id/edittext_insert"
@@ -126,51 +125,5 @@
         android:layout_toEndOf="@id/edittext_remove"
         android:layout_toRightOf="@id/edittext_remove"
         android:text="SAVE" />
-
-    <EditText
-        android:id="@+id/dayText"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="DAY"
-        android:ems="10"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="135dp"
-        android:layout_marginTop="551dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="28dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="317dp" />
-
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="129dp"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="85dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="271dp"
-        android:layout_marginTop="601dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="11dp" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="11dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="84dp"
-        android:layout_marginTop="602dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="187dp" />
 
 </RelativeLayout>
