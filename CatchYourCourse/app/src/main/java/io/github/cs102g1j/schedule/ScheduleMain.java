@@ -1,9 +1,3 @@
-/**
-*This is the ScheduleMain class.
-*@author Muhammed Can Küçükaslan
-*@author Melis Atun
-*@author Deniz Özay
-*/
 package io.github.cs102g1j.schedule;
 
 import android.os.Bundle;
@@ -13,16 +7,20 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import io.github.cs102g1j.R;
 import io.github.cs102g1j.nav.MyLessons;
-
+/**
+ * This fragment is where MyLesson objects are demonstrated as RecyclerView.
+ * @author Muhammed Can Küçükaslan
+ * @author Melis Atun
+ * @author Deniz Özay
+ * @see RecyclerView
+ * @see io.github.cs102g1j.nav.MyLesson
+ * @see io.github.cs102g1j.nav.MyLessons
+ */
 public class ScheduleMain extends Fragment
 {
    private MyLessons myLessons;
@@ -30,7 +28,9 @@ public class ScheduleMain extends Fragment
    private MyListAdapter adapter;
 
    @Override
-   public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState
+   public View onCreateView( LayoutInflater inflater,
+                             ViewGroup container,
+                             Bundle savedInstanceState
                            )
    {
       // Inflate the layout for this fragment
@@ -51,39 +51,9 @@ public class ScheduleMain extends Fragment
       adapter = new MyListAdapter( myLessons );
 
       //      recyclerView.setHasFixedSize(true);
-      recyclerView.setLayoutManager(new LinearLayoutManager( getContext()) );
-      recyclerView.setAdapter( adapter);
+      recyclerView.setLayoutManager( new LinearLayoutManager( getContext() ) );
+      recyclerView.setAdapter( adapter );
 
-      // Add FAB "+" button which navigates to scheduleAdd fragment
-      FloatingActionButton fab = view.findViewById( R.id.fab );
-      fab.setOnClickListener( new View.OnClickListener()
-      {
-         @Override
-         public void onClick( View view )
-         {
-            NavHostFragment.findNavController( ScheduleMain.this )
-                           .navigate( R.id.action_scheduleMain_to_scheduleAdd );
-            /*
-            //System.out.println( "\n\nline 49 fab clicked\n\n");
-            Snackbar.make( view, "Replace with your own action", Snackbar.LENGTH_LONG )
-                    .setAction( "Action", null ).show();
-            //navController.navigate( R.id.action_scheduleMain_to_scheduleAdd );
-            */
-         }
-      } );
-
-      //no more needed, to be totally deleted soon
-      /*
-      view.findViewById( R.id.button_first ).setOnClickListener( new View.OnClickListener()
-      {
-         @Override
-         public void onClick( View view )
-         {
-            NavHostFragment.findNavController( ScheduleMain.this )
-                           .navigate( R.id.action_scheduleMain_to_scheduleAdd );
-         }
-      } );
-
-       */
+      // Addition FAB was here, removed!
    }// this is end of METHOD onViewCreated(), I assure myself.
 } // this is end of the CLASS, for sure

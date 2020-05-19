@@ -198,7 +198,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             {
                for ( int i = 0; i < myLessons.size(); i++ )
                {
-                  if ( myLessons.getLesson( i ).isNow( location ) || true)
+                  if ( myLessons.get( i ).isNow( location ) || true)
                   {
                      isAR = true;
                      startActivity( toAR );
