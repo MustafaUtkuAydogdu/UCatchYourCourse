@@ -40,20 +40,20 @@ public class ScheduleMain extends Fragment
    public void onViewCreated( @NonNull View view, Bundle savedInstanceState )
    {
       super.onViewCreated( view, savedInstanceState );
-      // initiate MyLesson
-      myLessons = new MyLessons();
-      // add test values
-      myLessons.addTest();
-
-      // RecyclerView setup
-      recyclerView = view.findViewById( R.id.recyclerView );
-
-      adapter = new MyListAdapter( myLessons );
-
-      //      recyclerView.setHasFixedSize(true);
-      recyclerView.setLayoutManager( new LinearLayoutManager( getContext() ) );
-      recyclerView.setAdapter( adapter );
-
+      //// initiate MyLesson
+      //myLessons = new MyLessons();
+      //// add test values
+      //myLessons.addTest();
+      //
+      //// RecyclerView setup
+      //recyclerView = view.findViewById( R.id.recyclerView );
+      //
+      //adapter = new MyListAdapter( myLessons );
+      //
+      ////      recyclerView.setHasFixedSize(true);
+      //recyclerView.setLayoutManager( new LinearLayoutManager( getContext() ) );
+      //recyclerView.setAdapter( adapter );
+      //
       // Addition FAB was here, removed!
    }// this is end of METHOD onViewCreated(), I assure myself.
 } // this is end of the CLASS, for sure
