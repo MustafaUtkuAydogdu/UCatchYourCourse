@@ -2,6 +2,8 @@ package io.github.cs102g1j.nav;
 
 
 import android.location.Location;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.text.ParseException;
 import java.util.Calendar;
@@ -9,7 +11,7 @@ import java.util.TimeZone;
 
 import io.github.cs102g1j.nav.Building;
 
-public class MyLesson
+public class MyLesson implements Parcelable
 {
    static final int DISTANCE_20 = 20;
    //properties
@@ -27,6 +29,44 @@ public class MyLesson
       isTimeToAppearPokemon = false;
    }
 
+
+   protected MyLesson( Parcel in )
+   {
+      lectureName = in.readString();
+      lectureBuilding = in.readParcelable( Building.class.getClassLoader() );
+      lectureTime = in.readParcelable( MyDate.class.getClassLoader() );
+      isTimeToAppearPokemon = in.readByte() != 0;
+   }
+
+   @Override
+   public void writeToParcel( Parcel dest, int flags )
+   {
+      dest.writeString( lectureName );
+      dest.writeParcelable( lectureBuilding, flags );
+      dest.writeParcelable( lectureTime, flags );
+      dest.writeByte( (byte) ( isTimeToAppearPokemon ? 1 : 0 ) );
+   }
+
+   @Override
+   public int describeContents()
+   {
+      return 0;
+   }
+
+   public static final Creator< MyLesson > CREATOR = new Creator< MyLesson >()
+   {
+      @Override
+      public MyLesson createFromParcel( Parcel in )
+      {
+         return new MyLesson( in );
+      }
+
+      @Override
+      public MyLesson[] newArray( int size )
+      {
+         return new MyLesson[ size ];
+      }
+   };
 
    //methods
    public String getLectureName()

@@ -1,11 +1,14 @@
 package io.github.cs102g1j.nav;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class MyLessons
+public class MyLessons implements Parcelable
 {
    //properties
    ArrayList<MyLesson> myLessons;
@@ -17,10 +20,52 @@ public class MyLessons
 
    }
 
-   //methods
-   public void addLesson( MyLesson lesson)
+   protected MyLessons( Parcel in )
+   {
+      myLessons = in.createTypedArrayList( MyLesson.CREATOR );
+   }
+
+   @Override
+   public void writeToParcel( Parcel dest, int flags )
+   {
+      dest.writeTypedList( myLessons );
+   }
+
+   @Override
+   public int describeContents()
+   {
+      return 0;
+   }
+
+   public static final Creator< MyLessons > CREATOR = new Creator< MyLessons >()
+   {
+      @Override
+      public MyLessons createFromParcel( Parcel in )
+      {
+         return new MyLessons( in );
+      }
+
+      @Override
+      public MyLessons[] newArray( int size )
+      {
+         return new MyLessons[ size ];
+      }
+   };
+
+   // methods
+   public void add( MyLesson lesson)
    {
       myLessons.add( lesson );
+   }
+
+   public void add(int index, MyLesson lesson)
+   {
+      myLessons.add( index, lesson );
+   }
+
+   public void remove(int index)
+   {
+      myLessons.remove( index );
    }
 
    public MyLesson get(int index)
@@ -72,21 +117,21 @@ public class MyLessons
    {
       //  MyLesson( MyDate date, Building building, String lectureName)
       // MyDate( int day, int hour, int minuteStart, int duration)
-      addLesson( new MyLesson( new MyDate( 7, 8, 40, 600),
+      add( new MyLesson( new MyDate( 7, 8, 40, 600),
                                Building.BUILDING_EE, "Math 102") );
-      addLesson( new MyLesson( new MyDate( 2, 9, 40, 120), Building.BUILDING_MA, "CS101: Algorithms and Programming I") );
-      addLesson( new MyLesson( new MyDate( 4, 8, 40, 120), Building.BUILDING_EA, "GRA 215 Computer Graphics for Film and Television I") );
-      addLesson( new MyLesson( new MyDate( 4, 13, 40, 120), Building.BUILDING_EA, "HART 431 The Archaeology of Cyprus in the Bronze Age") );
-      addLesson( new MyLesson( new MyDate( 3, 9, 40, 120), Building.BUILDING_B, "MATH 132 Discrete and Combinatorial Mathematics") );
-      addLesson( new MyLesson( new MyDate( 6, 12, 40, 120), Building.BUILDING_S, "POLS 344 Turkish Nationalism :Politics and Ideology") );
+      add( new MyLesson( new MyDate( 2, 9, 40, 120), Building.BUILDING_MA, "CS101: Algorithms and Programming I") );
+      add( new MyLesson( new MyDate( 4, 8, 40, 120), Building.BUILDING_EA, "GRA 215 Computer Graphics for Film and Television I") );
+      add( new MyLesson( new MyDate( 4, 13, 40, 120), Building.BUILDING_EA, "HART 431 The Archaeology of Cyprus in the Bronze Age") );
+      add( new MyLesson( new MyDate( 3, 9, 40, 120), Building.BUILDING_B, "MATH 132 Discrete and Combinatorial Mathematics") );
+      add( new MyLesson( new MyDate( 6, 12, 40, 120), Building.BUILDING_S, "POLS 344 Turkish Nationalism :Politics and Ideology") );
      // addLesson( new MyLesson( new MyDate( 2, 9, 40, 120), Building.BUILDING_EE, "CS 443 Cloud Computing and Mobile Applications") );
-      addLesson( new MyLesson( new MyDate( 5, 9, 40, 120), Building.BUILDING_EE, "CS 453 Application Lifecycle Management") );
-      addLesson( new MyLesson( new MyDate( 2, 7, 40, 120), Building.BUILDING_EE, "CS 443 Cloud Computing and Mobile Applications") );
-      addLesson( new MyLesson( new MyDate( 4, 13, 40, 120), Building.BUILDING_EA, "POLS 344 Turkish Nationalism :Politics and Ideology") );
+      add( new MyLesson( new MyDate( 5, 9, 40, 120), Building.BUILDING_EE, "CS 453 Application Lifecycle Management") );
+      add( new MyLesson( new MyDate( 2, 7, 40, 120), Building.BUILDING_EE, "CS 443 Cloud Computing and Mobile Applications") );
+      add( new MyLesson( new MyDate( 4, 13, 40, 120), Building.BUILDING_EA, "POLS 344 Turkish Nationalism :Politics and Ideology") );
      // addLesson( new MyLesson( new MyDate( 5, 7, 40, 120), Building.BUILDING_EE, "CS 443 Cloud Computing and Mobile Applications") );
      // addLesson( new MyLesson( new MyDate( 5, 12, 40, 120), Building.BUILDING_EE, "GRA 215 Computer Graphics for Film and Television I") );
      // addLesson( new MyLesson( new MyDate( 2, 13, 40, 120), Building.BUILDING_EE, "CS 201 Fundamental Structures of Computer Science I") );
-      addLesson( new MyLesson( new MyDate( 4, 7, 40, 120), Building.BUILDING_EA, "CS 453 Application Lifecycle Management") );
+      add( new MyLesson( new MyDate( 4, 7, 40, 120), Building.BUILDING_EA, "CS 453 Application Lifecycle Management") );
      // addLesson( new MyLesson( new MyDate( 3, 11, 40, 120), Building.BUILDING_B, "CS 453 Application Lifecycle Management") );
      // addLesson( new MyLesson( new MyDate( 6, 13, 40, 120), Building.BUILDING_S, "MBG 110 Introduction to Modern Biology") );
      // addLesson( new MyLesson( new MyDate( 5, 11, 40, 120), Building.BUILDING_S, "CS101: Algorithms and Programming I") );

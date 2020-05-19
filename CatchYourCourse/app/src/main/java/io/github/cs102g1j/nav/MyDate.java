@@ -1,7 +1,11 @@
 package io.github.cs102g1j.nav;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
 // Have this comment read and edit regarding it
 // https://github.com/MuhammedCanKucukaslan/cs102g1J/commit/77a311b3f2d7345b865a6bcb6e936a5c982d2c1b#commitcomment-39071806
-public class MyDate
+public class MyDate implements Parcelable
 {
    //properties
    //int day; //Sunday is 1, Saturday is 7. (To be compatible with Calendar Class).
@@ -21,6 +25,40 @@ public class MyDate
       this.startTime = timeStart;
       this.endTime = timeEnd;
    }
+
+   protected MyDate( Parcel in )
+   {
+      startTime = in.readInt();
+      endTime = in.readInt();
+   }
+
+   @Override
+   public void writeToParcel( Parcel dest, int flags )
+   {
+      dest.writeInt( startTime );
+      dest.writeInt( endTime );
+   }
+
+   @Override
+   public int describeContents()
+   {
+      return 0;
+   }
+
+   public static final Creator< MyDate > CREATOR = new Creator< MyDate >()
+   {
+      @Override
+      public MyDate createFromParcel( Parcel in )
+      {
+         return new MyDate( in );
+      }
+
+      @Override
+      public MyDate[] newArray( int size )
+      {
+         return new MyDate[ size ];
+      }
+   };
 
    //methods
    public boolean isIncludes( MyDate time)
