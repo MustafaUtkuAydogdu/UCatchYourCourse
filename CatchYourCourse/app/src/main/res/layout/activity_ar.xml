@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     tools:context=".ar.ARActivity">
 
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/ux_fragment"
         android:name="com.google.ar.sceneform.ux.ArFragment"

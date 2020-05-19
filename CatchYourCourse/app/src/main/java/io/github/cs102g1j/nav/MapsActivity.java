@@ -182,13 +182,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             );
             mMap.addMarker( new MarkerOptions().position( nearestBuilding )
                                                .icon( BitmapDescriptorFactory.defaultMarker(
-                                                  BitmapDescriptorFactory.HUE_BLUE ) ) );
+                                                  BitmapDescriptorFactory.HUE_BLUE ) )
+                                               .title( myLessons.getNextLesson()
+                                                                .getLectureBuilding()
+                                                     .toString())  );
 
             mMap.moveCamera( CameraUpdateFactory.newLatLng( userLocation ) );
 
             Calendar calendar = Calendar.getInstance( TimeZone.getDefault() );
-            MyDate
-               currentDate
+            MyDate currentDate
                = new MyDate( calendar.get( Calendar.DAY_OF_WEEK ),
                              calendar.get( Calendar.HOUR_OF_DAY ),
                              calendar.get( Calendar.MINUTE ),
@@ -198,15 +200,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             {
                for ( int i = 0; i < myLessons.size(); i++ )
                {
-                  if ( myLessons.get( i ).isNow( location ) || true)
+                  if ( myLessons.get( i ).isNow( location ) ) // || true)
                   {
                      isAR = true;
                      startActivity( toAR );
                   }
                }
             }
-
-
          }
 
          @Override

@@ -5,11 +5,11 @@ import android.location.Location;
 public class Building
 {
    //constants locations
-   public final static Building BUILDING_EE = new Building(39.872094, 32.750913,"BUILDING_EE");
-   public final static Building BUILDING_EA = new Building(39.871195, 32.750058,"BUILDING_EA");
-   public final static Building BUILDING_S = new Building(39.867909, 32.748267,"BUILDING_S");
-   public final static Building BUILDING_B = new Building(39.868667, 32.748309,"BUILDING_B");
-   public final static Building BUILDING_V = new Building(39.867379025065425, 32.75014751011084,"BUILDING_V");
+   public final static Building BUILDING_EE = new Building(39.872094, 32.750913,"EE BUILDING");
+   public final static Building BUILDING_EA = new Building(39.871195, 32.750058,"EA BUILDING");
+   public final static Building BUILDING_S = new Building(39.867909, 32.748267,"S BUILDING");
+   public final static Building BUILDING_B = new Building(39.868667, 32.748309,"B BUILDING");
+   public final static Building BUILDING_MA = new Building(39.867379025065425, 32.75014751011084,"MA BUILDING");
 
 
    //properties
