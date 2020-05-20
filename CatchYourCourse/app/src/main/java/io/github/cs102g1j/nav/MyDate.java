@@ -37,7 +37,8 @@ public class MyDate implements Parcelable
       startTime = in.readInt();
       endTime = in.readInt();
    }
-
+  
+   
    @Override
    public void writeToParcel( Parcel dest, int flags )
    {
@@ -45,6 +46,9 @@ public class MyDate implements Parcelable
       dest.writeInt( endTime );
    }
 
+   /**
+   * @return returns 0.
+   */
    @Override
    public int describeContents()
    {
@@ -59,6 +63,7 @@ public class MyDate implements Parcelable
          return new MyDate( in );
       }
 
+      // This method creates an array, and has elements that are its size in it. 
       @Override
       public MyDate[] newArray( int size )
       {
@@ -66,17 +71,24 @@ public class MyDate implements Parcelable
       }
    };
 
-   //methods
+   // methods
+   /*
+   * This is the method that checks whether we are still in a current Lesson.
+   * @param time is the MyDate object that is taken as input of current moment of user
+   * @return returns true if there is still a lecture going on, false otherwise.
+   */
    public boolean isIncludes( MyDate time)
    {
       return startTime <= time.startTime && endTime >= time.endTime;
    }
 
+   // This method is for getting the startTime.
    public int getStartTime()
    {
       return  startTime;
    }
-
+   
+   // This method is for getting the endTime.
    public int getEndTime()
    {
       return  endTime;

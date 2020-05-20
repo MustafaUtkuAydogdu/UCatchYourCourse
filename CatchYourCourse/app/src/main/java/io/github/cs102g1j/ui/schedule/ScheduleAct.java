@@ -1,5 +1,9 @@
 /**
- * This is the ScheduleActivity class.
+ * This is the ScheduleAct class.
+ * @author Muhammed Can Küçükaslan
+ * @author Mustafa Utku Aydoğdu
+ * @author Mustafa Yasir Altunhan
+ * @author Melis Atun
  */
 package io.github.cs102g1j.ui.schedule;
 
@@ -64,9 +68,17 @@ public class ScheduleAct extends AppCompatActivity
 
    private Button saveButton;
 
-
+<<<<<<< HEAD
+=======
    MyLessons exportedList;
 
+   // methods
+   /** 
+   * This method is used to start an activity; super is used to call the parent class constructor; setContentView is used to set the xml.
+   * @param savedInstanceState
+   */
+   >>>>>>>
+   9a6153f8d4c89df0c6ac280b49b607902e057e1f
    @Override
    protected void onCreate( Bundle savedInstanceState )
    {
@@ -85,7 +97,13 @@ public class ScheduleAct extends AppCompatActivity
       //activating the buttons
       setButtons();
    }
-
+   /**
+   * This method is used to insert an item to the list. Input is taken from the user, and added to the arrayList.
+   * @param position
+   * @param myDate
+   * @param building
+   * @param lectureName
+   */
    public void insertItem( int position,
                            MyDate myDate,
                            Building building,
@@ -98,18 +116,24 @@ public class ScheduleAct extends AppCompatActivity
       mAdapter.notifyItemInserted( position );
    }
 
+   /** 
+   * This method is used to remove an item from the list.
+   * @param position
+   */
    public void removeItem( int position )
    {
       mExampleList.remove( position );
       mAdapter.notifyItemRemoved( position );
    }
 
-
+   // This method is used for creating an example list. 
    public void createExampleList()
    {
       mExampleList = new MyLessons();
    }
-
+   
+   
+   // This method is mainly for building the layout of RecylerView.
    public void buildRecyclerView()
    {
       mRecyclerView = findViewById( R.id.recyclerView );
@@ -125,7 +149,11 @@ public class ScheduleAct extends AppCompatActivity
          {
             //empty
          }
-
+         
+         /** 
+         * This method is for detecting when the user wants to remove an item, and clicks on it. 
+         * @param position
+         */
          @Override
          public void onDeleteClick( int position )
          {
@@ -134,6 +162,7 @@ public class ScheduleAct extends AppCompatActivity
       } );
    }
 
+   // This method is for setting all the buttons of RecyleView.
    public void setButtons()
    {
       buttonInsert = findViewById( R.id.button_insert );
@@ -149,6 +178,11 @@ public class ScheduleAct extends AppCompatActivity
 
       buttonInsert.setOnClickListener( new View.OnClickListener()
       {
+      
+         /**
+         * This method is for creating the mExampleList by taking the input from the user.
+         * @param v
+         */
          @Override
          public void onClick( View v )
          {
@@ -178,11 +212,19 @@ public class ScheduleAct extends AppCompatActivity
 
       saveButton.setOnClickListener( new View.OnClickListener()
       {
+      
+         /**
+         * This method is for creating intent to the list. 
+         * @param v
+         */  
          @Override
          public void onClick( View v )
          {
             saveData();
 
+            // When pressed to the "save" button in our application interface
+            // We send the "mExampleList" mylessons object to the MainActivity to provide data to other services.
+            // We basically parce the myLessons object to its primitive types and send it to the next activity.
             Intent intent;
             intent = new Intent( ScheduleAct.this, MainActivity.class );
             intent.putExtra( "linker", createList( mExampleList ) );
@@ -194,6 +236,11 @@ public class ScheduleAct extends AppCompatActivity
 
    }
 
+   /**
+   * This is the method that saves the MyLessons created by taking the user input.
+   * We used SharedPreferences and GSON instead of SQL since it is convenient for storing small amounts of data.
+   * We simply take the information in our myLessons and save it to an xml file in internal storage.
+   */
    public void saveData()
    {
       SharedPreferences sharedPreferences = getSharedPreferences(
@@ -209,6 +256,11 @@ public class ScheduleAct extends AppCompatActivity
            .show();
 
    }
+   /**
+   * This is the method that we take back the saved data (in the saveData() method). 
+   * We transfer the data we saved to the "mExampleList" myLessons object.
+   * If there is no coming from the SharedPreferences we just initialize the mExampleList.
+   */
 
    public void loadData()
    {
@@ -227,6 +279,10 @@ public class ScheduleAct extends AppCompatActivity
          mExampleList = new MyLessons();
       }
    }
+   /*
+   *
+   *
+   *
 
    public MyLessons createList( MyLessons k )
    {
@@ -238,6 +294,6 @@ public class ScheduleAct extends AppCompatActivity
       }
       return exportList;
    }
-
+*/
 
 } // end of class
