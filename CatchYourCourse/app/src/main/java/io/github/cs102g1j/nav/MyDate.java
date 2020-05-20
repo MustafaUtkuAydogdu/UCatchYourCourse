@@ -37,7 +37,7 @@ public class MyDate implements Parcelable
       this.endTime = timeEnd;
    }
 
-    /* 
+    /*
     * This is the method that we convert the properties of our myDate class to Strings.
     * Later on we will take these information to recreating object from its "parcels". ( in the MyDate( Parcel in) constructor)
     */
@@ -74,7 +74,7 @@ public class MyDate implements Parcelable
       }
 
       /**
-      * This method creates an array, and has elements that are its size in it. 
+      * This method creates an array, and has elements that are its size in it.
       */
       @Override
       public MyDate[] newArray( int size )
@@ -95,15 +95,15 @@ public class MyDate implements Parcelable
       return startTime <= time.startTime && endTime >= time.endTime;
    }
 
-   /** 
+   /**
    * This method is for getting the startTime.
    */
    public int getStartTime()
    {
       return  startTime;
    }
-   
-   /** 
+
+   /**
    * This method is for getting the endTime.
    */
    public int getEndTime()
@@ -113,9 +113,11 @@ public class MyDate implements Parcelable
 
 
    /**
-    *
-    * @param timeMinutes is
-    * @return String demonstration of
+    * Gets a indication of time, and transform it to the plain text.
+    * @param timeMinutes - minutes passed since the beginning of the week,
+    * that is, 00:00 Sunday.
+    * @return String demonstration of time, for example if timeMinutes is 320
+    * that means 5 hours and 20 minutes after 00.00 Sunday it returns "5:20, Sunday"
     */
    public String normalize( int timeMinutes)
    {

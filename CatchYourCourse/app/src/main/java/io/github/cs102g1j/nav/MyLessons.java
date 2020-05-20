@@ -1,10 +1,11 @@
 package io.github.cs102g1j.nav;
 /**
- * This is MyLessons class.
+ * This class is used for managing a set of MyLesson objects.
  * @author Mustafa Yasir Altunhan.
  * @author Mustafa Utku Aydoğdu
  * @author Muhammed Can Küçükaslan
  * @version 19.05.2020
+ * @see MyLesson
  */
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -20,17 +21,32 @@ public class MyLessons implements Parcelable
    ArrayList<MyLesson> myLessons;
 
    //constructors
+   /**
+   * Creates an empty MyLessons.
+   */
    public MyLessons()
    {
       myLessons = new ArrayList <MyLesson>( );
 
    }
 
+   /**
+      * This is the constructor that we recreate/clone our object using the
+      * parcels coming from the
+      * writeToParcel method. This method will be used in the
+      *
+      * @param in is the information coming in.
+      */
    protected MyLessons( Parcel in )
    {
       myLessons = in.createTypedArrayList( MyLesson.CREATOR );
    }
 
+   /* This is the method that we convert the properties of our
+    * building class to Strings. Later, these informations will be used
+    * to recreating object from its "parcels".
+    * ( in the MyLessons( Parcel in) constructor)
+    */
    @Override
    public void writeToParcel( Parcel dest, int flags )
    {
@@ -45,6 +61,10 @@ public class MyLessons implements Parcelable
 
    public static final Creator< MyLessons > CREATOR = new Creator< MyLessons >()
    {
+     /**
+     * Create MyLessons object from the Parcel
+     * @see Parcel
+     */
       @Override
       public MyLessons createFromParcel( Parcel in )
       {
@@ -59,30 +79,54 @@ public class MyLessons implements Parcelable
    };
 
    // methods
+   /**
+   * Add the "lesson" to the end of the list.
+   * @param lesson is the MyLesson object that will be added to list.
+   */
    public void add( MyLesson lesson)
    {
       myLessons.add( lesson );
    }
 
+
+   /**
+   * Add "lesson" to the specific location in the list, shifts index of following
+   * objects +1.
+   * @param index is the location that the "lesson" will be placed
+   * @param lesson is the MyLesson object that will be added to list.
+   */
    public void add(int index, MyLesson lesson)
    {
       myLessons.add( index, lesson );
    }
 
-   public void remove(int index)
+   /**
+   * Removes the MyLesson object at the given index.
+   * @param index is the location of the object to be removed.
+   */
+   public void remove( int index)
    {
       myLessons.remove( index );
    }
 
-   public MyLesson get(int index)
+   /**
+   * Returns the element at the specified position in this list.
+   * @param index - index of the element to return
+   * @return the element at the specified position in this list
+   */
+   public MyLesson get( int index)
    {
-      if (index < 0 || index >= myLessons.size())
+      if ( index < 0 || index >= myLessons.size())
 
          return null;
 
       return myLessons.get(index);
    }
 
+   /**
+   * Examines the date of the all lessons, find the next lesson.
+   * @return the next lesson.
+   */
    public MyLesson getNextLesson()
    {
       int indexOfNextLesson;
@@ -114,6 +158,10 @@ public class MyLessons implements Parcelable
       return myLessons.get( indexOfNextLesson );
    }
 
+   /**
+   * Returnsthe number of elements in this list
+   * @return the number of elements in this list
+   */
    public int size()
    {
       return myLessons.size();
@@ -175,6 +223,5 @@ public class MyLessons implements Parcelable
      // addLesson( new MyLesson( new MyDate( 5, 7, 40, 120), Building.BUILDING_S, "POLS 344 Turkish Nationalism :Politics and Ideology") );
      // addLesson( new MyLesson( new MyDate( 5, 15, 40, 120), Building.BUILDING_EA, "CS 443 Cloud Computing and Mobile Applications") );
      // addLesson( new MyLesson( new MyDate( 2, 9, 40, 120), Building.BUILDING_EE, "GRA 215 Computer Graphics for Film and Television I") );
-
    }
 }
