@@ -47,7 +47,7 @@ public class MyDate implements Parcelable
    }
 
    /**
-   * @return 0
+   * @return returns 0.
    */
    @Override
    public int describeContents()
