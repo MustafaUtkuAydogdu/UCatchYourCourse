@@ -68,17 +68,12 @@ public class ScheduleAct extends AppCompatActivity
 
    private Button saveButton;
 
-<<<<<<< HEAD
-=======
-   MyLessons exportedList;
-
    // methods
    /** 
    * This method is used to start an activity; super is used to call the parent class constructor; setContentView is used to set the xml.
    * @param savedInstanceState
    */
-   >>>>>>>
-   9a6153f8d4c89df0c6ac280b49b607902e057e1f
+
    @Override
    protected void onCreate( Bundle savedInstanceState )
    {
@@ -162,7 +157,7 @@ public class ScheduleAct extends AppCompatActivity
       } );
    }
 
-   // This method is for setting all the buttons of RecyleView.
+   // This method is for setting all the buttons of RecyclerleView.
    public void setButtons()
    {
       buttonInsert = findViewById( R.id.button_insert );
@@ -227,7 +222,7 @@ public class ScheduleAct extends AppCompatActivity
             // We basically parce the myLessons object to its primitive types and send it to the next activity.
             Intent intent;
             intent = new Intent( ScheduleAct.this, MainActivity.class );
-            intent.putExtra( "linker", createList( mExampleList ) );
+            intent.putExtra( "linker", ( mExampleList ) );
             startActivity( intent );
 
          }

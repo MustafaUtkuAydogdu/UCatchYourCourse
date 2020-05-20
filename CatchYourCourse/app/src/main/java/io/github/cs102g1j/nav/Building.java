@@ -45,6 +45,12 @@ public class Building implements Parcelable
 
    }
 
+
+   /*
+    * This is the constructor that we recreate/clone our object using the parcels coming from the writeToParcel method.
+    * This method will be used in the
+    * @param in is the information coming in.
+    */
    protected Building( Parcel in )
    {
       nameOfBuilding = in.readString();
@@ -52,6 +58,9 @@ public class Building implements Parcelable
       longitudeOfBuilding = in.readDouble();
    }
 
+   /*This is the method that we convert the properties of our building class to Strings.
+    * Later on we will take these information to recreating object from its "parcels". ( in the Building( Parcel in) constructor)
+    */
    @Override
    public void writeToParcel( Parcel dest, int flags )
    {
@@ -66,6 +75,8 @@ public class Building implements Parcelable
       return 0;
    }
 
+   // Creating a Building object invoking the Building( Parcel in) constructor.
+   // Also creates an array of Buildings in case of using a Building array in program.
    public static final Creator< Building > CREATOR = new Creator< Building >()
    {
       @Override
@@ -81,7 +92,7 @@ public class Building implements Parcelable
       }
    };
 
-   //methods
+   // Getter-setter methods
    public String getNameOfBuilding()
    {
       return nameOfBuilding;
@@ -109,7 +120,12 @@ public class Building implements Parcelable
       return longtitude;
    }
 
-   private double getDistance( Location currentLocation ) 
+   /*
+    * This is the method that finds the distance between our currentLocation and the building object.
+    *@param currentLocation is the currentLocation of the user.
+    *@return returns the distance as an double value.
+    */
+   private double getDistance( Location currentLocation )
    {
       double theta = longitudeOfBuilding - currentLocation.getLongitude();
       double dist = Math.sin( deg2rad( latitudeOfBuilding))
@@ -123,17 +139,35 @@ public class Building implements Parcelable
       return ( dist);
    }
 
-
-   private double deg2rad( double deg) 
+   /*
+    * One of the methods that helps to getDistance method
+    * Turns the degree input to the radian.
+    *@param deg is the deg input.
+    * @return returns the radian value as a double.
+    */
+   private double deg2rad( double deg)
    {
       return ( deg * Math.PI / 180.0);
    }
 
+   /*
+    * One of the methods that helps to getDistance method
+    * Turns the radian input to the degree.
+    * @param rad is the rad input.
+    * @return returns the degree value as a double.
+    */
    private double rad2deg( double rad)
    {
       return ( rad * 180.0 / Math.PI);
    }
 
+   /*
+    * This is the method that checks whether we are close enough to the Building.
+    * Method returns true if the user is closer to the Building than specified distance,otherwise return false.
+    *@param meter is the specified distance.
+    * @param currentLocation is the current location of the user.
+    *@return returns the boolean value
+    */
    public boolean isNearer( double meter, Location currentLocation)
    {
       if ( getDistance( currentLocation) <= meter / 1000)
@@ -146,12 +180,23 @@ public class Building implements Parcelable
 
 
 
+   /*
+    * A toString method that returns the name of the building.
+    * @return returns the name of the building as a String.
+    */
    @Override
    public String toString()
    {
       return nameOfBuilding;
    }
 
+
+
+   /*
+    * This is the method that return a building object according to the user input in application.
+    *@param buildingCode is the input that users enter in the app when creating their schedule
+    *@return return the appropriate building, if input is invalid return null.
+    */
    public static Building getBuilding( String buildingCode)
    {
       if ( buildingCode. equals( "EE") )
