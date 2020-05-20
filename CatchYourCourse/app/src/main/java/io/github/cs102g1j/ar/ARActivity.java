@@ -1,38 +1,31 @@
 package io.github.cs102g1j.ar;
-
-import android.content.Context;
+// Videoyu tersten çek
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.ar.core.Anchor;
 import com.google.ar.core.Frame;
-import com.google.ar.core.HitResult;
-import com.google.ar.core.Plane;
 import com.google.ar.core.Pose;
-import com.google.ar.core.Trackable;
 import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.FrameTime;
-import com.google.ar.sceneform.HitTestResult;
-import com.google.ar.sceneform.Node;
-import com.google.ar.sceneform.Scene;
-import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
+import com.google.ar.sceneform.ux.TransformableNode;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
 
 import io.github.cs102g1j.R;
 
-public class ARActivity extends AppCompatActivity implements Scene.OnUpdateListener
+public class ARActivity extends AppCompatActivity
 {
    ArFragment arFragment;
    ModelRenderable andyRenderable;
+   boolean placed = false;
 
    @Override
    @SuppressWarnings( { "AndroidApiChecker", "FutureReturnValueIgnored" } )
@@ -74,71 +67,42 @@ public class ARActivity extends AppCompatActivity implements Scene.OnUpdateListe
                            return null;
                         }
                      } );
+
+
+      arFragment.getArSceneView().getScene().addOnUpdateListener( this::onUpdateFrame );
+
    }
 
-   private Node getModel()
-   {
-      Node node = new Node();
-      node.setRenderable( andyRenderable );
-      Context cont = this;
-      node.setOnTapListener( new Node.OnTapListener()
-      {
-         @Override
-         public void onTap( HitTestResult v, MotionEvent event
-                          )
-         {
-            Toast.makeText( cont, "Model was touched", Toast.LENGTH_LONG )   // Toast?, toast!
-                 .show();
-         }
-      } );
-      return node;
-   }
-
-   @Override
-   public void onUpdate( FrameTime frameTime )
+   private void onUpdateFrame( FrameTime frameTime )
    {
       Frame frame = arFragment.getArSceneView().getArFrame();
+
+      // If there is no frame, just return.
       if ( frame == null )
       {
          return;
       }
-      if ( frame.getCamera().getTrackingState() != TrackingState.TRACKING )
+
+      //Making sure ARCore is tracking some feature points, makes the augmentation little stable.
+      if ( frame.getCamera().getTrackingState() == TrackingState.TRACKING && !placed )
       {
-         return;
+
+         Pose pos = frame.getCamera().getPose().compose( Pose.makeTranslation( 0, 0, -0.3f ) );
+         Anchor anchor = arFragment.getArSceneView().getSession().createAnchor( pos );
+         AnchorNode anchorNode = new AnchorNode( anchor );
+         anchorNode.setParent( arFragment.getArSceneView().getScene() );
+
+         // Create the arrow node and add it to the anchor.
+         placed = true; //to place the arrow just once.
+         // anchor.
+         TransformableNode andy = new TransformableNode( arFragment.getTransformationSystem() );
+         andy.setParent( anchorNode );
+         andy.setRenderable( andyRenderable );
+         andy.select();
+
       }
-      for ( Plane plane : frame.getUpdatedTrackables( Plane.class ) )
-      {
-         arFragment.getPlaneDiscoveryController().hide();
-         if ( plane.getTrackingState() == TrackingState.TRACKING )
-         {
-            for ( HitResult hit : frame.hitTest( findViewById( android.R.id.content ).getWidth() /
-                                                 2f,
-                                                 findViewById( android.R.id.content ).getHeight() /
-                                                 2f
-                                               ) )
-            {
-               Trackable trackable = hit.getTrackable();
-               if ( trackable instanceof Plane &&
-                    ( (Plane) trackable ).isPoseInPolygon( hit.getHitPose() ) )
-               {
-                  Anchor anchor = hit.createAnchor();
-                  AnchorNode anchorNode = new AnchorNode( anchor );
-                  anchorNode.setParent( arFragment.getArSceneView().getScene() );
-                  Pose pose = hit.getHitPose();
-                  Node node = new Node();
-                  node.setRenderable( andyRenderable );
-                  node.setLocalPosition( new Vector3( pose.tx(),
-                                                      pose.compose( Pose.makeTranslation( 0.0f,
-                                                                                          0.05f,
-                                                                                          0.0f
-                                                                                        ) ).ty(),
-                                                      pose.tz()
-                  ) );
-                  node.setParent( anchorNode );
-               }
-            }
-         }
-      }
+
    }
+
 }
 
