@@ -72,7 +72,10 @@ public class ScheduleAct extends AppCompatActivity
    MyLessons exportedList;
 
    // methods
-   // This method is used to start an activity; super is used to call the parent class constructor; setContentView is used to set the xml.
+   /** 
+   * This method is used to start an activity; super is used to call the parent class constructor; setContentView is used to set the xml.
+   * @param savedInstanceState
+   */
    @Override
    protected void onCreate( Bundle savedInstanceState )
    {
