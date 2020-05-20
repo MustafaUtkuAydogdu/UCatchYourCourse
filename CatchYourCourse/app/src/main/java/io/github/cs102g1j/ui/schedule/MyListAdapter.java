@@ -15,6 +15,10 @@ import io.github.cs102g1j.nav.MyLessons;
 /**
  * This is RecyclerView Adapter class for MyLessons objects.
  * @version 2020.05.19
+ * @author Melis Atun
+ * @author Muhammed Can Küçükaslan
+ * @author Mustafa Yasir Altunhan
+ * @author Mustafa Utku Aydoğdu
  */
 public class MyListAdapter
    extends RecyclerView.Adapter< MyListAdapter.ViewHolder >
@@ -28,7 +32,8 @@ public class MyListAdapter
       this.myLessons = myLessons;
    }
 
-
+   // methods
+   // 
    @Override
    public int getItemCount()
    {
