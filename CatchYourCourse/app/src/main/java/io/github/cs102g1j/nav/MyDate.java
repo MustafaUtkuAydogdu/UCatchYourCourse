@@ -73,7 +73,9 @@ public class MyDate implements Parcelable
          return new MyDate( in );
       }
 
-      // This method creates an array, and has elements that are its size in it. 
+      /**
+      * This method creates an array, and has elements that are its size in it. 
+      */
       @Override
       public MyDate[] newArray( int size )
       {
@@ -93,13 +95,17 @@ public class MyDate implements Parcelable
       return startTime <= time.startTime && endTime >= time.endTime;
    }
 
-   // This method is for getting the startTime.
+   /** 
+   * This method is for getting the startTime.
+   */
    public int getStartTime()
    {
       return  startTime;
    }
    
-   // This method is for getting the endTime.
+   /** 
+   * This method is for getting the endTime.
+   */
    public int getEndTime()
    {
       return  endTime;
