@@ -1,21 +1,14 @@
 package io.github.cs102g1j.nav;
 /**
  * This is MyLesson class.
- * @author Mustafa Yasir Altunhan.
- * @author Mustafa Utku Aydoğdu
- * @author Muhammed Can Küçükaslan
- * @version 19.05.2020
  */
 
 import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.text.ParseException;
 import java.util.Calendar;
 import java.util.TimeZone;
-
-import io.github.cs102g1j.nav.Building;
 
 public class MyLesson implements Parcelable
 {
@@ -59,7 +52,7 @@ public class MyLesson implements Parcelable
       return 0;
    }
 
-   public static final Creator< MyLesson > CREATOR = new Creator< MyLesson >()
+   public static final Creator<MyLesson> CREATOR = new Creator<MyLesson>()
    {
       @Override
       public MyLesson createFromParcel( Parcel in )
@@ -74,7 +67,9 @@ public class MyLesson implements Parcelable
       }
    };
 
-   //methods
+   // methods
+
+   // Getters & Setters
    public String getLectureName()
    {
       return lectureName;
@@ -90,46 +85,32 @@ public class MyLesson implements Parcelable
       return lectureTime;
    }
 
-   public boolean getIsTimeToAppearPokemon() { return isTimeToAppearPokemon; }
+   /**
+    * Returns whether it is valid for a pokemon to appear in ARActivity.
+    *
+    * @return whether it is valid for a pokemon to appear.
+    */
+   public boolean getIsTimeToAppearPokemon()
+   {
+      return isTimeToAppearPokemon;
+   }
 
-   // SHOULD THE SETTERS ALSO RETURN THE  VALUES WE SET
-   public void setLectureName( String name)
+   public void setLectureName( String name )
    {
       lectureName = name;
    }
 
-   public void setLectureBuilding( Building building)
+   public void setLectureBuilding( Building building )
    {
       lectureBuilding = building;
 
    }
 
-   public void setLectureTime( MyDate date)
+   public void setLectureTime( MyDate date )
    {
       lectureTime = date;
    }
 
-
-
-   public boolean isNow( Location currentLocation)
-   {
-      // getting the current time
-      Calendar calendar = Calendar.getInstance( TimeZone.getDefault() );
-      MyDate currentDate = new MyDate( calendar.get( Calendar.DAY_OF_WEEK ),
-                                       calendar.get( Calendar.HOUR_OF_DAY ),
-                                       calendar.get( Calendar.MINUTE ),
-                                       calendar.get( Calendar.MINUTE )
-      );
-
-
-      isTimeToAppearPokemon = lectureBuilding.isNearer( DISTANCE_20,
-                                                        currentLocation
-                                                      ) &&
-                              lectureTime.isIncludes( currentDate );
-
-      return lectureBuilding.isNearer( DISTANCE_20, currentLocation ) &&
-             lectureTime.isIncludes( currentDate );
-   }
    public String getLecture()
    {
       return lectureName;
@@ -144,11 +125,31 @@ public class MyLesson implements Parcelable
    {
       return lectureTime.normalize( lectureTime.getStartTime() );
    }
-   @Override
-   public String toString()
+
+   /**
+    * Returns whether it is valid for a pokemon to appear in ARActivity based on time and current
+    * location. Also updates the isTimeToAppearPokemon variable.
+    *
+    * @param currentLocation current location.
+    *
+    * @return whether is valid for a pokemon to appear.
+    */
+   public boolean isNow( Location currentLocation )
    {
-      return lectureName + " at " + lectureBuilding.toString()
-             + "\nbetween " + lectureTime.normalize( lectureTime.getStartTime() )
-             + " and " + lectureTime.normalize( lectureTime.getEndTime() );
+      // getting the current time
+      Calendar calendar = Calendar.getInstance( TimeZone.getDefault() );
+      MyDate currentDate = new MyDate( calendar.get( Calendar.DAY_OF_WEEK ),
+                                       calendar.get( Calendar.HOUR_OF_DAY ),
+                                       calendar.get( Calendar.MINUTE ),
+                                       calendar.get( Calendar.MINUTE )
+      );
+
+
+      isTimeToAppearPokemon = lectureBuilding.isNearer( DISTANCE_20, currentLocation ) &&
+                              lectureTime.isIncludes( currentDate );
+
+      return lectureBuilding.isNearer( DISTANCE_20, currentLocation ) && lectureTime.isIncludes(
+         currentDate );
    }
+
 } // END OF the class
