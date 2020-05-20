@@ -33,14 +33,20 @@ public class MyListAdapter
    }
 
    // methods
-   // This method is for getting the size of the object myLessons, which has a property of arrayList. Hence, when this method is called, the size of the arrayList of the object myLessons will be returned.
+   /**
+   * This method is for getting the size of the object myLessons, which has a property of arrayList. Hence, when this method is called, the size of the arrayList of the object myLessons will be returned.
+   */
    @Override
    public int getItemCount()
    {
       return myLessons.size();
    }
 
-   // This method only creates a new view holder when there are no existing view holders which the RecyleView can reuse.
+   /** 
+   * This method only creates a new view holder when there are no existing view holders which the RecyleView can reuse.
+   * @param parent
+   * @param viewType
+   */
    @Override
    public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType )
    {
@@ -55,7 +61,11 @@ public class MyListAdapter
       return viewHolder;
    }
    
-   // This method is for getting new unused view holders and filling them with data which are desired to be displayed.
+   /**
+   * This method is for getting new unused view holders and filling them with data which are desired to be displayed.
+   * @param holder
+   * @param position
+   */
    @Override
    public void onBindViewHolder( ViewHolder holder, int position )
    {
@@ -69,7 +79,10 @@ public class MyListAdapter
       //holder.mImageView.setImageResource(myListData.getImageResource());
    }
 
-   // If a user presses an Item in the list, this method will display that precise Item.
+   /**
+   * If a user presses an Item in the list, this method will display that precise Item.
+   * @param listener
+   */
    public void setOnItemClickListener( OnItemClickListener listener )
    {
       myListener = listener;
@@ -103,7 +116,10 @@ public class MyListAdapter
          itemView.setOnClickListener( new View.OnClickListener()
          {
             
-            // This method is for detecting when the user clicks a button.
+            /** 
+            * This method is for detecting when the user clicks a button.
+            * @param v
+            */
             @Override
             public void onClick( View v )
             {
