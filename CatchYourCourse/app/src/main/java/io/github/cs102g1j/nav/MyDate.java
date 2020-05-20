@@ -26,19 +26,31 @@ public class MyDate implements Parcelable
       this.endTime = startTime + duration;
    }
 
+   /*
+    * This is the constructor that we recreate/clone our object using the parcels coming from the writeToParcel method.
+    * This method will be used in the
+    * @param in is the information coming in.
+    */
    public MyDate(int timeStart, int timeEnd )
    {
       this.startTime = timeStart;
       this.endTime = timeEnd;
    }
+<<<<<<< HEAD
 
+    /* 
+    * This is the method that we convert the properties of our myDate class to Strings.
+    * Later on we will take these information to recreating object from its "parcels". ( in the MyDate( Parcel in) constructor)
+    */
+=======
    protected MyDate( Parcel in )
    {
       startTime = in.readInt();
       endTime = in.readInt();
    }
   
-   
+   >>>>>>>
+   9a6153f8d4c89df0c6ac280b49b607902e057e1f
    @Override
    public void writeToParcel( Parcel dest, int flags )
    {
@@ -55,6 +67,8 @@ public class MyDate implements Parcelable
       return 0;
    }
 
+   // Creating a MyDate object invoking the MyDate( Parcel in) constructor.
+   // Also creates an array of MyDate in case of using a MyDate array in program.
    public static final Creator< MyDate > CREATOR = new Creator< MyDate >()
    {
       @Override
@@ -70,13 +84,15 @@ public class MyDate implements Parcelable
          return new MyDate[ size ];
       }
    };
-
+<<<<<<< HEAD
    // methods
    /*
    * This is the method that checks whether we are still in a current Lesson.
    * @param time is the MyDate object that is taken as input of current moment of user
    * @return returns true if there is still a lecture going on, false otherwise.
    */
+   >>>>>>>
+   9a6153f8d4c89df0c6ac280b49b607902e057e1f
    public boolean isIncludes( MyDate time)
    {
       return startTime <= time.startTime && endTime >= time.endTime;
