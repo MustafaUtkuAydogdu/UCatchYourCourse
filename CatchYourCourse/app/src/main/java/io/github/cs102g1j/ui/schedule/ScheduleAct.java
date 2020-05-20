@@ -1,5 +1,9 @@
 /**
- * This is the ScheduleActivity class.
+ * This is the ScheduleAct class.
+ * @author Muhammed Can Küçükaslan
+ * @author Mustafa Utku Aydoğdu
+ * @author Mustafa Yasir Altunhan
+ * @author Melis Atun
  */
 package io.github.cs102g1j.ui.schedule;
 
@@ -67,6 +71,8 @@ public class ScheduleAct extends AppCompatActivity
 
    MyLessons exportedList;
 
+   // methods
+   // This method is used to start an activity; super is used to call the parent class constructor; setContentView is used to set the xml.
    @Override
    protected void onCreate( Bundle savedInstanceState )
    {
@@ -86,6 +92,7 @@ public class ScheduleAct extends AppCompatActivity
       setButtons();
    }
 
+   // This method is used to insert an item to the list. Input is taken from the user, and added to the arrayList.
    public void insertItem( int position,
                            MyDate myDate,
                            Building building,
@@ -98,18 +105,21 @@ public class ScheduleAct extends AppCompatActivity
       mAdapter.notifyItemInserted( position );
    }
 
+   // This method is used to remove an item from the list.
    public void removeItem( int position )
    {
       mExampleList.remove( position );
       mAdapter.notifyItemRemoved( position );
    }
 
-
+   // This method is used for creating an example list. 
    public void createExampleList()
    {
       mExampleList = new MyLessons();
    }
-
+   
+   
+   // This method is mainly for building the layout of RecylerView.
    public void buildRecyclerView()
    {
       mRecyclerView = findViewById( R.id.recyclerView );
@@ -125,7 +135,8 @@ public class ScheduleAct extends AppCompatActivity
          {
             //empty
          }
-
+         
+         // This method is for detecting when the user wants to remove an item, and clicks on it. 
          @Override
          public void onDeleteClick( int position )
          {
@@ -134,6 +145,7 @@ public class ScheduleAct extends AppCompatActivity
       } );
    }
 
+   // This method is for setting all the buttons of RecyleView.
    public void setButtons()
    {
       buttonInsert = findViewById( R.id.button_insert );
@@ -149,6 +161,8 @@ public class ScheduleAct extends AppCompatActivity
 
       buttonInsert.setOnClickListener( new View.OnClickListener()
       {
+      
+         // This method is for creating the mExampleList by taking the input from the user.
          @Override
          public void onClick( View v )
          {
@@ -178,6 +192,8 @@ public class ScheduleAct extends AppCompatActivity
 
       saveButton.setOnClickListener( new View.OnClickListener()
       {
+      
+         // This method is for creating intent to the list. 
          @Override
          public void onClick( View v )
          {
