@@ -46,6 +46,9 @@ public class MyDate implements Parcelable
       dest.writeInt( endTime );
    }
 
+   /**
+   * @return 0
+   */
    @Override
    public int describeContents()
    {
@@ -69,7 +72,11 @@ public class MyDate implements Parcelable
    };
 
    // methods
-   // 
+   /*
+   * This is the method that checks whether we are still in a current Lesson.
+   * @param time is the MyDate object that is taken as input of current moment of user
+   * @return returns true if there is still a lecture going on, false otherwise.
+   */
    public boolean isIncludes( MyDate time)
    {
       return startTime <= time.startTime && endTime >= time.endTime;
