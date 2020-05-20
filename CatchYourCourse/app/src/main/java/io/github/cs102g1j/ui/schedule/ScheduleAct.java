@@ -91,8 +91,13 @@ public class ScheduleAct extends AppCompatActivity
       //activating the buttons
       setButtons();
    }
-
-   // This method is used to insert an item to the list. Input is taken from the user, and added to the arrayList.
+   /**
+   * This method is used to insert an item to the list. Input is taken from the user, and added to the arrayList.
+   * @param position
+   * @param myDate
+   * @param building
+   * @param lectureName
+   */
    public void insertItem( int position,
                            MyDate myDate,
                            Building building,
@@ -105,7 +110,10 @@ public class ScheduleAct extends AppCompatActivity
       mAdapter.notifyItemInserted( position );
    }
 
-   // This method is used to remove an item from the list.
+   /** 
+   * This method is used to remove an item from the list.
+   * @param position
+   */
    public void removeItem( int position )
    {
       mExampleList.remove( position );
@@ -136,7 +144,10 @@ public class ScheduleAct extends AppCompatActivity
             //empty
          }
          
-         // This method is for detecting when the user wants to remove an item, and clicks on it. 
+         /** 
+         * This method is for detecting when the user wants to remove an item, and clicks on it. 
+         * @param position
+         */
          @Override
          public void onDeleteClick( int position )
          {
@@ -162,7 +173,10 @@ public class ScheduleAct extends AppCompatActivity
       buttonInsert.setOnClickListener( new View.OnClickListener()
       {
       
-         // This method is for creating the mExampleList by taking the input from the user.
+         /**
+         * This method is for creating the mExampleList by taking the input from the user.
+         * @param v
+         */
          @Override
          public void onClick( View v )
          {
@@ -193,7 +207,10 @@ public class ScheduleAct extends AppCompatActivity
       saveButton.setOnClickListener( new View.OnClickListener()
       {
       
-         // This method is for creating intent to the list. 
+         /**
+         * This method is for creating intent to the list. 
+         * @param v
+         */  
          @Override
          public void onClick( View v )
          {
