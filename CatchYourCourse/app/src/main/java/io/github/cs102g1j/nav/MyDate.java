@@ -37,7 +37,8 @@ public class MyDate implements Parcelable
       startTime = in.readInt();
       endTime = in.readInt();
    }
-
+  
+   
    @Override
    public void writeToParcel( Parcel dest, int flags )
    {
@@ -59,6 +60,7 @@ public class MyDate implements Parcelable
          return new MyDate( in );
       }
 
+      // This method creates an array, and has elements that are its size in it. 
       @Override
       public MyDate[] newArray( int size )
       {
@@ -66,17 +68,20 @@ public class MyDate implements Parcelable
       }
    };
 
-   //methods
+   // methods
+   // 
    public boolean isIncludes( MyDate time)
    {
       return startTime <= time.startTime && endTime >= time.endTime;
    }
 
+   // This method is for getting the startTime.
    public int getStartTime()
    {
       return  startTime;
    }
-
+   
+   // This method is for getting the endTime.
    public int getEndTime()
    {
       return  endTime;
